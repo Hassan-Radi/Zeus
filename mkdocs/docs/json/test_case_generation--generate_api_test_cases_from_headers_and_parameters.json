@@ -1,0 +1,114 @@
+{
+  "prompt": {
+    "employeeName": "Vladislav Razakov",
+    "caseName": "Testing / Test Automation",
+    "aiTool": "OpenAI ChatGPT-3.5",
+    "expectations": "AI should write basic tests for the POST method to be used by Postman",
+    "examplePrompt": "We have a POST request with body:\n{\n  \"fileId\": \"150aaaa9-80e2-419b-a747-67f3771c8d0c\",\n  \"accountId\": \"4060741400042390599\"\n}\nWrite tests for Postman",
+    "numberOfRetries": "",
+    "timeGainedOrLost": "80%",
+    "satisfaction": 5,
+    "isCustomerUsingIt": false,
+    "sideEffectsOrComments": "AI did well, all tests turned out to be working"
+  },
+  "codeResult": {
+    "highSatisfaction": true,
+    "relevantExpectations": true,
+    "relevantExamplePrompt": true,
+    "relevantSideEffectsOrComments": true,
+    "sentimentOfSideEffectsOrComments": "POSITIVE",
+    "gainedTime": true,
+    "highNumberOfRetries": false
+  },
+  "assessment": {
+    "comments": "Another test case generation example, but this one is focusing on API testing.",
+    "category": [
+      "TEST_CASE_GENERATION",
+      "API_TESTING"
+    ],
+    "intendedAudience": [
+      "QA_ENGINEER",
+      "SDET"
+    ],
+    "promptHistory": {
+      "1": {
+        "revisedPrompt": "We have a POST request with body:\n{\n  \"fileId\": \"150aaaa9-80e2-419b-a747-67f3771c8d0c\",\n  \"accountId\": \"4060741400042390599\"\n}\nWrite tests for Postman",
+        "changeLog": "Original version.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-3.5"
+      },
+      "2": {
+        "revisedPrompt": "Write Postman tests for a POST request with body:\n{\n  \"fileId\": \"150aaaa9-80e2-419b-a747-67f3771c8d0c\",\n  \"accountId\": \"4060741400042390599\"\n}",
+        "changeLog": "Minor refactor to the prompt.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-3.5"
+      },
+      "3": {
+        "revisedPrompt": "Write API test cases for a POST request with body:\n{\n  \"fileId\": \"150aaaa9-80e2-419b-a747-67f3771c8d0c\",\n  \"accountId\": \"4060741400042390599\"\n}",
+        "changeLog": "Started using GPT-4 in the prompt + genralising it to work with any API client (not just Postman).",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4"
+      },
+      "4": {
+        "revisedPrompt": "Write API test cases for a {{REQUEST_TYPE}} request with body: {{REQUEST_BODY}}",
+        "changeLog": "Converted the prompt to a template prompt.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT",
+          "TEMPLATE_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4",
+        "sampleData": [
+          "REQUEST_TYPE: POST",
+          "REQUEST_BODY: {\n  \"fileId\": \"150aaaa9-80e2-419b-a747-67f3771c8d0c\",\n  \"accountId\": \"4060741400042390599\"\n}"
+        ]
+      },
+      "5": {
+        "revisedPrompt": "Act as a senior software development engineer in test. Write API test cases for a {{REQUEST_TYPE}} request with body: {{REQUEST_BODY}}",
+        "changeLog": "Added the act as part.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT",
+          "TEMPLATE_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4",
+        "sampleData": [
+          "REQUEST_TYPE: POST",
+          "REQUEST_BODY: {\n  \"fileId\": \"150aaaa9-80e2-419b-a747-67f3771c8d0c\",\n  \"accountId\": \"4060741400042390599\"\n}"
+        ]
+      },
+      "6": {
+        "revisedPrompt": "Act as a Senior Software Development Engineer in Test. Write API test cases for a {{REQUEST_TYPE}} request with parameters: {{REQUEST_PARAMETERS}} and headers: {{REQUEST_HEADERS}}",
+        "changeLog": "Added the API headers part.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT",
+          "TEMPLATE_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4",
+        "sampleData": [
+          "REQUEST_TYPE: POST",
+          "REQUEST_PARAMETERS: <br>{<br>&emsp;\"fileId\": \"150aaaa9-80e2-419b-a747-67f3771c8d0c\",<br>&emsp;\"accountId\": \"4060741400042390599\"<br>}",
+          "REQUEST_HEADERS: <br>{<br>&emsp;\"connection\": \"keep-alive\",<br>&emsp;\"content-type\" : \"application/json; charset=utf-8\"<br>}"
+        ]
+      }
+    }
+  },
+  "aiResult": {
+    "highSatisfaction": false,
+    "relevantExpectations": false,
+    "relevantExamplePrompt": false,
+    "relevantSideEffectsOrComments": false,
+    "gainedTime": false,
+    "highNumberOfRetries": false
+  }
+}

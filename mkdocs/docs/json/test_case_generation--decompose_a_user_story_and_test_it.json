@@ -1,0 +1,111 @@
+{
+  "prompt": {
+    "employeeName": "Vladislav Razakov",
+    "caseName": "Testing / Test Automation",
+    "aiTool": "OpenAI ChatGPT-3.5",
+    "expectations": "AI has to write user stories for buying a movie ticket online, and then test them and check if there are any logical inconsistencies.",
+    "examplePrompt": "Act like a business analyst. Create a user story for buying a ticket to the cinema. Decompose stories whenever possible to make it easier for developers to implement.\n\nThen act like a tester. Test this business requirements.",
+    "numberOfRetries": "",
+    "timeGainedOrLost": "80%",
+    "satisfaction": 5,
+    "isCustomerUsingIt": false,
+    "sideEffectsOrComments": "With this task, AI coped well."
+  },
+  "codeResult": {
+    "highSatisfaction": true,
+    "relevantExpectations": true,
+    "relevantExamplePrompt": true,
+    "relevantSideEffectsOrComments": false,
+    "sentimentOfSideEffectsOrComments": "POSITIVE",
+    "gainedTime": true,
+    "highNumberOfRetries": false
+  },
+  "assessment": {
+    "comments": "Great prompt. The response is very useful. It can be broken into two separate prompts for better/more results (The AI did a great job nonetheless).",
+    "category": [
+      "TEST_CASE_GENERATION",
+      "USER_STORY_GENERATION"
+    ],
+    "intendedAudience": [
+      "BUSINESS_ANALYST",
+      "PRODUCT_OWNER",
+      "QA_ENGINEER"
+    ],
+    "promptHistory": {
+      "1": {
+        "revisedPrompt": "Act like a business analyst. Create a user story for buying a ticket to the cinema. Decompose stories whenever possible to make it easier for developers to implement.\n\nThen act like a tester. Test this business requirements.",
+        "changeLog": "Original version.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-3.5"
+      },
+      "2": {
+        "revisedPrompt": "Act as a business analyst. Create a user story for buying a ticket to the cinema. Decompose stories whenever possible to make it easier for the developers to implement them.\n\nThen act as a tester and test these business requirements.",
+        "changeLog": "Fixed grammar and spelling mistakes",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-3.5"
+      },
+      "3": {
+        "revisedPrompt": "Act as a business analyst. Create a user story for buying a ticket to the cinema. Decompose stories whenever possible to make it easier for the developers to implement them.\n\nThen act as a tester and test these business requirements.",
+        "changeLog": "Switched to OpenAI GPT-4",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4"
+      },
+      "4": {
+        "revisedPrompt": "Act as a business analyst. Create a user story for the below scenario delimited by triple backticks. Decompose stories whenever possible to make it easier for the developers to implement them.\n\nThen act as a tester and test these business requirements.```{{SCENARIO}}```",
+        "changeLog": "Converted the prompt to a template one + using delimiters",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT",
+          "TEMPLATE_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4",
+        "sampleData": [
+          "SCENARIO: buying a ticket to the cinema"
+        ]
+      },
+      "5": {
+        "revisedPrompt": "Perform the following actions: - Act as a business analyst. Create a user story for the below scenario delimited by triple backticks. - Decompose the created stories whenever possible to make it easier for the developers to implement them. - Then act as a tester and test these business requirements.```{{SCENARIO}}```",
+        "changeLog": "Rephrased the prompt and split it into actions to perform.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT",
+          "TEMPLATE_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4",
+        "sampleData": [
+          "SCENARIO: buying a ticket to the cinema"
+        ]
+      },
+      "6": {
+        "revisedPrompt": "Perform the following actions: 1. Act as a Business Analyst and then create a user story for the below scenario delimited by triple backticks. 2. Decompose the created user stories whenever possible, to make it easier for the developers to implement them. 3. Then act as a Quality Assurance Engineer and test these business requirements.```{{SCENARIO}}```",
+        "changeLog": "Enhanced the prompt a bit.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT",
+          "TEMPLATE_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4",
+        "sampleData": [
+          "SCENARIO: buying a ticket to the cinema"
+        ]
+      }
+    }
+  },
+  "aiResult": {
+    "highSatisfaction": false,
+    "relevantExpectations": false,
+    "relevantExamplePrompt": false,
+    "relevantSideEffectsOrComments": false,
+    "gainedTime": false,
+    "highNumberOfRetries": false
+  }
+}

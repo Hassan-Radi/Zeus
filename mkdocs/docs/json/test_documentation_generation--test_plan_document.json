@@ -1,0 +1,60 @@
+{
+  "prompt": {
+    "employeeName": "Valentyna Kharchuk",
+    "caseName": "Testing / Test Automation",
+    "aiTool": "OpenAI ChatGPT-4",
+    "expectations": "I wanted to find a quick result for my question for writing Test plan, instead of using Google search. ",
+    "examplePrompt": "I want you to act as a software testing engineer. Give me please entry criteria for test process which I can write in test plan.",
+    "numberOfRetries": "",
+    "timeGainedOrLost": "60%",
+    "satisfaction": 5,
+    "isCustomerUsingIt": false,
+    "sideEffectsOrComments": "I saved my time because I got results in a several second instead of opening a lot of pages during using Google search. Of course it is necessary to analyze  this information and adapted to my project but it will not take a lot of time."
+  },
+  "codeResult": {
+    "highSatisfaction": true,
+    "relevantExpectations": true,
+    "relevantExamplePrompt": true,
+    "relevantSideEffectsOrComments": false,
+    "sentimentOfSideEffectsOrComments": "POSITIVE",
+    "gainedTime": true,
+    "highNumberOfRetries": false
+  },
+  "assessment": {
+    "comments": "Good prompt, but the user kinda limited the model. It could have generated a good document to start with.",
+    "category": [
+      "TEST_DOCUMENTATION_GENERATION"
+    ],
+    "intendedAudience": [
+      "LEAD_SDET"
+    ],
+    "promptHistory": {
+      "1": {
+        "revisedPrompt": "I want you to act as a software testing engineer. Give me please entry criteria for test process which I can write in test plan.",
+        "changeLog": "Original version.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4"
+      },
+      "2": {
+        "revisedPrompt": "Act as a Senior Software Testing Engineer. Write a test plan document with entry criteria and test process.",
+        "changeLog": "Fixed spelling and grammar mistakes + rephrased the prompt.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4"
+      }
+    }
+  },
+  "aiResult": {
+    "highSatisfaction": false,
+    "relevantExpectations": false,
+    "relevantExamplePrompt": false,
+    "relevantSideEffectsOrComments": false,
+    "gainedTime": false,
+    "highNumberOfRetries": false
+  }
+}

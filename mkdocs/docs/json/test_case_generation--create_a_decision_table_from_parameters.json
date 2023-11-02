@@ -1,0 +1,117 @@
+{
+  "prompt": {
+    "employeeName": "Anzhelika Zheltanoha",
+    "caseName": "Testing / Test Automation",
+    "aiTool": "OpenAI ChatGPT-3.5",
+    "expectations": "creating decision table",
+    "examplePrompt": "create decision table for testing 2 conditions – UserID, Password; 2 Actions – Login Successfully, Error showing ‘Invalid Credentials’; 3 Options — Blank, Valid, Invalid.",
+    "numberOfRetries": "",
+    "timeGainedOrLost": "60%",
+    "satisfaction": 5,
+    "isCustomerUsingIt": false,
+    "sideEffectsOrComments": "It\u0027s useful decision table from test design techniques"
+  },
+  "codeResult": {
+    "highSatisfaction": true,
+    "relevantExpectations": false,
+    "relevantExamplePrompt": true,
+    "relevantSideEffectsOrComments": true,
+    "sentimentOfSideEffectsOrComments": "NEUTRAL",
+    "gainedTime": true,
+    "highNumberOfRetries": false
+  },
+  "assessment": {
+    "comments": "Another test case generation example that focuses on decision tables.",
+    "category": [
+      "TEST_CASE_GENERATION"
+    ],
+    "intendedAudience": [
+      "QA_ENGINEER"
+    ],
+    "promptHistory": {
+      "1": {
+        "revisedPrompt": "create decision table for testing 2 conditions – UserID, Password; 2 Actions – Login Successfully, Error showing ‘Invalid Credentials’; 3 Options — Blank, Valid, Invalid.",
+        "changeLog": "Original version.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-3.5"
+      },
+      "2": {
+        "revisedPrompt": "Create a decision table for testing 2 conditions – UserID, Password; 2 Actions – Login Successfully, Error showing ‘Invalid Credentials’; 3 Options — Blank, Valid, Invalid.",
+        "changeLog": "Corrected spelling and grammar mistakes.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-3.5"
+      },
+      "3": {
+        "revisedPrompt": "Create a decision table for testing 2 conditions – UserID, Password; 2 Actions – Login Successfully, Error showing ‘Invalid Credentials’; 3 Options — Blank, Valid, Invalid.",
+        "changeLog": "Switched to using OpenAI GPT-4 for better results.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4"
+      },
+      "4": {
+        "revisedPrompt": "Act as a software tester and then create a decision table for testing the following: - 2 conditions: UserID, Password. - 2 Actions: Login Successfully, Error showing ‘Invalid Credentials’. - 3 Options: Blank, Valid, Invalid.",
+        "changeLog": "Added more context for the AI + rephrased the prompt.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4"
+      },
+      "5": {
+        "revisedPrompt": "Act as a software tester and then create a decision table for testing the following: {{PARAMETERS}}",
+        "changeLog": "Converted to a template prompt.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT",
+          "TEMPLATE_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4",
+        "sampleData": [
+          "PARAMETERS: - 2 conditions: UserID, Password. - 2 Actions: Login Successfully, Error showing ‘Invalid Credentials’. - 3 Options: Blank, Valid, Invalid."
+        ]
+      },
+      "6": {
+        "revisedPrompt": "Act as a software tester and then create a decision table for testing the following parameters delimited by triple backticks: ```{{PARAMETERS}}```",
+        "changeLog": "Use delimiters to separate the text to process from the actions to perform.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT",
+          "TEMPLATE_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4",
+        "sampleData": [
+          "PARAMETERS: - 2 conditions: UserID, Password. - 2 Actions: Login Successfully, Error showing ‘Invalid Credentials’. - 3 Options: Blank, Valid, Invalid."
+        ]
+      },
+      "7": {
+        "revisedPrompt": "Act as a Senior Quality Assurance Engineer and then create a decision table for testing the following parameters delimited by triple backticks: ```{{PARAMETERS}}```",
+        "changeLog": "Update prompt and its sample data.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT",
+          "TEMPLATE_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4",
+        "sampleData": [
+          "PARAMETERS: <br>- 2 conditions: UserID, Password.<br>- 2 Actions: Login Successfully, Error showing ‘Invalid Credentials’.<br>- 3 Options: Blank, Valid, Invalid."
+        ]
+      }
+    }
+  },
+  "aiResult": {
+    "highSatisfaction": false,
+    "relevantExpectations": false,
+    "relevantExamplePrompt": false,
+    "relevantSideEffectsOrComments": false,
+    "gainedTime": false,
+    "highNumberOfRetries": false
+  }
+}

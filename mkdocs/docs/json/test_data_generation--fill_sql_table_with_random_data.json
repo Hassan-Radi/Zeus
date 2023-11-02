@@ -1,0 +1,86 @@
+{
+  "prompt": {
+    "employeeName": "Aliaksandr Farelnik",
+    "caseName": "Testing / Test Automation",
+    "aiTool": "OpenAI ChatGPT-3.5",
+    "expectations": "Write a query with generation test data",
+    "examplePrompt": "Create a query on the mobility_service_request table, with randomly pre-filled test data and status IN_PROGRESS for all created records, the number of new records should be 100",
+    "numberOfRetries": "",
+    "timeGainedOrLost": "100%",
+    "satisfaction": 4,
+    "isCustomerUsingIt": false,
+    "sideEffectsOrComments": "Pros:\n- Helps to write the needed queries\n- Useful in writing complex and capacious queries\n- Helps new testers get familiar with the database and work with data faster\n- Can generate huge amounts of test data\n- Write scripts to update data from DB\nCons: \n- Sometimes explaining can take more time than writing the query itself (actual for simple requests)\n- Without connection to DB need to give a lot of data / context to create required query\nConclusion: Situational"
+  },
+  "codeResult": {
+    "highSatisfaction": true,
+    "relevantExpectations": true,
+    "relevantExamplePrompt": true,
+    "relevantSideEffectsOrComments": true,
+    "sentimentOfSideEffectsOrComments": "NEUTRAL",
+    "gainedTime": true,
+    "highNumberOfRetries": false
+  },
+  "assessment": {
+    "comments": "Very useful for creating test data in database tables.",
+    "category": [
+      "TEST_DATA_GENERATION",
+      "SQL_GENERATION"
+    ],
+    "intendedAudience": [
+      "SDET",
+      "DEVELOPER"
+    ],
+    "promptHistory": {
+      "1": {
+        "revisedPrompt": "Create a query on the mobility_service_request table, with randomly pre-filled test data and status IN_PROGRESS for all created records, the number of new records should be 100",
+        "changeLog": "Original version.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-3.5"
+      },
+      "2": {
+        "revisedPrompt": "Create an SQL query for the 'mobility_service_request' table to fill it with random test data. The number of new records should be 100. Use status 'IN_PROGRESS' for all the created records.",
+        "changeLog": "Fixed spelling and grammar mistakes.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-3.5"
+      },
+      "3": {
+        "revisedPrompt": "Create an SQL query for the 'mobility_service_request' table to fill it with random test data. The number of new records should be 100. Use status 'IN_PROGRESS' for all the created records.",
+        "changeLog": "Used OpenAI ChatGPT-4.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4"
+      },
+      "4": {
+        "revisedPrompt": "Create an SQL query for the '{{DB_TABLE_NAME}}' table to fill it with random test data. The number of records to generate is {{NUMBER_OF_RECORDS}}. {{CONTEXT}}",
+        "changeLog": "Converted to a template prompt + rephrased the prompt.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT",
+          "TEMPLATE_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4",
+        "sampleData": [
+          "DB_TABLE_NAME: mobility_service_request",
+          "NUMBER_OF_RECORDS: 100",
+          "CONTEXT: Use status 'IN_PROGRESS' for all the created records."
+        ]
+      }
+    }
+  },
+  "aiResult": {
+    "highSatisfaction": false,
+    "relevantExpectations": false,
+    "relevantExamplePrompt": false,
+    "relevantSideEffectsOrComments": false,
+    "gainedTime": false,
+    "highNumberOfRetries": false
+  }
+}

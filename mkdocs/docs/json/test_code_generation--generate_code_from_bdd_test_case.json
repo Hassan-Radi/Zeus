@@ -1,0 +1,100 @@
+{
+  "prompt": {
+    "employeeName": "Aliaksandr Farelnik",
+    "caseName": "Testing / Test Automation",
+    "aiTool": "OpenAI ChatGPT-3.5",
+    "expectations": "Write autotest on Cucumber.js",
+    "examplePrompt": "I need to automate this BDD test case in Cucumber.js\nSummary: Verify background color for header\nScenario:\nGiven IMR exists for employee\nAnd user opens IMR\nWhen the Opportunities header loads\nThen the Opportunities header background-color is #303240",
+    "numberOfRetries": "",
+    "timeGainedOrLost": "100%",
+    "satisfaction": 4,
+    "isCustomerUsingIt": false,
+    "sideEffectsOrComments": "Pros:\n- Without deep knowledge, it could write autotest in different languages / frameworks\n- Made less mistakes while automation\n- Save a lot of time\n- Know different ways how to automate the same case\nCons: \n- Need recheck\n- Need connection to API for more correct and complete automation\nConclusion: Useful"
+  },
+  "codeResult": {
+    "highSatisfaction": true,
+    "relevantExpectations": false,
+    "relevantExamplePrompt": true,
+    "relevantSideEffectsOrComments": true,
+    "sentimentOfSideEffectsOrComments": "NEUTRAL",
+    "gainedTime": true,
+    "highNumberOfRetries": false
+  },
+  "assessment": {
+    "comments": "General how to question about creating test cases in Cucumber in JS",
+    "category": [
+      "TEST_CODE_GENERATION",
+      "BDD_TESTING"
+    ],
+    "intendedAudience": [
+      "SDET"
+    ],
+    "promptHistory": {
+      "1": {
+        "revisedPrompt": "I need to automate this BDD test case in Cucumber.js\nSummary: Verify background color for header\nScenario:\nGiven IMR exists for employee\nAnd user opens IMR\nWhen the Opportunities header loads\nThen the Opportunities header background-color is #303240",
+        "changeLog": "Original version.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-3.5"
+      },
+      "2": {
+        "revisedPrompt": "I need to automate this BDD test case in Cucumber.js\nSummary: Verify background color for header\nScenario:\nGiven IMR exists for employee\nAnd user opens IMR\nWhen the Opportunities header loads\nThen the Opportunities header background-color is #303240",
+        "changeLog": "Use OpenAI ChatGPT-4.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4"
+      },
+      "3": {
+        "revisedPrompt": "Act as a Senior Software Development Engineer in Test. Generate automation code from the following BDD test case using Cucumber.js.\nSummary: Verify background color for header\nScenario:\nGiven IMR exists for employee\nAnd user opens IMR\nWhen the Opportunities header loads\nThen the Opportunities header background-color is #303240",
+        "changeLog": "Rephrased the prompt to make it produce better results.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4"
+      },
+      "4": {
+        "revisedPrompt": "Act as a Senior Software Development Engineer in Test. Generate automation code from the following BDD test case using '{{AUTOMATION_TOOL}}' and '{{PROGRAMMING_LANGUAGE}}'.\n{{BDD_TEST_CASE}}",
+        "changeLog": "Converted to a template prompt.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT",
+          "TEMPLATE_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4",
+        "sampleData": [
+          "AUTOMATION_TOOL: Cucumber",
+          "PROGRAMMING_LANGUAGE: JS",
+          "BDD_TEST_CASE: Summary: Verify background color for header\nScenario:\nGiven IMR exists for employee\nAnd user opens IMR\nWhen the Opportunities header loads\nThen the Opportunities header background-color is #303240"
+        ]
+      },
+      "5": {
+        "revisedPrompt": "Act as a Senior Software Development Engineer in Test. Generate automation code from the BDD test case that is delimited by triple backticks. Use '{{AUTOMATION_TOOL}}' and '{{PROGRAMMING_LANGUAGE}}'. ```{{BDD_TEST_CASE}}```",
+        "changeLog": "Added more enhancements to the prompt.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT",
+          "TEMPLATE_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4",
+        "sampleData": [
+          "AUTOMATION_TOOL: Cucumber",
+          "PROGRAMMING_LANGUAGE: JS",
+          "BDD_TEST_CASE: <br>Feature: Verify background color for header<br><br>Scenario:<br>&emsp;Given IMR exists for employee<br>&emsp;And user opens IMR<br>&emsp;When the Opportunities header loads<br>&emsp;Then the Opportunities header background-color is #303240"
+        ]
+      }
+    }
+  },
+  "aiResult": {
+    "highSatisfaction": false,
+    "relevantExpectations": false,
+    "relevantExamplePrompt": false,
+    "relevantSideEffectsOrComments": false,
+    "gainedTime": false,
+    "highNumberOfRetries": false
+  }
+}

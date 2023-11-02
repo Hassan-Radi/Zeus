@@ -1,0 +1,95 @@
+{
+  "prompt": {
+    "employeeName": "Aliaksandr Farelnik",
+    "caseName": "Testing / Test Automation",
+    "aiTool": "OpenAI ChatGPT-3.5",
+    "expectations": "Change test cases to BDD (Gherkin) format",
+    "examplePrompt": "For the next Text case need to change format to BDD\n\n1) Precondition: Logged in as:\nEmployee\nResource Manager\nRMs by hierarchy\nHR\nDelivery Manager (for their subordinates)\nAM\nProject Manager\nIM coordinator\n\nSteps to reproduce:\n1. Open \"Relocation and IM\" tab.\n2. Click \"Start IM process\" button.\n3. Fill in mandatory fields and click \"Save\" button.\nExpected result:\nIMR full form is created.",
+    "numberOfRetries": "",
+    "timeGainedOrLost": "100%",
+    "satisfaction": 5,
+    "isCustomerUsingIt": false,
+    "sideEffectsOrComments": "Pros: \n- Helps to save much time after all the conditions are applied\n- Tests can be downloaded as a Excel file and copied into the ChatGPT, so we can rework whole blocks of test\nCons: \n- Chat has some limits on input signs\nConclusion: Useful"
+  },
+  "codeResult": {
+    "highSatisfaction": true,
+    "relevantExpectations": true,
+    "relevantExamplePrompt": false,
+    "relevantSideEffectsOrComments": true,
+    "sentimentOfSideEffectsOrComments": "NEUTRAL",
+    "gainedTime": true,
+    "highNumberOfRetries": false
+  },
+  "assessment": {
+    "comments": "A good example about converting normal test cases to BDD style.",
+    "category": [
+      "BDD_TESTING",
+      "TEST_CASE_CONVERSION"
+    ],
+    "intendedAudience": [
+      "QA_ENGINEER",
+      "SDET"
+    ],
+    "promptHistory": {
+      "1": {
+        "revisedPrompt": "For the next Text case need to change format to BDD\n\n1) Precondition: Logged in as:\nEmployee\nResource Manager\nRMs by hierarchy\nHR\nDelivery Manager (for their subordinates)\nAM\nProject Manager\nIM coordinator\n\nSteps to reproduce:\n1. Open \"Relocation and IM\" tab.\n2. Click \"Start IM process\" button.\n3. Fill in mandatory fields and click \"Save\" button.\nExpected result:\nIMR full form is created.",
+        "changeLog": "Original version.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-3.5"
+      },
+      "2": {
+        "revisedPrompt": "Change the format of the next test case to BDD:\n\n1) Precondition: Logged in as:\nEmployee\nResource Manager\nRMs by hierarchy\nHR\nDelivery Manager (for their subordinates)\nAM\nProject Manager\nIM coordinator\n\nSteps to reproduce:\n1. Open 'Relocation and IM' tab.\n2. Click 'Start IM process' button.\n3. Fill in mandatory fields and click 'Save' button.\nExpected result:\nIMR full form is created.",
+        "changeLog": "Fixed grammar and spelling mistakes.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-3.5"
+      },
+      "3": {
+        "revisedPrompt": "Change the format of the next test case to BDD:\n\n1) Precondition: Logged in as:\nEmployee\nResource Manager\nRMs by hierarchy\nHR\nDelivery Manager (for their subordinates)\nAM\nProject Manager\nIM coordinator\n\nSteps to reproduce:\n1. Open 'Relocation and IM' tab.\n2. Click 'Start IM process' button.\n3. Fill in mandatory fields and click 'Save' button.\nExpected result:\nIMR full form is created.",
+        "changeLog": "Switched to OpenAI Chat-GPT-4.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4"
+      },
+      "4": {
+        "revisedPrompt": "Act as a senior quality engineer. Convert the following test case to Gherkin-style:\n\nPrecondition: Logged in as:\nEmployee\nResource Manager\nRMs by hierarchy\nHR\nDelivery Manager (for their subordinates)\nAM\nProject Manager\nIM coordinator\n\nSteps to reproduce:\n1. Open 'Relocation and IM' tab.\n2. Click 'Start IM process' button.\n3. Fill in mandatory fields and click 'Save' button.\nExpected results:\nIMR full form is created.",
+        "changeLog": "Rephrased and enhanced the prompt.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4"
+      },
+      "5": {
+        "revisedPrompt": "Act as a Senior Quality Engineer. Convert the following test case to Gherkin-style:\n\nPrecondition: {{PRECONDITIONS}}\n\nSteps to reproduce:\n{{STEPS_TO_REPRODUCE}}\nExpected results:\n{{EXPECTED_RESULTS}}",
+        "changeLog": "Convert to a template prompt.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT",
+          "TEMPLATE_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4",
+        "sampleData": [
+          "PRECONDITIONS: Logged in as: Employee, Resource Manager, RMs by hierarchy, HR, Delivery Manager (for their subordinates), AM, Project Manager, IM coordinator",
+          "STEPS_TO_REPRODUCE: 1. Open 'Relocation and IM' tab.\n2. Click 'Start IM process' button.\n3. Fill in mandatory fields and click 'Save' button.",
+          "EXPECTED_RESULTS: IMR full form is created."
+        ]
+      }
+    }
+  },
+  "aiResult": {
+    "highSatisfaction": false,
+    "relevantExpectations": false,
+    "relevantExamplePrompt": false,
+    "relevantSideEffectsOrComments": false,
+    "gainedTime": false,
+    "highNumberOfRetries": false
+  }
+}
