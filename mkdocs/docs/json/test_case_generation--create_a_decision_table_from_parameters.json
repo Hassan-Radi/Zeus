@@ -1,4 +1,6 @@
 {
+  "title": "",
+  "pageHeader": "[Test case generation] Create a decision table from parameters",
   "prompt": {
     "employeeName": "Anzhelika Zheltanoha",
     "caseName": "Testing / Test Automation",

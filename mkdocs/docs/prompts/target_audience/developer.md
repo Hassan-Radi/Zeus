@@ -16,7 +16,7 @@ Contains all the prompts that help developers.
 <ol class="list-group list-group-numbered">
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../common/test_data_generation_sql_fill_table_with_random_data.html"><small>Fill SQL table with random data</small></a>
+          <a href="../prompt_page.html?prompt=test_data_generation_sql_fill_table_with_random_data.html"><small>Fill SQL table with random data</small></a>
         </div>
         <div>
             <span class="badge bg-primary rounded-pill"><small>New</small></span>

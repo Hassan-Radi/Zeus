@@ -1,4 +1,6 @@
 {
+  "title": "",
+  "pageHeader": "[Test case generation] Exhaustive testing for a scenario",
   "prompt": {
     "employeeName": "Volha Kozich",
     "caseName": "Testing / Test Automation",

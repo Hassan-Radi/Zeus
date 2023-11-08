@@ -1,4 +1,6 @@
 {
+  "title": "",
+  "pageHeader": "[Test case generation] Generate API test cases from headers & parameters",
   "prompt": {
     "employeeName": "Vladislav Razakov",
     "caseName": "Testing / Test Automation",

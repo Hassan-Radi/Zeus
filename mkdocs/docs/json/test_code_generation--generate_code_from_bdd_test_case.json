@@ -1,4 +1,6 @@
 {
+  "title": "",
+  "pageHeader": "[Test code generation] Generate automation code from a BDD test case",
   "prompt": {
     "employeeName": "Aliaksandr Farelnik",
     "caseName": "Testing / Test Automation",

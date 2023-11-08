@@ -16,7 +16,7 @@ Contains all the prompts that help designers.
 <ol class="list-group list-group-numbered">
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../common/ux_evaluating_heuristics.html"><small>Evaluating Heuristics</small></a>
+          <a href="../prompt_page.html?prompt=ux_evaluating_heuristics.html"><small>Evaluating Heuristics</small></a>
         </div>
         <div>
             <span class="badge bg-warning rounded-pill"><small>Intermediate</small></span>

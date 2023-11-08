@@ -1,4 +1,6 @@
 {
+  "title": "",
+  "pageHeader": "[Test case generation] Generate API test cases from a Swagger link",
   "prompt": {
     "employeeName": "Sviatlana Makarevich",
     "caseName": "Testing / Test Automation",
