@@ -52,7 +52,7 @@ Contains all the prompts that help architects.
 <ol class="list-group list-group-numbered">
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../common/interview_question_generation_automation_practical_task.html"><small>Create an automation practical task for an interview</small></a>
+          <a href="../prompt_page.html?prompt=interview_question_generation--create_an_automation_practical_task_for_an_interview"><small>Create an automation practical task for an interview</small></a>
         </div>
         <div>
             <span class="badge bg-danger rounded-pill"><small>Advanced</small></span>

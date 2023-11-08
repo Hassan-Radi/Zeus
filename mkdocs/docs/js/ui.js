@@ -169,6 +169,14 @@ class UI {
     }
   }
 
+  showPageTitle(){
+    fetch(JSON_FILE)
+    .then((response) => response.json())
+    .then((json) => {
+      document.getElementById('header').innerText = json.pageHeader;
+    });
+  }
+
   showPromptBookmarkOptions() {
     const divElement = document.createElement('div');
     divElement.classList = 'float-end';

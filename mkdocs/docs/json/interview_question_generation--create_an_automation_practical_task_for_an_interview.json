@@ -1,4 +1,6 @@
 {
+  "title": "Create an automation practical task for an interview",
+  "pageHeader": "[Interview question generation] Create an automation practical task for an interview",
   "prompt": {
     "employeeName": "Anton Chyrko",
     "caseName": "Testing / Test Automation",
@@ -112,13 +114,5 @@
         ]
       }
     }
-  },
-  "aiResult": {
-    "highSatisfaction": false,
-    "relevantExpectations": false,
-    "relevantExamplePrompt": false,
-    "relevantSideEffectsOrComments": false,
-    "gainedTime": false,
-    "highNumberOfRetries": false
   }
 }

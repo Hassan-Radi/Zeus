@@ -1,4 +1,4 @@
-# [Interview question generation] Create an automation practical task for an interview
+# header
 
 <script type="text/javascript" src="/js/ui.js"></script>
 <script type="text/javascript" src="/js/actions.js"></script>
@@ -9,7 +9,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
 <script type="text/javascript">
-    populateThePage('/json/interview_question_generation--create_an_automation_practical_task_for_an_interview.json');
+    populateThePage();
 </script>
 
 #### Prompt iterations history

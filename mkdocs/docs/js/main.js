@@ -2,10 +2,14 @@ const actions = new Actions;
 const ui = new UI;
 let JSON_FILE;
 
-function populateThePage(jsonFile) {
-  JSON_FILE = jsonFile;
+function populateThePage() {
+  const urlParams = new URLSearchParams(window.location.href.split('?')[1]);
+  const jsonFileName = urlParams.get('prompt');
+  JSON_FILE = '/json/' + jsonFileName + '.json';
 
   actions.enableTooltips();
+
+  ui.showPageTitle();
   ui.showPromptBookmarkOptions();
   ui.showPromptDetails();
   ui.showPromptHistory();
