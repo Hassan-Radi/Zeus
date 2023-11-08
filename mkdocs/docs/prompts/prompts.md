@@ -18,7 +18,7 @@ The prompts are split by target audience groups.
         <div class="card" style="width: 10rem;">
             <i class="fa-solid fa-bug fa-2xl"></i>
             <div class="card-body">
-                <a href="/prompts/qa_engineer/qa_engineer.html" class="link link-warning">QA Engineer</a>
+                <a href="/prompts/target_audience/qa_engineer.html" class="link link-warning">QA Engineer</a>
             </div>
         </div>
     </div>
@@ -26,7 +26,7 @@ The prompts are split by target audience groups.
         <div class="card" style="width: 10rem;">
             <i class="fa-solid fa-terminal fa-2xl"></i>
             <div class="card-body">
-                <a href="/prompts/sdet/sdet.html" class="link link-success">SDET</a>
+                <a href="/prompts/target_audience/sdet.html" class="link link-success">SDET</a>
             </div>
         </div>
     </div>
@@ -34,7 +34,7 @@ The prompts are split by target audience groups.
         <div class="card" style="width: 10rem;">
             <i class="fa-solid fa-briefcase fa-2xl"></i>
             <div class="card-body">
-                <a href="/prompts/business_analyst/business_analyst.html" class="link link-dark">Business Analyst</a>
+                <a href="/prompts/target_audience/business_analyst.html" class="link link-dark">Business Analyst</a>
             </div>
         </div>
     </div>
@@ -42,7 +42,7 @@ The prompts are split by target audience groups.
         <div class="card" style="width: 10rem;">
             <i class="fa-solid fa-box-open fa-2xl"></i>
             <div class="card-body">
-                <a href="/prompts/product_owner/product_owner.html" class="link link-secondary">Product Owner</a>
+                <a href="/prompts/target_audience/product_owner.html" class="link link-secondary">Product Owner</a>
             </div>
         </div>
     </div>
@@ -50,7 +50,7 @@ The prompts are split by target audience groups.
         <div class="card" style="width: 10rem;">
             <i class="fa-solid fa-code fa-2xl"></i>
             <div class="card-body">
-                <a href="/prompts/developer/developer.html" class="link link-danger">Developer</a>
+                <a href="/prompts/target_audience/developer.html" class="link link-danger">Developer</a>
             </div>
         </div>
     </div>
@@ -58,7 +58,7 @@ The prompts are split by target audience groups.
         <div class="card" style="width: 10rem;">
             <i class="fa-solid fa-user-gear fa-2xl"></i>
             <div class="card-body">
-                <a href="/prompts/architect/architect.html" class="link link-info">Architect</a>
+                <a href="/prompts/target_audience/architect.html" class="link link-info">Architect</a>
             </div>
         </div>
     </div>
@@ -66,7 +66,7 @@ The prompts are split by target audience groups.
         <div class="card" style="width: 10rem;">
             <i class="fa-solid fa-wand-magic-sparkles fa-2xl"></i>
             <div class="card-body">
-                <a href="/prompts/designer/designer.html" class="link link-primary">Designer</a>
+                <a href="/prompts/target_audience/designer.html" class="link link-primary">Designer</a>
             </div>
         </div>
     </div>
