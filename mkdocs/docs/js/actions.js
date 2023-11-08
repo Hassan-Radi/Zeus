@@ -18,7 +18,7 @@ const ALL_JSON_FILES = [
   "/json/test_documentation_generation--test_automation_strategy_document.json",
   "/json/test_documentation_generation--test_plan_document.json",
   "/json/ux--evaluating_heuristics.json",
-  "/json/test_automation_how_to--api_tool_selection_&_comparison.json",
+  "/json/test_automation_how_to--api_tool_selection_and_comparison.json",
   "/json/test_data_generation--fill_sql_table_with_random_data.json",
   "/json/mentoring--provide_study_materials_for_juniors.json"
 ];

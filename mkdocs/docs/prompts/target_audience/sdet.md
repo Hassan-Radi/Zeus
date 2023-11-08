@@ -16,7 +16,7 @@ Contains all the prompts that help Software Development Engineers in Test (SDETs
 <ol class="list-group list-group-numbered">
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../prompt_page.html?prompt=mentoring_provide_study_materials_for_juniors.html"><small>Provide study materials for juniors</small></a>
+          <a href="../prompt_page.html?prompt=mentoring--provide_study_materials_for_juniors"><small>Provide study materials for juniors</small></a>
         </div>
         <div>
             <span class="badge bg-primary rounded-pill"><small>New</small></span>
@@ -29,12 +29,12 @@ Contains all the prompts that help Software Development Engineers in Test (SDETs
 <ol class="list-group list-group-numbered">
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../prompt_page.html?prompt=test_case_generation_api.html"><small>Generate API test cases from headers & parameters</small></a>
+          <a href="../prompt_page.html?prompt=test_case_generation--generate_api_test_cases_from_headers_and_parameters"><small>Generate API test cases from headers & parameters</small></a>
         </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../prompt_page.html?prompt=test_case_generation_swagger_link_to_api_tests.html"><small>Generate API test cases from a Swagger link</small></a>
+          <a href="../prompt_page.html?prompt=test_case_generation--generate_api_tests_from_swagger_link"><small>Generate API test cases from a Swagger link</small></a>
         </div>
         <div>
             <span class="badge bg-primary rounded-pill"><small>New</small></span>
@@ -43,7 +43,7 @@ Contains all the prompts that help Software Development Engineers in Test (SDETs
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../prompt_page.html?prompt=test_case_generation_exhaustive_testing.html"><small>Exhaustive testing for a scenario</small></a>
+          <a href="../prompt_page.html?prompt=test_case_generation--exhaustive_testing_for_a_scenario"><small>Exhaustive testing for a scenario</small></a>
         </div>
     </li>
 </ol>
@@ -53,7 +53,7 @@ Contains all the prompts that help Software Development Engineers in Test (SDETs
 <ol class="list-group list-group-numbered">
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../prompt_page.html?prompt=test_case_conversion_plain_test_case_to_gherkin_style.html"><small>Convert plain test case to Gherkin-style</small></a>
+          <a href="../prompt_page.html?prompt=test_case_conversion--convert_plain_test_case_to_gherkin-style"><small>Convert plain test case to Gherkin-style</small></a>
         </div>
         <div>
             <span class="badge bg-primary rounded-pill"><small>New</small></span>
@@ -67,7 +67,7 @@ Contains all the prompts that help Software Development Engineers in Test (SDETs
 <ol class="list-group list-group-numbered">
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../prompt_page.html?prompt=test_code_generation_bdd_to_cucumber.html"><small>Generate automation code from a BDD test case</small></a>
+          <a href="../prompt_page.html?prompt=test_code_generation--generate_code_from_bdd_test_case"><small>Generate automation code from a BDD test case</small></a>
         </div>
         <div>
             <span class="badge bg-primary rounded-pill"><small>New</small></span>
@@ -81,7 +81,7 @@ Contains all the prompts that help Software Development Engineers in Test (SDETs
 <ol class="list-group list-group-numbered">
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../prompt_page.html?prompt=test_data_generation_sql_fill_table_with_random_data.html"><small>Fill SQL table with random data</small></a>
+          <a href="../prompt_page.html?prompt=test_data_generation--fill_sql_table_with_random_data"><small>Fill SQL table with random data</small></a>
         </div>
         <div>
             <span class="badge bg-primary rounded-pill"><small>New</small></span>
@@ -108,7 +108,7 @@ Contains all the prompts that help Software Development Engineers in Test (SDETs
 <ol class="list-group list-group-numbered">
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../prompt_page.html?prompt=test_estimation_generation_3_point.html"><small>Do a 3-point test estimation with data</small></a>
+          <a href="../prompt_page.html?prompt=test_estimation_generation--do_a_3_point_test_estimation_with_data"><small>Do a 3-point test estimation with data</small></a>
         </div>
         <div>
             <span class="badge bg-warning rounded-pill"><small>Intermediate</small></span>
@@ -121,7 +121,7 @@ Contains all the prompts that help Software Development Engineers in Test (SDETs
 <ol class="list-group list-group-numbered">
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../prompt_page.html?prompt=test_documentation_generation_test_automation_strategy_document.html"><small>Test automation strategy document</small></a>
+          <a href="../prompt_page.html?prompt=test_documentation_generation--test_automation_strategy_document"><small>Test automation strategy document</small></a>
         </div>
         <div>
             <span class="badge bg-success rounded-pill"><small>Interactive</small></span>
@@ -135,7 +135,7 @@ Contains all the prompts that help Software Development Engineers in Test (SDETs
 <ol class="list-group list-group-numbered">
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../prompt_page.html?prompt=test_automation_how_to_tool_selection_comparison.html"><small>API - tool selection & comparison</small></a>
+          <a href="../prompt_page.html?prompt=test_automation_how_to--api_tool_selection_and_comparison"><small>API - tool selection & comparison</small></a>
         </div>
         <div>
             <span class="badge bg-primary rounded-pill"><small>New</small></span>

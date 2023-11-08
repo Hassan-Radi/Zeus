@@ -16,7 +16,7 @@ Contains all the prompts that help product owners.
 <ol class="list-group list-group-numbered">
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../prompt_page.html?prompt=test_case_generation_user_story_decomposition_testing.html"><small>Decompose a user story & test it</small></a>
+          <a href="../prompt_page.html?prompt=test_case_generation--decompose_a_user_story_and_test_it"><small>Decompose a user story & test it</small></a>
         </div>
         <div>
             <span class="badge bg-danger rounded-pill"><small>Advanced</small></span>
@@ -29,7 +29,7 @@ Contains all the prompts that help product owners.
 <ol class="list-group list-group-numbered">
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../prompt_page.html?prompt=ux_evaluating_heuristics.html"><small>Evaluating Heuristics</small></a>
+          <a href="../prompt_page.html?prompt=ux--evaluating_heuristics"><small>Evaluating Heuristics</small></a>
         </div>
         <div>
             <span class="badge bg-warning rounded-pill"><small>Intermediate</small></span>

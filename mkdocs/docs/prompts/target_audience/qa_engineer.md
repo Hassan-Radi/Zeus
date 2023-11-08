@@ -16,7 +16,7 @@ Contains all the prompts that help QA engineers.
 <ol class="list-group list-group-numbered">
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../prompt_page.html?prompt=mentoring_provide_study_materials_for_juniors.html"><small>Provide study materials for juniors</small></a>
+          <a href="../prompt_page.html?prompt=mentoring--provide_study_materials_for_juniors"><small>Provide study materials for juniors</small></a>
         </div>
         <div>
             <span class="badge bg-primary rounded-pill"><small>New</small></span>
@@ -29,12 +29,12 @@ Contains all the prompts that help QA engineers.
 <ol class="list-group list-group-numbered">
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../prompt_page.html?prompt=test_case_generation_api.html"><small>Generate API test cases from headers & parameters</small></a>
+          <a href="../prompt_page.html?prompt=test_case_generation--generate_api_test_cases_from_headers_and_parameters"><small>Generate API test cases from headers & parameters</small></a>
         </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../prompt_page.html?prompt=test_case_generation_swagger_link_to_api_tests.html"><small>Generate API test cases from a Swagger link</small></a>
+          <a href="../prompt_page.html?prompt=test_case_generation--generate_api_tests_from_swagger_link"><small>Generate API test cases from a Swagger link</small></a>
         </div>
         <div>
             <span class="badge bg-primary rounded-pill"><small>New</small></span>
@@ -43,12 +43,12 @@ Contains all the prompts that help QA engineers.
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../prompt_page.html?prompt=test_case_generation_decision_table.html"><small>Create a decision table from parameters</small></a>
+          <a href="../prompt_page.html?prompt=test_case_generation--create_a_decision_table_from_parameters"><small>Create a decision table from parameters</small></a>
         </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../prompt_page.html?prompt=common/test_case_generation_user_story_decomposition_testing.html"><small>Decompose a user story & test it</small></a>
+          <a href="../prompt_page.html?prompt=test_case_generation--decompose_a_user_story_and_test_it"><small>Decompose a user story & test it</small></a>
         </div>
         <div>
             <span class="badge bg-danger rounded-pill"><small>Advanced</small></span>
@@ -56,7 +56,7 @@ Contains all the prompts that help QA engineers.
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../prompt_page.html?prompt=test_case_generation_exhaustive_testing.html"><small>Exhaustive testing for a scenario</small></a>
+          <a href="../prompt_page.html?prompt=test_case_generation--exhaustive_testing_for_a_scenario"><small>Exhaustive testing for a scenario</small></a>
         </div>
     </li>
 </ol>
@@ -66,7 +66,7 @@ Contains all the prompts that help QA engineers.
 <ol class="list-group list-group-numbered">
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../prompt_page.html?prompt=test_case_conversion_plain_test_case_to_gherkin_style.html"><small>Convert plain test case to Gherkin-style</small></a>
+          <a href="../prompt_page.html?prompt=test_case_conversion--convert_plain_test_case_to_gherkin-style"><small>Convert plain test case to Gherkin-style</small></a>
         </div>
         <div>
             <span class="badge bg-primary rounded-pill"><small>New</small></span>
@@ -80,7 +80,7 @@ Contains all the prompts that help QA engineers.
 <ol class="list-group list-group-numbered">
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../prompt_page.html?prompt=test_estimation_generation_3_point.html"><small>Do a 3-point test estimation with data</small></a>
+          <a href="../prompt_page.html?prompt=test_estimation_generation--do_a_3_point_test_estimation_with_data"><small>Do a 3-point test estimation with data</small></a>
         </div>
         <div>
             <span class="badge bg-warning rounded-pill"><small>Intermediate</small></span>
@@ -93,7 +93,7 @@ Contains all the prompts that help QA engineers.
 <ol class="list-group list-group-numbered">
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <a href="../prompt_page.html?prompt=test_documentation_generation_test_plan_document.html"><small>Test plan document</small></a>
+          <a href="../prompt_page.html?prompt=test_documentation_generation--test_plan_document"><small>Test plan document</small></a>
         </div>
         <div>
             <span class="badge bg-primary rounded-pill"><small>New</small></span>
