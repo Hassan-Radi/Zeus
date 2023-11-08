@@ -1,5 +1,5 @@
 {
-  "title": "",
+  "title": "Generate API test cases from a Swagger link",
   "pageHeader": "[Test case generation] Generate API test cases from a Swagger link",
   "prompt": {
     "employeeName": "Sviatlana Makarevich",

@@ -1,5 +1,5 @@
 {
-  "title": "",
+  "title": "Fill SQL table with random data",
   "pageHeader": "[Test data generation] Fill SQL table with random data",
   "prompt": {
     "employeeName": "Aliaksandr Farelnik",

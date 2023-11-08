@@ -1,5 +1,5 @@
 {
-  "title": "",
+  "title": "Convert plain test case to Gherkin-style",
   "pageHeader": "[Test case conversion] Convert plain test case to Gherkin-style",
   "prompt": {
     "employeeName": "Aliaksandr Farelnik",
