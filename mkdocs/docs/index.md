@@ -10,7 +10,7 @@
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
 
 Zeus is a prompt library developed by Epam&copy;. The project focuses on prompts in the
-field of Quality Engineering (QE).
+field of Quality Engineering (QE). THIS IS A TEST
 
 ## Why build it?
 
