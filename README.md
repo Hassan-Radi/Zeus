@@ -1,1 +1,1 @@
-# Zeus site generator
+# Zeus Site Generator
