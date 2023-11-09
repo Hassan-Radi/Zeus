@@ -1,9 +1,8 @@
-image: ubuntu:latest
-
 build-site:
   stage: build
   rules:
     - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  image: squidfunk/mkdocs-material:latest
   before_script:
     - apt-get update
     - apt-get install -y zip
@@ -23,6 +22,7 @@ deploy-site:
   stage: deploy
   rules:
     - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  image: ubuntu:latest
   needs: ["build-site"]
   before_script:
     - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
