@@ -1,0 +1,47 @@
+image: ubuntu:latest
+
+build-site:
+  stage: build
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  before_script:
+    - apt-get update
+    - apt-get install -y zip
+    - apt-get install -y mkdocs
+    - apt-get install -y python3-pip
+    - pip3 install mkdocs-material
+  script:
+    - cd mkdocs
+    - mkdocs build
+    - zip -r site.zip site
+  artifacts:
+    paths:
+      - mkdocs/site.zip
+    expire_in: 1 week
+
+deploy-site:
+  stage: deploy
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  needs: ["build-site"]
+  before_script:
+    - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan $VM_IPADDRESS >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - apt-get install -y unzip
+  script:
+    - cd mkdocs
+    - scp site.zip "$SSH_USER"@$VM_IPADDRESS:/tmp/site.zip
+    - ssh "$SSH_USER"@$VM_IPADDRESS <<'ENDSSH'
+    - cd /tmp/
+    - sudo unzip site.zip
+    - sudo rm -r /var/www/html/*
+    - sudo mv /tmp/site/* /var/www/html/
+    - sudo rm site.zip
+    - sudo rm site/ -r
+    - sudo systemctl reload caddy
+    - ENDSSH
