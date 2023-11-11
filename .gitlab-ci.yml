@@ -2,7 +2,7 @@ generate-dynamic-content:
   stage: .pre
   rules:
     - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-  image: node:latest
+  image: node:18-alpine3.17
   before_script:
     - npm install
   script:
