@@ -1,12 +1,16 @@
 {
   "title": "Provide study materials for juniors",
   "pageHeader": "[Mentoring] Provide study materials for juniors",
+  "category": "Mentoring",
+  "badges": [
+
+  ],
   "prompt": {
     "employeeName": "Daniyar Kushkinbayev",
     "caseName": "Testing / Test Automation",
     "aiTool": "OpenAI ChatGPT-3.5",
     "expectations": "I want chat GPT to give suggestion about study materials, as an example I asked to provide link to the materials about API testing.",
-    "examplePrompt": "provide materials about api testing",
+    "examplePrompt": "provide materials about api\"category\": \"\",\n  \"badges\": [\n    \n  ], testing",
     "numberOfRetries": "",
     "timeGainedOrLost": "60%",
     "satisfaction": 5,

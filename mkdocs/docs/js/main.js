@@ -1,11 +1,13 @@
 const actions = new Actions;
 const ui = new UI;
-let JSON_FILE;
+let JSON_FILE_PATH;
+let JSON_FILE_NAME;
 
 function populateThePage() {
   const urlParams = new URLSearchParams(window.location.href.split('?')[1]);
   const jsonFileName = urlParams.get('prompt');
-  JSON_FILE = '/json/' + jsonFileName + '.json';
+  JSON_FILE_NAME = jsonFileName;
+  JSON_FILE_PATH = '/json/' + jsonFileName + '.json';
 
   actions.enableTooltips();
 

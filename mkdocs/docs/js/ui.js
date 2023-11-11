@@ -1,7 +1,7 @@
 class UI {
 
   showPromptHistory() {
-    fetch(JSON_FILE)
+    fetch(JSON_FILE_PATH)
     .then((response) => response.json())
     .then((json) => {
       for (let i = 1; i <= Object.keys(json.assessment.promptHistory).length;
@@ -38,7 +38,7 @@ class UI {
   }
 
   showPromptDetails() {
-    fetch(JSON_FILE)
+    fetch(JSON_FILE_PATH)
     .then((response) => response.json())
     .then((json) => {
       let divElement = document.createElement("div");
@@ -66,7 +66,7 @@ class UI {
           Object.keys(json.assessment.promptHistory).length);
 
       // add the download as .json button
-      divElement.innerHTML += `<br><a type="button" class="btn btn-sm btn-primary link-light float-end" href="${JSON_FILE}"><i class="fa-solid fa-download"></i> Download as .json</a><br>`;
+      divElement.innerHTML += `<br><a type="button" class="btn btn-sm btn-primary link-light float-end" href="${JSON_FILE_PATH}"><i class="fa-solid fa-download"></i> Download as .json</a><br>`;
 
       // add the text to the HTML document
       document.getElementsByTagName('h1')[0].after(divElement);
@@ -170,7 +170,7 @@ class UI {
   }
 
   showPageTitle(){
-    fetch(JSON_FILE)
+    fetch(JSON_FILE_PATH)
     .then((response) => response.json())
     .then((json) => {
       document.getElementById('header').innerText = json.pageHeader;

@@ -1,12 +1,16 @@
 {
   "title": "Generate automation code from a BDD test case",
   "pageHeader": "[Test code generation] Generate automation code from a BDD test case",
+  "category": "Test code generation",
+  "badges": [
+
+  ],
   "prompt": {
     "employeeName": "Aliaksandr Farelnik",
     "caseName": "Testing / Test Automation",
     "aiTool": "OpenAI ChatGPT-3.5",
     "expectations": "Write autotest on Cucumber.js",
-    "examplePrompt": "I need to automate this BDD test case in Cucumber.js\nSummary: Verify background color for header\nScenario:\nGiven IMR exists for employee\nAnd user opens IMR\nWhen the Opportunities header loads\nThen the Opportunities header background-color is #303240",
+    "examplePrompt": "I need to automate this BDD test case in Cucumber.js\nSummary: Verify background color for header\nScenario:\nGiven IMR exists for employee\nAnd user opens Test case generationIMR\nWhen the Opportunities header loads\nThen the Opportunities header background-color is #303240",
     "numberOfRetries": "",
     "timeGainedOrLost": "100%",
     "satisfaction": 4,
