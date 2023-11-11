@@ -2,7 +2,7 @@ generate-dynamic-content:
   stage: .pre
   rules:
     - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-  image: ubuntu:latest
+  image: node:latest
   before_script:
     - npm install
   script:
