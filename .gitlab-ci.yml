@@ -1,8 +1,23 @@
-build-site:
+generate-dynamic-content:
+  stage: .pre
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  image: ubuntu:latest
+  before_script:
+    - npm install
+  script:
+    - npm run collectJsonPrompts
+  artifacts:
+    paths:
+      - mkdocs/docs/config/*
+    expire_in: 1 week
+
+build-mkdocs:
   stage: build
   rules:
     - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   image: ubuntu:latest
+  needs: ["generate-dynamic-content"]
   before_script:
     - apt-get update
     - apt-get install -y zip
@@ -23,7 +38,7 @@ deploy-site:
   rules:
     - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   image: ubuntu:latest
-  needs: ["build-site"]
+  needs: ["build-mkdocs"]
   before_script:
     - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
     - eval $(ssh-agent -s)

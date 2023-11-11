@@ -5,23 +5,7 @@ const ORIGINAL_BOOKMARK_TOOLTIP = "Bookmark prompt";
 const BOOKMARK_ADDED_TOOLTIP = "Bookmarked!";
 const BOOKMARK_REMOVED_TOOLTIP = "Bookmark removed!";
 const ORIGINAL_CLEAR_ALL_PROMPTS_TOOLTIP = "Clear all bookmarked prompts";
-const ALL_JSON_FILES = [
-  "/json/test_case_generation--generate_api_test_cases_from_headers_and_parameters.json",
-  "/json/test_case_conversion--convert_plain_test_case_to_gherkin-style.json",
-  "/json/test_case_generation--create_a_decision_table_from_parameters.json",
-  "/json/test_case_generation--decompose_a_user_story_and_test_it.json",
-  "/json/test_case_generation--exhaustive_testing_for_a_scenario.json",
-  "/json/test_case_generation--generate_api_tests_from_swagger_link.json",
-  "/json/test_code_generation--generate_code_from_bdd_test_case.json",
-  "/json/test_estimation_generation--do_a_3_point_test_estimation_with_data.json",
-  "/json/interview_question_generation--create_an_automation_practical_task_for_an_interview.json",
-  "/json/test_documentation_generation--test_automation_strategy_document.json",
-  "/json/test_documentation_generation--test_plan_document.json",
-  "/json/ux--evaluating_heuristics.json",
-  "/json/test_automation_how_to--api_tool_selection_and_comparison.json",
-  "/json/test_data_generation--fill_sql_table_with_random_data.json",
-  "/json/mentoring--provide_study_materials_for_juniors.json"
-];
+const ALL_JSON_PROMPTS_PATH = "config/allPrompts.json";
 
 class Actions {
 
@@ -71,7 +55,7 @@ class Actions {
       event.target.classList.remove('fa-regular');
       event.target.classList.add('fa-solid');
 
-      this.storePromptInLocalStorage(JSON_FILE);
+      this.storePromptInLocalStorage(JSON_FILE_NAME);
     } else {
       // change tooltip
       $(event.target).attr('data-bs-original-title', BOOKMARK_REMOVED_TOOLTIP)
@@ -81,7 +65,7 @@ class Actions {
       event.target.classList.remove('fa-solid');
       event.target.classList.add('fa-regular');
 
-      this.removePromptFromLocalStorage(JSON_FILE);
+      this.removePromptFromLocalStorage(JSON_FILE_NAME);
     }
 
     // update the remove all bookmarks button
@@ -131,7 +115,7 @@ class Actions {
 
   loadBookmarkIcon() {
     const element = document.getElementById('bookmark-prompt');
-    if (this.isPromptInLocalStorage(JSON_FILE)) {
+    if (this.isPromptInLocalStorage(JSON_FILE_NAME)) {
       element.classList.remove('fa-regular');
       element.classList.add('fa-solid');
 
@@ -243,25 +227,31 @@ class Actions {
   listAllPrompt() {
     window.addEventListener('load', () => {
       const element = document.getElementById('table-body');
-      for (let i = 0; i < ALL_JSON_FILES.length; i++) {
-        let promptName = this.getPromptReadableName(ALL_JSON_FILES[i]);
 
-        const trElement = document.createElement('tr');
-        trElement.id = "table-row";
+      fetch(ALL_JSON_PROMPTS_PATH)
+      .then((response) => response.json())
+      .then((json) => {
+        for (let i = 0; i < json.length; i++) {
+          const trElement = document.createElement('tr');
+          trElement.id = "table-row";
 
-        if (this.isPromptInLocalStorage(ALL_JSON_FILES[i])) {
-          trElement.innerHTML += `<th class="text-center" scope="row"><input id="prompt-checkbox" class="form-check-input" type="checkbox" checked></th>`;
-        } else {
-          trElement.innerHTML += `<th class="text-center" scope="row"><input id="prompt-checkbox" class="form-check-input" type="checkbox"></th>`;
-        }
-        trElement.innerHTML +=
-            `<td class="text-center">${i + 1}</td>
-              <td id="prompt-name">${promptName}</td>
+          if (this.isPromptInLocalStorage(json[i].fileName.replace('.json', ''))) {
+            trElement.innerHTML += `<th class="text-center" scope="row"><input id="prompt-checkbox" class="form-check-input" type="checkbox" checked></th>`;
+          } else {
+            trElement.innerHTML += `<th class="text-center" scope="row"><input id="prompt-checkbox" class="form-check-input" type="checkbox"></th>`;
+          }
+          trElement.innerHTML +=
+              `<td class="text-center">${i + 1}</td>
+              <td id="prompt-name">
+                <a class="link-primary" href="/prompts/prompt_page.html?prompt=${json[i].fileName.replace('.json', '')}">${json[i].category} - ${json[i].title}
+                </a>
+              </td>
             </tr>
             `;
 
-        element.appendChild(trElement);
-      }
+          element.appendChild(trElement);
+        }
+      });
     });
   }
 
@@ -283,8 +273,14 @@ class Actions {
     for (let i = 0; i < allRows.length; i++) {
       let isChecked = this.isCheckBoxChecked(allRows[i].querySelector(
           '#prompt-checkbox'));
+
+      // move on quickly if the prompt is not selected
+      if(!isChecked){
+        continue;
+      }
+
       let promptContent;
-      let promptJsonFileName = this.getPromptOriginalName(
+      let promptJsonFileName = await this.getPromptJsonFile(
           allRows[i].querySelector('#prompt-name').textContent);
 
       await fetch(promptJsonFileName)
@@ -326,7 +322,13 @@ class Actions {
     for (let i = 0; i < allRows.length; i++) {
       let isChecked = this.isCheckBoxChecked(allRows[i].querySelector(
           '#prompt-checkbox'));
-      let promptJsonFileName = this.getPromptOriginalName(
+
+      // move on quickly if the prompt is not selected
+      if(!isChecked){
+        continue;
+      }
+
+      let promptJsonFileName = await this.getPromptJsonFile(
           allRows[i].querySelector('#prompt-name').textContent);
 
       await fetch(promptJsonFileName)
@@ -384,18 +386,20 @@ class Actions {
     );
   }
 
-  getPromptReadableName(promptOriginalName) {
-    let promptNameBefore = promptOriginalName.replace('/json/', '').replace(
-        '.json', '').replaceAll(
-        '_', ' ').replaceAll('--', ' - ');
-    return promptNameBefore.charAt(0).toUpperCase()
-        + promptNameBefore.slice(1);
-  }
+  async getPromptJsonFile(promptReadableName) {
+    let promptTitle = promptReadableName.split('-')[1].trim();
+    let output;
 
-  getPromptOriginalName(promptReadableName) {
-    return "/json/" + promptReadableName.toLowerCase().replaceAll(' - ',
-            '--').replaceAll(' ',
-            "_")
-        + ".json";
+    await fetch(ALL_JSON_PROMPTS_PATH)
+    .then((response) => response.json())
+    .then((json) => {
+      for (let i = 0; i < json.length; i++) {
+        if (json[i].title === promptTitle) {
+          output = "json/" + json[i].fileName;
+        }
+      }
+    });
+
+    return output;
   }
 }

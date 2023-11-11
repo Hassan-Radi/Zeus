@@ -1,6 +1,10 @@
 {
   "title": "Create a decision table from parameters",
   "pageHeader": "[Test case generation] Create a decision table from parameters",
+  "category": "Test case generation",
+  "badges": [
+
+  ],
   "prompt": {
     "employeeName": "Anzhelika Zheltanoha",
     "caseName": "Testing / Test Automation",

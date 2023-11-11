@@ -1,6 +1,10 @@
 {
   "title": "Do a 3-point test estimation with data",
   "pageHeader": "[Test estimation generation] Do a 3-point test estimation with data",
+  "category": "Test estimation generation",
+  "badges": [
+
+  ],
   "prompt": {
     "employeeName": "Vladislav Razakov",
     "caseName": "Testing / Test Automation",

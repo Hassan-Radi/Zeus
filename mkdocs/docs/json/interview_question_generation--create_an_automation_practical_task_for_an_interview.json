@@ -1,6 +1,10 @@
 {
   "title": "Create an automation practical task for an interview",
   "pageHeader": "[Interview question generation] Create an automation practical task for an interview",
+  "category": "Interview question generation",
+  "badges": [
+
+  ],
   "prompt": {
     "employeeName": "Anton Chyrko",
     "caseName": "Testing / Test Automation",

@@ -30,3 +30,5 @@ models/
 split/
 filter/
 processedParts.json
+node_modules/
+mkdocs/docs/config/allPrompts.json

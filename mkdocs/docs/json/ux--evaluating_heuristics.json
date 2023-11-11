@@ -1,6 +1,10 @@
 {
   "title": "Evaluating Heuristics",
   "pageHeader": "[UX] Evaluating Heuristics",
+  "category": "UX",
+  "badges": [
+
+  ],
   "prompt": {
     "employeeName": "Andrei Afanasyeu",
     "caseName": "Testing / Test Automation",
