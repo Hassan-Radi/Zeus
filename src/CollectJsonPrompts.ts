@@ -3,7 +3,8 @@ import path from 'path';
 import fs from 'fs';
 
 const MK_DOCS_JSON_PATH = "mkdocs/docs/json";
-const OUTPUT_FILE = "mkdocs/docs/config/allPrompts.json";
+const OUTPUT_FILE_PATH = "mkdocs/docs/config";
+const OUTPUT_FILE = OUTPUT_FILE_PATH + "/allPrompts.json";
 let jsonOutput: Object[] = [];
 
 test('List all Json Prompt Files', (t) => {
@@ -22,6 +23,10 @@ test('List all Json Prompt Files', (t) => {
     });
   });
 
+  const directoryPath = path.join(OUTPUT_FILE);
+
+  fs.mkdirSync(OUTPUT_FILE_PATH);
+
   // Write the extracted info in a json file
-  fs.writeFileSync("./" + OUTPUT_FILE, JSON.stringify(jsonOutput), "utf8");
+  fs.writeFileSync(OUTPUT_FILE, JSON.stringify(jsonOutput), "utf8");
 });
