@@ -1,5 +1,4 @@
 import test from 'node:test';
-import path from 'path';
 import fs from 'fs';
 
 const MK_DOCS_JSON_PATH = "mkdocs/docs/json";
@@ -23,8 +22,7 @@ test('List all Json Prompt Files', (t) => {
     });
   });
 
-  const directoryPath = path.join(OUTPUT_FILE);
-
+  // Make sure the parent path is created, otherwise the code would fail.
   fs.mkdirSync(OUTPUT_FILE_PATH);
 
   // Write the extracted info in a json file
