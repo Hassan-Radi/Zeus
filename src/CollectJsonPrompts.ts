@@ -23,5 +23,5 @@ test('List all Json Prompt Files', (t) => {
   });
 
   // Write the extracted info in a json file
-  fs.writeFileSync(OUTPUT_FILE, JSON.stringify(jsonOutput), "utf8");
+  fs.writeFileSync("./" + OUTPUT_FILE, JSON.stringify(jsonOutput), "utf8");
 });
