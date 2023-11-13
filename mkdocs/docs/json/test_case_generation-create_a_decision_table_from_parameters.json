@@ -5,6 +5,9 @@
   "badges": [
 
   ],
+  "targetAudience": [
+    "QA Engineer"
+  ],
   "prompt": {
     "employeeName": "Anzhelika Zheltanoha",
     "caseName": "Testing / Test Automation",

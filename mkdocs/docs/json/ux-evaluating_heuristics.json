@@ -3,7 +3,11 @@
   "pageHeader": "[UX] Evaluating Heuristics",
   "category": "UX",
   "badges": [
-
+    "Intermediate"
+  ],
+  "targetAudience": [
+    "Product Owner",
+    "Designer"
   ],
   "prompt": {
     "employeeName": "Andrei Afanasyeu",

@@ -31,4 +31,5 @@ split/
 filter/
 processedParts.json
 node_modules/
-mkdocs/docs/config/allPrompts.json
+mkdocs/docs/config/*
+mkdocs/docs/prompts/target_audience/*

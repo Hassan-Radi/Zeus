@@ -3,7 +3,11 @@
   "pageHeader": "[Mentoring] Provide study materials for juniors",
   "category": "Mentoring",
   "badges": [
-
+    "New"
+  ],
+  "targetAudience": [
+    "QA Engineer",
+    "SDET"
   ],
   "prompt": {
     "employeeName": "Daniyar Kushkinbayev",

@@ -3,7 +3,12 @@
   "pageHeader": "[Test code generation] Generate automation code from a BDD test case",
   "category": "Test code generation",
   "badges": [
-
+    "New",
+    "Advanced"
+  ],
+  "targetAudience": [
+    "SDET",
+    "Architect"
   ],
   "prompt": {
     "employeeName": "Aliaksandr Farelnik",
