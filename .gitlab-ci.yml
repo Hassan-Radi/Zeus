@@ -6,7 +6,9 @@ generate-dynamic-content:
   before_script:
     - npm install
   script:
-    - npm run collectJsonPrompts
+    - npm run generateIntermediaryFiles
+    - npm run generateTargetAudienceMaps
+    - npm run generateTargetAudiencePages
   artifacts:
     paths:
       - mkdocs/docs/config/*

@@ -3,7 +3,13 @@
   "pageHeader": "[Test case generation] Decompose a user story & test it",
   "category": "Test case generation",
   "badges": [
-
+    "Advanced"
+  ],
+  "targetAudience": [
+    "QA Engineer",
+    "Business Analyst",
+    "Product Owner",
+    "Architect"
   ],
   "prompt": {
     "employeeName": "Vladislav Razakov",

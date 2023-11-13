@@ -5,6 +5,10 @@
   "badges": [
 
   ],
+  "targetAudience": [
+    "QA Engineer",
+    "SDET"
+  ],
   "prompt": {
     "employeeName": "Vladislav Razakov",
     "caseName": "Testing / Test Automation",

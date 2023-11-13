@@ -3,7 +3,12 @@
   "pageHeader": "[Test documentation generation] Test automation strategy document",
   "category": "Test documentation generation",
   "badges": [
-
+    "Interactive",
+    "Advanced"
+  ],
+  "targetAudience": [
+    "SDET",
+    "Architect"
   ],
   "prompt": {
     "employeeName": "Davud Murtazin",

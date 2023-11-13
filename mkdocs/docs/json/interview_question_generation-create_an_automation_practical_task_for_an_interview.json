@@ -3,7 +3,11 @@
   "pageHeader": "[Interview question generation] Create an automation practical task for an interview",
   "category": "Interview question generation",
   "badges": [
-
+    "Advanced"
+  ],
+  "targetAudience": [
+    "SDET",
+    "Architect"
   ],
   "prompt": {
     "employeeName": "Anton Chyrko",

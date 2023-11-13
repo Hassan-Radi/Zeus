@@ -1,4 +1,3 @@
-# Developers
 
 <script type="text/javascript" src="/js/ui.js"></script>
 <script type="text/javascript" src="/js/actions.js"></script>
@@ -9,18 +8,3 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
 
-Contains all the prompts that help developers.
-
-## Test data generation
-
-<ol class="list-group list-group-numbered">
-    <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-          <a href="../prompt_page.html?prompt=test_data_generation--fill_sql_table_with_random_data"><small>Fill SQL table with random data</small></a>
-        </div>
-        <div>
-            <span class="badge bg-primary rounded-pill"><small>New</small></span>
-            <span class="badge bg-warning rounded-pill"><small>Intermediate</small></span>
-        </div>
-    </li>
-</ol>

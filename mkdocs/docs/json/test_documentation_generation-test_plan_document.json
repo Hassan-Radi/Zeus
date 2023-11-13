@@ -3,7 +3,11 @@
   "pageHeader": "[Test documentation generation] Test plan document",
   "category": "Test documentation generation",
   "badges": [
-
+    "New",
+    "Intermediate"
+  ],
+  "targetAudience": [
+    "QA Engineer"
   ],
   "prompt": {
     "employeeName": "Valentyna Kharchuk",

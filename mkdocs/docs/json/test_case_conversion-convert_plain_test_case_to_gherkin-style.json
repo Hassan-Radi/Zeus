@@ -3,7 +3,12 @@
   "pageHeader": "[Test case conversion] Convert plain test case to Gherkin-style",
   "category": "Test case conversion",
   "badges": [
-
+    "New",
+    "Intermediate"
+  ],
+  "targetAudience": [
+    "QA Engineer",
+    "SDET"
   ],
   "prompt": {
     "employeeName": "Aliaksandr Farelnik",

@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "collectJsonPrompts": "node --test --require ts-node/register src/CollectJsonPrompts.ts",
-    "generateTargetAudiencePages": "node --test --require ts-node/register src/*.ts"
+    "generateIntermediaryFiles": "node --test --require ts-node/register src/intermediary/*",
+    "generateTargetAudienceMaps": "node --test --require ts-node/register src/maps/*",
+    "generateTargetAudiencePages": "node --test --require ts-node/register src/GenerateTargetAudiencePages.ts"
   },
   "keywords": [],
   "author": "",

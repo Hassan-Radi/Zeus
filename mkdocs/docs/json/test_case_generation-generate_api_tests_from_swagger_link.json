@@ -3,7 +3,13 @@
   "pageHeader": "[Test case generation] Generate API test cases from a Swagger link",
   "category": "Test case generation",
   "badges": [
-
+    "New",
+    "Advanced"
+  ],
+  "targetAudience": [
+    "QA Engineer",
+    "SDET",
+    "Architect"
   ],
   "prompt": {
     "employeeName": "Sviatlana Makarevich",
