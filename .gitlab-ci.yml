@@ -12,6 +12,7 @@ generate-dynamic-content:
   artifacts:
     paths:
       - mkdocs/docs/config/*
+      - mkdocs/docs/prompts/target_audience/*
     expire_in: 1 week
 
 build-mkdocs:
