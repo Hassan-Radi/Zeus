@@ -1,0 +1,29 @@
+{
+  "title": "Tariq King Demo",
+  "pageHeader": "[Demo] Tariq King",
+  "category": "Demo",
+  "badges": [
+    "New",
+    "Intermediate"
+  ],
+  "targetAudience": [
+    "QA Engineer"
+  ],
+  "prompt": {
+    "employeeName": "Tariq King",
+    "examplePrompt": "This is an example prompt"
+  },
+  "assessment": {
+    "promptHistory": {
+      "1": {
+        "revisedPrompt": "This is an example prompt.",
+        "changeLog": "Original version.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4"
+      }
+    }
+  }
+}
