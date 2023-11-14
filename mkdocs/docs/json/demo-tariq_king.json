@@ -1,0 +1,28 @@
+{
+  "title": "Tariq King Demo",
+  "pageHeader": "[Demo] Tariq King",
+  "category": "Demo",
+  "badges": [
+    "New",
+    "Intermediate"
+  ],
+  "targetAudience": [
+    "QA Engineer"
+  ],
+  "prompt": {
+    "employeeName": "Valentyna Kharchuk"
+  },
+  "assessment": {
+    "promptHistory": {
+      "1": {
+        "revisedPrompt": "I want you to act as a software testing engineer. Give me please entry criteria for test process which I can write in test plan.",
+        "changeLog": "Original version.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4"
+      }
+    }
+  }
+}
