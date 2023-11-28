@@ -243,8 +243,8 @@ class Actions {
           trElement.innerHTML +=
               `<td class="text-center">${i + 1}</td>
               <td id="prompt-name">
-                <a class="link-primary" href="/prompts/prompt_page.html?prompt=${json[i].fileName.replace('.json', '')}">${json[i].category} - ${json[i].title}
-                </a>
+                <a class="link-primary" href="/prompts/prompt_page.html?prompt=${json[i].fileName
+                  .replace('.json', '')}">${json[i].category} - ${json[i].title}</a>
               </td>
             </tr>
             `;
@@ -294,7 +294,7 @@ class Actions {
             "id": `${this.generateUuidv4()}`,
             "folderId": null,
             "name": `${allRows[i].querySelector(
-                '#prompt-name').textContent} (V${Object.keys(
+                '#prompt-name').textContent.trim()} (V${Object.keys(
                 json.promptHistory).length})`,
             "content": `${promptContent}`
           })
