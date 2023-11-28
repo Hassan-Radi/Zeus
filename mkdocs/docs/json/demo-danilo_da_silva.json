@@ -1,0 +1,28 @@
+{
+  "title": "Danilo da Silva Demo",
+  "pageHeader": "[Demo] Danilo da Silva",
+  "category": "Demo",
+  "badges": [
+    "New",
+    "Intermediate"
+  ],
+  "targetAudience": [
+    "QA Engineer"
+  ],
+  "prompt": {
+    "employeeName": "Danilo da Silva"
+  },
+  "assessment": {
+    "promptHistory": {
+      "1": {
+        "revisedPrompt": "This is a very special prompt submitted by 'Danilo da Silva'",
+        "changeLog": "Original version.",
+        "promptType": [
+          "ZERO_SHOT_PROMPT",
+          "USER_PROMPT"
+        ],
+        "aiTool": "OpenAI ChatGPT-4"
+      }
+    }
+  }
+}
