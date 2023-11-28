@@ -286,8 +286,8 @@ class Actions {
       await fetch(promptJsonFileName)
       .then((response) => response.json())
       .then((json) => {
-        promptContent = json.assessment.promptHistory[Object.keys(
-            json.assessment.promptHistory).length].revisedPrompt;
+        promptContent = json.promptHistory[Object.keys(
+            json.promptHistory).length].revisedPrompt;
 
         if (isChecked) {
           jsonOutput.prompts.push({
@@ -295,7 +295,7 @@ class Actions {
             "folderId": null,
             "name": `${allRows[i].querySelector(
                 '#prompt-name').textContent} (V${Object.keys(
-                json.assessment.promptHistory).length})`,
+                json.promptHistory).length})`,
             "content": `${promptContent}`
           })
         }

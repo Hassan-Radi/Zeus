@@ -9,118 +9,93 @@
     "SDET",
     "Architect"
   ],
-  "prompt": {
-    "employeeName": "Anton Chyrko",
-    "caseName": "Testing / Test Automation",
-    "aiTool": "OpenAI ChatGPT-3.5",
-    "expectations": "Create some practical task for Test automation engineer on Java for checking his knowledge about collections and provide solution",
-    "examplePrompt": "Create some practical task for Test automation engineer on Java for checking his knowledge about collections and provide solution\n\ncan you complicate this task",
-    "numberOfRetries": "",
-    "timeGainedOrLost": "100%",
-    "satisfaction": 5,
-    "isCustomerUsingIt": false,
-    "sideEffectsOrComments": "Very satisfy"
-  },
-  "codeResult": {
-    "highSatisfaction": true,
-    "relevantExpectations": true,
-    "relevantExamplePrompt": true,
-    "relevantSideEffectsOrComments": false,
-    "sentimentOfSideEffectsOrComments": "VERY_POSITIVE",
-    "gainedTime": true,
-    "highNumberOfRetries": false
-  },
-  "assessment": {
-    "comments": "A good example to generate sample interview questions for automation engineers. This would work better if you make the AI creative as it would produce different examples every time and make it interesting.",
-    "category": [
-      "INTERVIEW_QUESTION_GENERATION"
-    ],
-    "intendedAudience": [
-      "SENIOR_SDET",
-      "LEAD_SDET"
-    ],
-    "promptHistory": {
-      "1": {
-        "revisedPrompt": "Create some practical task for Test automation engineer on Java for checking his knowledge about collections and provide solution\n\ncan you complicate this task",
-        "changeLog": "Original version.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-3.5"
-      },
-      "2": {
-        "revisedPrompt": "Create a practical task for interviewing a test automation engineer using Java. Focus on testing their knowledge about collections. Provide the task's solution and make it complicated",
-        "changeLog": "Corrected spelling and grammar mistakes.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-3.5"
-      },
-      "3": {
-        "revisedPrompt": "Create a practical task for interviewing a test automation engineer using Java. Focus on testing their knowledge about collections. Provide the task's solution and make it complicated",
-        "changeLog": "Switched to using GPT-4 for better results.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-4"
-      },
-      "4": {
-        "revisedPrompt": "Act as a senior test automation engineer. Create a practical task for interviewing a test automation engineer using Java. Focus on testing their knowledge about collections. Provide the task's solution and make it complicated",
-        "changeLog": "Added more context for the AI.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-4"
-      },
-      "5": {
-        "revisedPrompt": "Act as a senior {{ROLE}}. Create a practical task for interviewing a {{ROLE}} using {{PROGRAMMING_LANGUAGE}}. {{TASK_CONTEXT}}. Provide the task's solution and make it complicated",
-        "changeLog": "Converted the prompt to a template one.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT",
-          "TEMPLATE_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-4",
-        "sampleData": [
-          "ROLE: test automation engineer",
-          "PROGRAMMING_LANGUAGE: Java",
-          "TASK_CONTEXT: Focus on testing their knowledge about collections"
-        ]
-      },
-      "6": {
-        "revisedPrompt": "Act as a senior {{ROLE}} and then perform the following actions: - Create a practical task for interviewing a {{ROLE}} using {{PROGRAMMING_LANGUAGE}}. {{TASK_CONTEXT}}. - Provide the task's solution and make it complicated",
-        "changeLog": "Split the prompt to actions to perform.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT",
-          "TEMPLATE_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-4",
-        "sampleData": [
-          "ROLE: test automation engineer",
-          "PROGRAMMING_LANGUAGE: Java",
-          "TASK_CONTEXT: Focus on testing their knowledge about collections"
-        ]
-      },
-      "7": {
-        "revisedPrompt": "Act as a senior {{ROLE}} and then perform the following actions: 1. Create a practical task for interviewing a {{ROLE}} using {{PROGRAMMING_LANGUAGE}}. {{TASK_CONTEXT}}. 2. Provide the task's solution and make it complicated",
-        "changeLog": "Optimized the prompt a bit.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT",
-          "TEMPLATE_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-4",
-        "sampleData": [
-          "ROLE: test automation engineer",
-          "PROGRAMMING_LANGUAGE: Java",
-          "TASK_CONTEXT: Focus on testing the candidate's knowledge about collections"
-        ]
-      }
+  "submittedOriginallyBy": [
+    "Anton Chyrko"
+  ],
+  "optimizedBy": [
+    "Hassan Radi"
+  ],
+  "promptHistory": {
+    "1": {
+      "revisedPrompt": "Create some practical task for Test automation engineer on Java for checking his knowledge about collections and provide solution\n\ncan you complicate this task",
+      "changeLog": "Original version.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-3.5"
+    },
+    "2": {
+      "revisedPrompt": "Create a practical task for interviewing a test automation engineer using Java. Focus on testing their knowledge about collections. Provide the task's solution and make it complicated",
+      "changeLog": "Corrected spelling and grammar mistakes.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-3.5"
+    },
+    "3": {
+      "revisedPrompt": "Create a practical task for interviewing a test automation engineer using Java. Focus on testing their knowledge about collections. Provide the task's solution and make it complicated",
+      "changeLog": "Switched to using GPT-4 for better results.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-4"
+    },
+    "4": {
+      "revisedPrompt": "Act as a senior test automation engineer. Create a practical task for interviewing a test automation engineer using Java. Focus on testing their knowledge about collections. Provide the task's solution and make it complicated",
+      "changeLog": "Added more context for the AI.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-4"
+    },
+    "5": {
+      "revisedPrompt": "Act as a senior {{ROLE}}. Create a practical task for interviewing a {{ROLE}} using {{PROGRAMMING_LANGUAGE}}. {{TASK_CONTEXT}}. Provide the task's solution and make it complicated",
+      "changeLog": "Converted the prompt to a template one.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT",
+        "TEMPLATE_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-4",
+      "sampleData": [
+        "ROLE: test automation engineer",
+        "PROGRAMMING_LANGUAGE: Java",
+        "TASK_CONTEXT: Focus on testing their knowledge about collections"
+      ]
+    },
+    "6": {
+      "revisedPrompt": "Act as a senior {{ROLE}} and then perform the following actions: - Create a practical task for interviewing a {{ROLE}} using {{PROGRAMMING_LANGUAGE}}. {{TASK_CONTEXT}}. - Provide the task's solution and make it complicated",
+      "changeLog": "Split the prompt to actions to perform.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT",
+        "TEMPLATE_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-4",
+      "sampleData": [
+        "ROLE: test automation engineer",
+        "PROGRAMMING_LANGUAGE: Java",
+        "TASK_CONTEXT: Focus on testing their knowledge about collections"
+      ]
+    },
+    "7": {
+      "revisedPrompt": "Act as a senior {{ROLE}} and then perform the following actions: 1. Create a practical task for interviewing a {{ROLE}} using {{PROGRAMMING_LANGUAGE}}. {{TASK_CONTEXT}}. 2. Provide the task's solution and make it complicated",
+      "changeLog": "Optimized the prompt a bit.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT",
+        "TEMPLATE_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-4",
+      "sampleData": [
+        "ROLE: test automation engineer",
+        "PROGRAMMING_LANGUAGE: Java",
+        "TASK_CONTEXT: Focus on testing the candidate's knowledge about collections"
+      ]
     }
   }
 }

@@ -10,125 +10,93 @@
     "SDET",
     "Architect"
   ],
-  "prompt": {
-    "employeeName": "Davud Murtazin",
-    "caseName": "Testing / Test Automation",
-    "aiTool": "OpenAI ChatGPT-3 (API)",
-    "expectations": "To get test automation strategy points to start from.",
-    "examplePrompt": "Create test automation strategy for mobile application testing on iOS and Android with tools:\n1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system",
-    "numberOfRetries": "",
-    "timeGainedOrLost": "60%",
-    "satisfaction": 4,
-    "isCustomerUsingIt": false,
-    "sideEffectsOrComments": "It provided common used test strategy that can be start point."
-  },
-  "codeResult": {
-    "highSatisfaction": true,
-    "relevantExpectations": true,
-    "relevantExamplePrompt": true,
-    "relevantSideEffectsOrComments": true,
-    "sentimentOfSideEffectsOrComments": "NEUTRAL",
-    "gainedTime": true,
-    "highNumberOfRetries": false
-  },
-  "assessment": {
-    "comments": "The result is ok, it rephrased the given details and added some more context, but it didn't generate a complete test strategy document as was expected. I love the idea though and it can be a huge time saver if rephrased correctly.",
-    "category": [
-      "TEST_DOCUMENTATION_GENERATION"
-    ],
-    "intendedAudience": [
-      "LEAD_SDET"
-    ],
-    "promptHistory": {
-      "1": {
-        "revisedPrompt": "Create test automation strategy for mobile application testing on iOS and Android with tools:\n1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system",
-        "changeLog": "Original version.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-3 (API)"
-      },
-      "2": {
-        "revisedPrompt": "Create a test automation strategy for testing a mobile application on iOS and Android with the following tools:\n1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system",
-        "changeLog": "Minor fixes to make the prompt better.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-3 (API)"
-      },
-      "3": {
-        "revisedPrompt": "Write a formal test automation strategy document for testing a mobile application on iOS and Android using the following tools:\n1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system",
-        "changeLog": "Updated the prompt to make it better.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-3 (API)"
-      },
-      "4": {
-        "revisedPrompt": "Write a formal test automation strategy document for testing a mobile application on iOS and Android using the following tools:\n1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system",
-        "changeLog": "Switched to GPT-4 for better results and longer content in the produced document.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-4"
-      },
-      "5": {
-        "revisedPrompt": "Write a formal test automation strategy document for testing a {{APPLICATION_TYPE}} on {{SUPPORTED_PLATFORMS}} using the following tools: {{SUPPORTED_TOOLS}}",
-        "changeLog": "Converted the prompt to a template prompt.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT",
-          "TEMPLATE_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-4",
-        "sampleData": [
-          "APPLICATION_TYPE: mobile application",
-          "SUPPORTED_PLATFORMS: iOS and Android",
-          "SUPPORTED_TOOLS: 1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system."
-        ]
-      },
-      "6": {
-        "revisedPrompt": "Act as a lead software development engineer in test. Your job is to write a formal test automation strategy document for testing a {{APPLICATION_TYPE}} on {{SUPPORTED_PLATFORMS}} using the following tools: {{SUPPORTED_TOOLS}}",
-        "changeLog": "Rephrased the prompt a bit in preparation to convert it to a system prompt.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT",
-          "TEMPLATE_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-4",
-        "sampleData": [
-          "APPLICATION_TYPE: mobile application",
-          "SUPPORTED_PLATFORMS: iOS and Android",
-          "SUPPORTED_TOOLS: 1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system."
-        ]
-      },
-      "7": {
-        "revisedPrompt": "Act as a lead software development engineer in test. Your job is to write a formal test automation strategy document. Perform the following actions: 1. Great the user politely 2. Ask the user to provide the type of application they want to test. This can be either a web or a mobile application. 3. Ask the user to provide a list of platforms they want to support. 4. Ask the user to provide a list of tools they want to use. 5. Write the formal test automation strategy document using all of the above provided information. Split the document into sections and provide as much details as possible.",
-        "changeLog": "Converted the prompt to a system interactive prompt.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "SYSTEM_PROMPT",
-          "INTERACTIVE_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-4",
-        "sampleData": [
-          "1st input: mobile application",
-          "2nd input: iOS and Android",
-          "3rd input: 1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system."
-        ]
-      }
+  "submittedOriginallyBy": [
+    "Davud Murtazin"
+  ],
+  "optimizedBy": [
+    "Hassan Radi"
+  ],
+  "promptHistory": {
+    "1": {
+      "revisedPrompt": "Create test automation strategy for mobile application testing on iOS and Android with tools:\n1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system",
+      "changeLog": "Original version.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-3 (API)"
+    },
+    "2": {
+      "revisedPrompt": "Create a test automation strategy for testing a mobile application on iOS and Android with the following tools:\n1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system",
+      "changeLog": "Minor fixes to make the prompt better.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-3 (API)"
+    },
+    "3": {
+      "revisedPrompt": "Write a formal test automation strategy document for testing a mobile application on iOS and Android using the following tools:\n1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system",
+      "changeLog": "Updated the prompt to make it better.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-3 (API)"
+    },
+    "4": {
+      "revisedPrompt": "Write a formal test automation strategy document for testing a mobile application on iOS and Android using the following tools:\n1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system",
+      "changeLog": "Switched to GPT-4 for better results and longer content in the produced document.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-4"
+    },
+    "5": {
+      "revisedPrompt": "Write a formal test automation strategy document for testing a {{APPLICATION_TYPE}} on {{SUPPORTED_PLATFORMS}} using the following tools: {{SUPPORTED_TOOLS}}",
+      "changeLog": "Converted the prompt to a template prompt.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT",
+        "TEMPLATE_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-4",
+      "sampleData": [
+        "APPLICATION_TYPE: mobile application",
+        "SUPPORTED_PLATFORMS: iOS and Android",
+        "SUPPORTED_TOOLS: 1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system."
+      ]
+    },
+    "6": {
+      "revisedPrompt": "Act as a lead software development engineer in test. Your job is to write a formal test automation strategy document for testing a {{APPLICATION_TYPE}} on {{SUPPORTED_PLATFORMS}} using the following tools: {{SUPPORTED_TOOLS}}",
+      "changeLog": "Rephrased the prompt a bit in preparation to convert it to a system prompt.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT",
+        "TEMPLATE_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-4",
+      "sampleData": [
+        "APPLICATION_TYPE: mobile application",
+        "SUPPORTED_PLATFORMS: iOS and Android",
+        "SUPPORTED_TOOLS: 1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system."
+      ]
+    },
+    "7": {
+      "revisedPrompt": "Act as a lead software development engineer in test. Your job is to write a formal test automation strategy document. Perform the following actions: 1. Great the user politely 2. Ask the user to provide the type of application they want to test. This can be either a web or a mobile application. 3. Ask the user to provide a list of platforms they want to support. 4. Ask the user to provide a list of tools they want to use. 5. Write the formal test automation strategy document using all of the above provided information. Split the document into sections and provide as much details as possible.",
+      "changeLog": "Converted the prompt to a system interactive prompt.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "SYSTEM_PROMPT",
+        "INTERACTIVE_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-4",
+      "sampleData": [
+        "1st input: mobile application",
+        "2nd input: iOS and Android",
+        "3rd input: 1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system."
+      ]
     }
-  },
-  "aiResult": {
-    "highSatisfaction": false,
-    "relevantExpectations": false,
-    "relevantExamplePrompt": false,
-    "relevantSideEffectsOrComments": false,
-    "gainedTime": false,
-    "highNumberOfRetries": false
   }
 }

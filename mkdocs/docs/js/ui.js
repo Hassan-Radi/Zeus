@@ -4,7 +4,7 @@ class UI {
     fetch(JSON_FILE_PATH)
     .then((response) => response.json())
     .then((json) => {
-      for (let i = 1; i <= Object.keys(json.assessment.promptHistory).length;
+      for (let i = 1; i <= Object.keys(json.promptHistory).length;
           i++) {
         let detailsElement = document.createElement("details");
         let summaryElement = document.createElement("summary");
@@ -14,17 +14,17 @@ class UI {
         let divElement = document.createElement("div");
         divElement.innerHTML = `
           <br><b>Type:</b> ${this.getPromptTypeAsLinks(
-            json.assessment.promptHistory[i].promptType)} <br>
-          <b>Change log:</b> ${JSON.stringify(
-            json.assessment.promptHistory[i].changeLog).replaceAll('\"', '')} <br>
+            json.promptHistory[i].promptType)} <br>
+          <b>Changelog:</b> ${JSON.stringify(
+            json.promptHistory[i].changeLog).replaceAll('\"', '')} <br>
           <b>AI tool:</b> ${JSON.stringify(
-            json.assessment.promptHistory[i].aiTool).replaceAll('\"', '')} <br>
+            json.promptHistory[i].aiTool).replaceAll('\"', '')} <br>
           <h5 class="link-primary">Prompt:</h5
         `;
 
         divElement.innerHTML = this.addDataItemGroup(divElement.innerHTML, null,
             'link-primary',
-            json.assessment.promptHistory[i].revisedPrompt.replaceAll('\"', ''))
+            json.promptHistory[i].revisedPrompt.replaceAll('\"', ''))
 
         this.displaySampleData(json, divElement, i);
 
@@ -44,13 +44,21 @@ class UI {
       let divElement = document.createElement("div");
       divElement.innerHTML = `
         <b>Submitted originally by:</b> ${JSON.stringify(
-          json.prompt.employeeName).replaceAll('\"', '')} <br>
+          json.submittedOriginallyBy).replaceAll('\"', '')
+          .replaceAll('[', '')
+          .replaceAll(']', '')
+          .replaceAll(',', ', ')} <br>
+        <b>Optimized by:</b> ${JSON.stringify(
+          json.optimizedBy).replaceAll('\"', '')
+          .replaceAll('[', '')
+          .replaceAll(']', '')
+          .replaceAll(',', ', ')} <br>
         <b>Type:</b> ${this.getPromptTypeAsLinks(
-          json.assessment.promptHistory[Object.keys(
-              json.assessment.promptHistory).length].promptType)} <br>
+          json.promptHistory[Object.keys(
+              json.promptHistory).length].promptType)} <br>
         <b>AI tool:</b> ${JSON.stringify(
-          json.assessment.promptHistory[Object.keys(
-              json.assessment.promptHistory).length].aiTool).replaceAll('\"',
+          json.promptHistory[Object.keys(
+              json.promptHistory).length].aiTool).replaceAll('\"',
           '')} <br>
         <hr>
         <h5 class="link-primary">Prompt:</h5>
@@ -58,12 +66,12 @@ class UI {
 
       divElement.innerHTML = this.addDataItemGroup(divElement.innerHTML, null,
           'link-primary',
-          json.assessment.promptHistory[Object.keys(
-              json.assessment.promptHistory).length].revisedPrompt.replaceAll(
+          json.promptHistory[Object.keys(
+              json.promptHistory).length].revisedPrompt.replaceAll(
               '\"', ''))
 
       this.displaySampleData(json, divElement,
-          Object.keys(json.assessment.promptHistory).length);
+          Object.keys(json.promptHistory).length);
 
       // add the download as .json button
       divElement.innerHTML += `<br><a type="button" class="btn btn-sm btn-primary link-light float-end" href="${JSON_FILE_PATH}"><i class="fa-solid fa-download"></i> Download as .json</a><br>`;
@@ -143,15 +151,15 @@ class UI {
 
   displaySampleData(json, divElement, entryIndex) {
     // add the sample data if any exists
-    if (json.assessment.promptHistory[entryIndex].sampleData !== undefined) {
+    if (json.promptHistory[entryIndex].sampleData !== undefined) {
       let sampleDataHtml = "";
       let numberOfEntries = Object.keys(
-          json.assessment.promptHistory[entryIndex].sampleData).length;
+          json.promptHistory[entryIndex].sampleData).length;
 
       for (let i = 0; i < numberOfEntries; i++) {
-        let dataItemName = json.assessment.promptHistory[entryIndex].sampleData[i].split(
+        let dataItemName = json.promptHistory[entryIndex].sampleData[i].split(
             ':')[0].trim();
-        let dataItemValue = json.assessment.promptHistory[entryIndex].sampleData[i].substring(
+        let dataItemValue = json.promptHistory[entryIndex].sampleData[i].substring(
             dataItemName.length + 1).trim();
 
         sampleDataHtml = this.addDataItemGroup(sampleDataHtml, dataItemName,
