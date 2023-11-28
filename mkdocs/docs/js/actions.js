@@ -387,7 +387,7 @@ class Actions {
   }
 
   async getPromptJsonFile(promptReadableName) {
-    let promptTitle = promptReadableName.split('-')[1].trim();
+    let promptTitle = promptReadableName.substring(promptReadableName.indexOf('-') + 1).trim();
     let output;
 
     await fetch(ALL_JSON_PROMPTS_PATH)
