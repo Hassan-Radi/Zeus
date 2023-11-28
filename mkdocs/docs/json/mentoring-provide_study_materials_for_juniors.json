@@ -9,99 +9,66 @@
     "QA Engineer",
     "SDET"
   ],
-  "prompt": {
-    "employeeName": "Daniyar Kushkinbayev",
-    "caseName": "Testing / Test Automation",
-    "aiTool": "OpenAI ChatGPT-3.5",
-    "expectations": "I want chat GPT to give suggestion about study materials, as an example I asked to provide link to the materials about API testing.",
-    "examplePrompt": "provide materials about api\"category\": \"\",\n  \"badges\": [\n    \n  ], testing",
-    "numberOfRetries": "",
-    "timeGainedOrLost": "60%",
-    "satisfaction": 5,
-    "isCustomerUsingIt": false,
-    "sideEffectsOrComments": "I am happy with the provided answer as I could reach out to the material directly without spending time to google them or looking through any other resource."
-  },
-  "codeResult": {
-    "highSatisfaction": true,
-    "relevantExpectations": true,
-    "relevantExamplePrompt": true,
-    "relevantSideEffectsOrComments": false,
-    "sentimentOfSideEffectsOrComments": "NEUTRAL",
-    "gainedTime": true,
-    "highNumberOfRetries": false
-  },
-  "assessment": {
-    "comments": "Good for providing pointers about where to start.",
-    "category": [
-      "MENTORING"
-    ],
-    "intendedAudience": [
-      "QA_ENGINEER",
-      "SDET"
-    ],
-    "promptHistory": {
-      "1": {
-        "revisedPrompt": "provide materials about api testing",
-        "changeLog": "Original version.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-3.5"
-      },
-      "2": {
-        "revisedPrompt": "Act as a senior software development engineer in test, provide materials about api testing",
-        "changeLog": "Added more context to the prompt.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-3.5"
-      },
-      "3": {
-        "revisedPrompt": "Act as a senior software development engineer in test, provide materials about api testing",
-        "changeLog": "Use OpenAI Chat-GPT-4",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-4"
-      },
-      "4": {
-        "revisedPrompt": "Act as a {{ROLE}}, provide materials about {{TOPIC}}.",
-        "changeLog": "Convert the prompt to a template one.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT",
-          "TEMPLATE_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-4",
-        "sampleData": [
-          "ROLE: Senior software development engineer in test",
-          "TOPIC: API testing"
-        ]
-      },
-      "5": {
-        "revisedPrompt": "Act as a Quality Architect, collect online training materials about {{TOPIC}} to help a junior learn about it.",
-        "changeLog": "Optimise the prompt to add more context and make it more relevant.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT",
-          "TEMPLATE_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-4",
-        "sampleData": [
-          "TOPIC: API testing"
-        ]
-      }
+  "submittedOriginallyBy": [
+    "Daniyar Kushkinbayev"
+  ],
+  "optimizedBy": [
+    "Hassan Radi"
+  ],
+  "promptHistory": {
+    "1": {
+      "revisedPrompt": "provide materials about api testing",
+      "changeLog": "Original version.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-3.5"
+    },
+    "2": {
+      "revisedPrompt": "Act as a senior software development engineer in test, provide materials about api testing",
+      "changeLog": "Added more context to the prompt.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-3.5"
+    },
+    "3": {
+      "revisedPrompt": "Act as a senior software development engineer in test, provide materials about api testing",
+      "changeLog": "Use OpenAI Chat-GPT-4",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-4"
+    },
+    "4": {
+      "revisedPrompt": "Act as a {{ROLE}}, provide materials about {{TOPIC}}.",
+      "changeLog": "Convert the prompt to a template one.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT",
+        "TEMPLATE_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-4",
+      "sampleData": [
+        "ROLE: Senior software development engineer in test",
+        "TOPIC: API testing"
+      ]
+    },
+    "5": {
+      "revisedPrompt": "Act as a Quality Architect, collect online training materials about {{TOPIC}} to help a junior learn about it.",
+      "changeLog": "Optimise the prompt to add more context and make it more relevant.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT",
+        "TEMPLATE_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-4",
+      "sampleData": [
+        "TOPIC: API testing"
+      ]
     }
-  },
-  "aiResult": {
-    "highSatisfaction": false,
-    "relevantExpectations": false,
-    "relevantExamplePrompt": false,
-    "relevantSideEffectsOrComments": false,
-    "gainedTime": false,
-    "highNumberOfRetries": false
   }
 }

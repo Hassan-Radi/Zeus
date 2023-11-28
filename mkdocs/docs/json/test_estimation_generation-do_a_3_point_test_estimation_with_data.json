@@ -9,104 +9,71 @@
     "QA Engineer",
     "SDET"
   ],
-  "prompt": {
-    "employeeName": "Vladislav Razakov",
-    "caseName": "Testing / Test Automation",
-    "aiTool": "OpenAI ChatGPT-3.5",
-    "expectations": "The AI must make a three-point estimate with the following data:\nTest team size: 1 person\nTotal number of cases: 38\nTime to complete the case for 1 person: 20 minutes\nTime for regression and retesting: 20 minutes on average",
-    "examplePrompt": "Act like a tester. Do a 3-point test estimation with the following data:\nTest team size: 1 person\nTotal number of cases: 38\nTime to complete the case for 1 person: 20 minutes\nTime for regression and retesting: 20 minutes on average",
-    "numberOfRetries": "",
-    "timeGainedOrLost": "100%",
-    "satisfaction": 5,
-    "isCustomerUsingIt": false,
-    "sideEffectsOrComments": "AI did the job well"
-  },
-  "codeResult": {
-    "highSatisfaction": true,
-    "relevantExpectations": true,
-    "relevantExamplePrompt": true,
-    "relevantSideEffectsOrComments": false,
-    "sentimentOfSideEffectsOrComments": "NEUTRAL",
-    "gainedTime": true,
-    "highNumberOfRetries": false
-  },
-  "assessment": {
-    "comments": "A very good example for test estimation that saves a lot of time.",
-    "category": [
-      "TEST_ESTIMATION_GENRATION"
-    ],
-    "intendedAudience": [
-      "LEAD_QA_ENGINEER",
-      "LEAD_SDET"
-    ],
-    "promptHistory": {
-      "1": {
-        "revisedPrompt": "Act like a tester. Do a 3-point test estimation with the following data:\nTest team size: 1 person\nTotal number of cases: 38\nTime to complete the case for 1 person: 20 minutes\nTime for regression and retesting: 20 minutes on average",
-        "changeLog": "Original version.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-3.5"
-      },
-      "2": {
-        "revisedPrompt": "Act as a software tester. Do a 3-point test estimation with the following data:\nTest team size: 1 person\nTotal number of test cases: 38\nTime to complete one test case for 1 person: 20 minutes\nTime for regression and retesting: 20 minutes on average",
-        "changeLog": "Corrected spelling and grammar mistakes.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-3.5"
-      },
-      "3": {
-        "revisedPrompt": "Act as a software tester. Do a 3-point test estimation with the following data:\nTest team size: 1 person\nTotal number of test cases: 38\nTime to complete one test case for 1 person: 20 minutes\nTime for regression and retesting: 20 minutes on average",
-        "changeLog": "Switched to using OpenAI GPT-4 for better results.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-4"
-      },
-      "4": {
-        "revisedPrompt": "Act as a software tester. Do a 3-point test estimation with the following data:\nTest team size: {{TEAM_SIZE}} person\nTotal number of test cases: {{NUMBER_OF_TEST_CASES}}\nTime to complete one test case for 1 person: {{TIME_PER_TEST_CASE}} minutes\nTime for regression and retesting: {{REGRESSION_RETESTING_TIME}} minutes on average",
-        "changeLog": "Converted to a template prompt.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT",
-          "TEMPLATE_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-4",
-        "sampleData": [
-          "TEAM_SIZE: 1",
-          "NUMBER_OF_TEST_CASES: 38",
-          "TIME_PER_TEST_CASE: 20",
-          "REGRESSION_RETESTING_TIME: 20"
-        ]
-      },
-      "5": {
-        "revisedPrompt": "Act as a lead software development engineer in test. Do a 3-point test estimation with the following data:\nTest team size: {{TEAM_SIZE}} person.\nTotal number of test cases: {{NUMBER_OF_TEST_CASES}}.\nTime to complete one test case for 1 person: {{TIME_PER_TEST_CASE}} minutes.\nTime for regression and retesting: {{REGRESSION_RETESTING_TIME}} minutes on average.",
-        "changeLog": "Rephrased and reformatted the prompt.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT",
-          "TEMPLATE_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-4",
-        "sampleData": [
-          "TEAM_SIZE: 1",
-          "NUMBER_OF_TEST_CASES: 38",
-          "TIME_PER_TEST_CASE: 20",
-          "REGRESSION_RETESTING_TIME: 20"
-        ]
-      }
+  "submittedOriginallyBy": [
+    "Vladislav Razakov"
+  ],
+  "optimizedBy": [
+    "Hassan Radi"
+  ],
+  "promptHistory": {
+    "1": {
+      "revisedPrompt": "Act like a tester. Do a 3-point test estimation with the following data:\nTest team size: 1 person\nTotal number of cases: 38\nTime to complete the case for 1 person: 20 minutes\nTime for regression and retesting: 20 minutes on average",
+      "changeLog": "Original version.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-3.5"
+    },
+    "2": {
+      "revisedPrompt": "Act as a software tester. Do a 3-point test estimation with the following data:\nTest team size: 1 person\nTotal number of test cases: 38\nTime to complete one test case for 1 person: 20 minutes\nTime for regression and retesting: 20 minutes on average",
+      "changeLog": "Corrected spelling and grammar mistakes.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-3.5"
+    },
+    "3": {
+      "revisedPrompt": "Act as a software tester. Do a 3-point test estimation with the following data:\nTest team size: 1 person\nTotal number of test cases: 38\nTime to complete one test case for 1 person: 20 minutes\nTime for regression and retesting: 20 minutes on average",
+      "changeLog": "Switched to using OpenAI GPT-4 for better results.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-4"
+    },
+    "4": {
+      "revisedPrompt": "Act as a software tester. Do a 3-point test estimation with the following data:\nTest team size: {{TEAM_SIZE}} person\nTotal number of test cases: {{NUMBER_OF_TEST_CASES}}\nTime to complete one test case for 1 person: {{TIME_PER_TEST_CASE}} minutes\nTime for regression and retesting: {{REGRESSION_RETESTING_TIME}} minutes on average",
+      "changeLog": "Converted to a template prompt.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT",
+        "TEMPLATE_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-4",
+      "sampleData": [
+        "TEAM_SIZE: 1",
+        "NUMBER_OF_TEST_CASES: 38",
+        "TIME_PER_TEST_CASE: 20",
+        "REGRESSION_RETESTING_TIME: 20"
+      ]
+    },
+    "5": {
+      "revisedPrompt": "Act as a lead software development engineer in test. Do a 3-point test estimation with the following data:\nTest team size: {{TEAM_SIZE}} person.\nTotal number of test cases: {{NUMBER_OF_TEST_CASES}}.\nTime to complete one test case for 1 person: {{TIME_PER_TEST_CASE}} minutes.\nTime for regression and retesting: {{REGRESSION_RETESTING_TIME}} minutes on average.",
+      "changeLog": "Rephrased and reformatted the prompt.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT",
+        "TEMPLATE_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-4",
+      "sampleData": [
+        "TEAM_SIZE: 1",
+        "NUMBER_OF_TEST_CASES: 38",
+        "TIME_PER_TEST_CASE: 20",
+        "REGRESSION_RETESTING_TIME: 20"
+      ]
     }
-  },
-  "aiResult": {
-    "highSatisfaction": false,
-    "relevantExpectations": false,
-    "relevantExamplePrompt": false,
-    "relevantSideEffectsOrComments": false,
-    "gainedTime": false,
-    "highNumberOfRetries": false
   }
 }

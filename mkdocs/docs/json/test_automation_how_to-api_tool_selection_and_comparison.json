@@ -9,107 +9,75 @@
   "targetAudience": [
     "SDET"
   ],
-  "prompt": {
-    "employeeName": "Sviatlana Makarevich",
-    "caseName": "Testing / Test Automation",
-    "aiTool": "OpenAI ChatGPT-3.5",
-    "expectations": "I expected to get  some ideas about test automation framework that can be used for automated test creation.",
-    "examplePrompt": "\"Suggest automation frameworks that can help me automate this endpoint https://petstore.swagger.io/#/user/updateUser\"\n\"Compare them and suggest what can be used in case if I want to have only API tests and don\u0027t need UI tests.\"\n",
-    "numberOfRetries": "",
-    "timeGainedOrLost": "60%",
-    "satisfaction": 4,
-    "isCustomerUsingIt": false,
-    "sideEffectsOrComments": "It provided a few popular popular test automation frameworks. After additional requirements were provided, it correctly updated the list. It provided some comparison."
-  },
-  "codeResult": {
-    "highSatisfaction": true,
-    "relevantExpectations": true,
-    "relevantExamplePrompt": true,
-    "relevantSideEffectsOrComments": true,
-    "sentimentOfSideEffectsOrComments": "POSITIVE",
-    "gainedTime": true,
-    "highNumberOfRetries": false
-  },
-  "assessment": {
-    "comments": "The response was good and it mentioned a couple of good tools. The prompt can be optimised to make it produce better & more accurate results.",
-    "category": [
-      "TEST_AUTOMATION_HOW_TO"
-    ],
-    "intendedAudience": [
-      "SDET"
-    ],
-    "promptHistory": {
-      "1": {
-        "revisedPrompt": "\"Suggest automation frameworks that can help me automate this endpoint https://petstore.swagger.io/#/user/updateUser\"\n\"Compare them and suggest what can be used in case if I want to have only API tests and don't need UI tests.\"\n",
-        "changeLog": "Original version.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-3.5"
-      },
-      "2": {
-        "revisedPrompt": "Suggest automation frameworks that can help me automate this endpoint 'https://petstore.swagger.io/#/user/updateUser'. Compare them and suggest what can be used in case I want only API tests and don't need UI tests.",
-        "changeLog": "Fixed grammar and spelling mistakes.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-3.5"
-      },
-      "3": {
-        "revisedPrompt": "Suggest automation frameworks that can help me automate this endpoint 'https://petstore.swagger.io/#/user/updateUser'. Compare them and suggest what can be used in case I want only API tests and don't need UI tests.",
-        "changeLog": "Switched to OpenAI ChatGPT-4.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-4"
-      },
-      "4": {
-        "revisedPrompt": "Act as a Senior Quality Engineer and then perform the following actions: 1. Suggest automation frameworks that can help me automate this endpoint 'https://petstore.swagger.io/#/user/updateUser'. 2. Compare between the suggested frameworks and then choose which one would be more suitable in this case.",
-        "changeLog": "Rephrased and enhanced the prompt.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-4"
-      },
-      "5": {
-        "revisedPrompt": "Act as a Senior Quality Engineer and then perform the following actions: 1. Suggest automation frameworks that can help me automate this endpoint '{{ENDPOINT}}'. 2. Compare between the suggested frameworks and then choose which one would be more suitable in this case.",
-        "changeLog": "Converted to a template prompt.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT",
-          "TEMPLATE_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-4",
-        "sampleData": [
-          "ENDPOINT: https://petstore.swagger.io/#/user/updateUser"
-        ]
-      },
-      "6": {
-        "revisedPrompt": "Act as a Senior Quality Engineer and then perform the following actions: 1. Suggest automation frameworks that can help me automate the endpoint '{{ENDPOINT}}' using '{{PROGRAMMING_LANGUAGE}}' as a programming language. 2. Compare between the suggested frameworks and then choose which one would be more suitable in this case.",
-        "changeLog": "Extended the prompt by including the suggested programming language.",
-        "promptType": [
-          "ZERO_SHOT_PROMPT",
-          "USER_PROMPT",
-          "TEMPLATE_PROMPT"
-        ],
-        "aiTool": "OpenAI ChatGPT-4",
-        "sampleData": [
-          "ENDPOINT: https://petstore.swagger.io/#/user/updateUser",
-          "PROGRAMMING_LANGUAGE: JS"
-        ]
-      }
+  "submittedOriginallyBy": [
+    "Sviatlana Makarevich"
+  ],
+  "optimizedBy": [
+    "Hassan Radi"
+  ],
+  "promptHistory": {
+    "1": {
+      "revisedPrompt": "\"Suggest automation frameworks that can help me automate this endpoint https://petstore.swagger.io/#/user/updateUser\"\n\"Compare them and suggest what can be used in case if I want to have only API tests and don't need UI tests.\"\n",
+      "changeLog": "Original version.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-3.5"
+    },
+    "2": {
+      "revisedPrompt": "Suggest automation frameworks that can help me automate this endpoint 'https://petstore.swagger.io/#/user/updateUser'. Compare them and suggest what can be used in case I want only API tests and don't need UI tests.",
+      "changeLog": "Fixed grammar and spelling mistakes.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-3.5"
+    },
+    "3": {
+      "revisedPrompt": "Suggest automation frameworks that can help me automate this endpoint 'https://petstore.swagger.io/#/user/updateUser'. Compare them and suggest what can be used in case I want only API tests and don't need UI tests.",
+      "changeLog": "Switched to OpenAI ChatGPT-4.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-4"
+    },
+    "4": {
+      "revisedPrompt": "Act as a Senior Quality Engineer and then perform the following actions: 1. Suggest automation frameworks that can help me automate this endpoint 'https://petstore.swagger.io/#/user/updateUser'. 2. Compare between the suggested frameworks and then choose which one would be more suitable in this case.",
+      "changeLog": "Rephrased and enhanced the prompt.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-4"
+    },
+    "5": {
+      "revisedPrompt": "Act as a Senior Quality Engineer and then perform the following actions: 1. Suggest automation frameworks that can help me automate this endpoint '{{ENDPOINT}}'. 2. Compare between the suggested frameworks and then choose which one would be more suitable in this case.",
+      "changeLog": "Converted to a template prompt.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT",
+        "TEMPLATE_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-4",
+      "sampleData": [
+        "ENDPOINT: https://petstore.swagger.io/#/user/updateUser"
+      ]
+    },
+    "6": {
+      "revisedPrompt": "Act as a Senior Quality Engineer and then perform the following actions: 1. Suggest automation frameworks that can help me automate the endpoint '{{ENDPOINT}}' using '{{PROGRAMMING_LANGUAGE}}' as a programming language. 2. Compare between the suggested frameworks and then choose which one would be more suitable in this case.",
+      "changeLog": "Extended the prompt by including the suggested programming language.",
+      "promptType": [
+        "ZERO_SHOT_PROMPT",
+        "USER_PROMPT",
+        "TEMPLATE_PROMPT"
+      ],
+      "aiTool": "OpenAI ChatGPT-4",
+      "sampleData": [
+        "ENDPOINT: https://petstore.swagger.io/#/user/updateUser",
+        "PROGRAMMING_LANGUAGE: JS"
+      ]
     }
-  },
-  "aiResult": {
-    "highSatisfaction": false,
-    "relevantExpectations": false,
-    "relevantExamplePrompt": false,
-    "relevantSideEffectsOrComments": false,
-    "gainedTime": false,
-    "highNumberOfRetries": false
   }
 }
