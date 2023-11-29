@@ -1,5 +1,4 @@
-# What is Zeus?
-
+# Zeus
 <script type="text/javascript" src="/js/ui.js"></script>
 <script type="text/javascript" src="/js/actions.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
@@ -9,15 +8,67 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
 
-Zeus is a prompt library developed by Epam&copy;. The project focuses on prompts in the
-field of Quality Engineering (QE).
+<div>Zeus is a prompt library developed by Epam&copy;. The project focuses on prompts in the
+field of Quality Engineering (QE).<br><br>The prompts are diverse and cover a wide-range of roles throughout the SDLC. The prompts are split by target audience groups.</div>
 
-## Why build it?
-
-The main purpose of Zeus is saving time and reducing cost by using AI prompts to simplify
-and speed-up our daily tasks.
-
-<br><a class="link link-primary float-end" href="/prompts/prompts.html">Take me
-to the prompts <i class="fa-solid fa-circle-chevron-right"></i></a>
-<a class="link link-success float-start" href="export.html"><i class="fa-solid fa-circle-chevron-left"></i>
-Export prompts</a><br>
+<br>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+        <div class="card" style="width: 10rem;">
+            <i class="fa-solid fa-bug fa-2xl"></i>
+            <div class="card-body">
+                <a href="/prompts/target_audience/qa_engineer.html" class="link link-warning">QA Engineer</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 10rem;">
+            <i class="fa-solid fa-terminal fa-2xl"></i>
+            <div class="card-body">
+                <a href="/prompts/target_audience/sdet.html" class="link link-success">SDET</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 10rem;">
+            <i class="fa-solid fa-briefcase fa-2xl"></i>
+            <div class="card-body">
+                <a href="/prompts/target_audience/business_analyst.html" class="link link-dark">Business Analyst</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 10rem;">
+            <i class="fa-solid fa-box-open fa-2xl"></i>
+            <div class="card-body">
+                <a href="/prompts/target_audience/product_owner.html" class="link link-secondary">Product Owner</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 10rem;">
+            <i class="fa-solid fa-code fa-2xl"></i>
+            <div class="card-body">
+                <a href="/prompts/target_audience/developer.html" class="link link-danger">Developer</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 10rem;">
+            <i class="fa-solid fa-user-gear fa-2xl"></i>
+            <div class="card-body">
+                <a href="/prompts/target_audience/architect.html" class="link link-info">Architect</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 10rem;">
+            <i class="fa-solid fa-wand-magic-sparkles fa-2xl"></i>
+            <div class="card-body">
+                <a href="/prompts/target_audience/designer.html" class="link link-primary">Designer</a>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<a class="link link-success float-end" href="export.html"><i class="fa-solid fa-circle-chevron-left"></i> Export prompts</a>

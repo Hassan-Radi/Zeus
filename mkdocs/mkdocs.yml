@@ -2,12 +2,7 @@ site_name: Zeus
 use_directory_urls: false
 nav:
   - Home: /
-  - Prompts:
-      - Prompts: prompts/prompts.md
-      - Prompt types: prompt_types.md
-      - Export prompts: export.md
-  - Tutorials:
-      - Video tutorials: tutorials/video_tutorials.md
+  - Export prompts: export.md
   - Target Audience:
       - QA Engineer: prompts/target_audience/qa_engineer.md
       - SDET: prompts/target_audience/sdet.md
@@ -16,8 +11,11 @@ nav:
       - Developer: prompts/target_audience/developer.md
       - Architect: prompts/target_audience/architect.md
       - Designer: prompts/target_audience/designer.md
+  - Tutorials:
+      - Video tutorials: tutorials/video_tutorials.md
+  - Prompt types: prompt_types.md
 theme:
   name: material
-copyright: Made with ❤️ by EPAM&copy; Systems, Inc. All Rights Reserved. 2023&emsp;(v3.1.4)&emsp;-&emsp;<a href="/features.html">Features</a>&emsp;-&emsp;<div class="float-end md-copyright__highlight">- Made with <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">Material for MkDocs</a></div><div class="float-end"><a href="https://chat.lab.epam.com/" target="_blank" rel="noopener">EPAM AI Dial</a>&emsp;</div>
+copyright: Made with ❤️ by EPAM&copy; Systems, Inc. All Rights Reserved. 2023&emsp;(v3.1.5)&emsp;-&emsp;<a href="/features.html">Features</a>&emsp;-&emsp;<div class="float-end md-copyright__highlight">- Made with <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">Material for MkDocs</a></div><div class="float-end"><a href="https://chat.lab.epam.com/" target="_blank" rel="noopener">EPAM AI Dial</a>&emsp;</div>
 extra:
   generator: false
