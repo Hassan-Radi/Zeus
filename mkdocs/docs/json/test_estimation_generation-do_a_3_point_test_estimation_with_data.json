@@ -23,7 +23,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-3.5"
+      "llmModel": "GPT-3.5"
     },
     "2": {
       "revisedPrompt": "Act as a software tester. Do a 3-point test estimation with the following data:\nTest team size: 1 person\nTotal number of test cases: 38\nTime to complete one test case for 1 person: 20 minutes\nTime for regression and retesting: 20 minutes on average",
@@ -32,7 +32,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-3.5"
+      "llmModel": "GPT-3.5"
     },
     "3": {
       "revisedPrompt": "Act as a software tester. Do a 3-point test estimation with the following data:\nTest team size: 1 person\nTotal number of test cases: 38\nTime to complete one test case for 1 person: 20 minutes\nTime for regression and retesting: 20 minutes on average",
@@ -41,7 +41,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4"
+      "llmModel": "GPT-4"
     },
     "4": {
       "revisedPrompt": "Act as a software tester. Do a 3-point test estimation with the following data:\nTest team size: {{TEAM_SIZE}} person\nTotal number of test cases: {{NUMBER_OF_TEST_CASES}}\nTime to complete one test case for 1 person: {{TIME_PER_TEST_CASE}} minutes\nTime for regression and retesting: {{REGRESSION_RETESTING_TIME}} minutes on average",
@@ -51,7 +51,7 @@
         "USER_PROMPT",
         "TEMPLATE_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4",
+      "llmModel": "GPT-4",
       "sampleData": [
         "TEAM_SIZE: 1",
         "NUMBER_OF_TEST_CASES: 38",
@@ -67,7 +67,7 @@
         "USER_PROMPT",
         "TEMPLATE_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4",
+      "llmModel": "GPT-4",
       "sampleData": [
         "TEAM_SIZE: 1",
         "NUMBER_OF_TEST_CASES: 38",

@@ -25,7 +25,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-3.5"
+      "llmModel": "GPT-3.5"
     },
     "2": {
       "revisedPrompt": "Act as a business analyst. Create a user story for buying a ticket to the cinema. Decompose stories whenever possible to make it easier for the developers to implement them.\n\nThen act as a tester and test these business requirements.",
@@ -34,7 +34,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-3.5"
+      "llmModel": "GPT-3.5"
     },
     "3": {
       "revisedPrompt": "Act as a business analyst. Create a user story for buying a ticket to the cinema. Decompose stories whenever possible to make it easier for the developers to implement them.\n\nThen act as a tester and test these business requirements.",
@@ -43,7 +43,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4"
+      "llmModel": "GPT-4"
     },
     "4": {
       "revisedPrompt": "Act as a business analyst. Create a user story for the below scenario delimited by triple backticks. Decompose stories whenever possible to make it easier for the developers to implement them.\n\nThen act as a tester and test these business requirements.```{{SCENARIO}}```",
@@ -53,7 +53,7 @@
         "USER_PROMPT",
         "TEMPLATE_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4",
+      "llmModel": "GPT-4",
       "sampleData": [
         "SCENARIO: buying a ticket to the cinema"
       ]
@@ -66,7 +66,7 @@
         "USER_PROMPT",
         "TEMPLATE_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4",
+      "llmModel": "GPT-4",
       "sampleData": [
         "SCENARIO: buying a ticket to the cinema"
       ]
@@ -79,7 +79,7 @@
         "USER_PROMPT",
         "TEMPLATE_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4",
+      "llmModel": "GPT-4",
       "sampleData": [
         "SCENARIO: buying a ticket to the cinema"
       ]

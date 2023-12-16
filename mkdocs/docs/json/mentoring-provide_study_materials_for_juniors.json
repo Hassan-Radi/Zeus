@@ -23,7 +23,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-3.5"
+      "llmModel": "GPT-3.5"
     },
     "2": {
       "revisedPrompt": "Act as a senior software development engineer in test, provide materials about api testing",
@@ -32,7 +32,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-3.5"
+      "llmModel": "GPT-3.5"
     },
     "3": {
       "revisedPrompt": "Act as a senior software development engineer in test, provide materials about api testing",
@@ -41,7 +41,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4"
+      "llmModel": "GPT-4"
     },
     "4": {
       "revisedPrompt": "Act as a {{ROLE}}, provide materials about {{TOPIC}}.",
@@ -51,7 +51,7 @@
         "USER_PROMPT",
         "TEMPLATE_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4",
+      "llmModel": "GPT-4",
       "sampleData": [
         "ROLE: Senior software development engineer in test",
         "TOPIC: API testing"
@@ -65,7 +65,7 @@
         "USER_PROMPT",
         "TEMPLATE_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4",
+      "llmModel": "GPT-4",
       "sampleData": [
         "TOPIC: API testing"
       ]

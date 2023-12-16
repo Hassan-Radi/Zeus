@@ -23,7 +23,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4"
+      "llmModel": "GPT-4"
     },
     "2": {
       "revisedPrompt": "Act as a Senior Software Testing Engineer. Write a test plan document with entry criteria and test process.",
@@ -32,7 +32,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4"
+      "llmModel": "GPT-4"
     }
   }
 }

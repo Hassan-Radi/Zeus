@@ -21,7 +21,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-3.5"
+      "llmModel": "GPT-3.5"
     },
     "2": {
       "revisedPrompt": "Create a decision table for testing 2 conditions – UserID, Password; 2 Actions – Login Successfully, Error showing ‘Invalid Credentials’; 3 Options — Blank, Valid, Invalid.",
@@ -30,7 +30,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-3.5"
+      "llmModel": "GPT-3.5"
     },
     "3": {
       "revisedPrompt": "Create a decision table for testing 2 conditions – UserID, Password; 2 Actions – Login Successfully, Error showing ‘Invalid Credentials’; 3 Options — Blank, Valid, Invalid.",
@@ -39,7 +39,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4"
+      "llmModel": "GPT-4"
     },
     "4": {
       "revisedPrompt": "Act as a software tester and then create a decision table for testing the following: - 2 conditions: UserID, Password. - 2 Actions: Login Successfully, Error showing ‘Invalid Credentials’. - 3 Options: Blank, Valid, Invalid.",
@@ -48,7 +48,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4"
+      "llmModel": "GPT-4"
     },
     "5": {
       "revisedPrompt": "Act as a software tester and then create a decision table for testing the following: {{PARAMETERS}}",
@@ -58,7 +58,7 @@
         "USER_PROMPT",
         "TEMPLATE_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4",
+      "llmModel": "GPT-4",
       "sampleData": [
         "PARAMETERS: - 2 conditions: UserID, Password. - 2 Actions: Login Successfully, Error showing ‘Invalid Credentials’. - 3 Options: Blank, Valid, Invalid."
       ]
@@ -71,7 +71,7 @@
         "USER_PROMPT",
         "TEMPLATE_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4",
+      "llmModel": "GPT-4",
       "sampleData": [
         "PARAMETERS: - 2 conditions: UserID, Password. - 2 Actions: Login Successfully, Error showing ‘Invalid Credentials’. - 3 Options: Blank, Valid, Invalid."
       ]
@@ -84,7 +84,7 @@
         "USER_PROMPT",
         "TEMPLATE_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4",
+      "llmModel": "GPT-4",
       "sampleData": [
         "PARAMETERS: <br>- 2 conditions: UserID, Password.<br>- 2 Actions: Login Successfully, Error showing ‘Invalid Credentials’.<br>- 3 Options: Blank, Valid, Invalid."
       ]

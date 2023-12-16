@@ -23,7 +23,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-3.5"
+      "llmModel": "GPT-3.5"
     },
     "2": {
       "revisedPrompt": "Create a practical task for interviewing a test automation engineer using Java. Focus on testing their knowledge about collections. Provide the task's solution and make it complicated",
@@ -32,7 +32,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-3.5"
+      "llmModel": "GPT-3.5"
     },
     "3": {
       "revisedPrompt": "Create a practical task for interviewing a test automation engineer using Java. Focus on testing their knowledge about collections. Provide the task's solution and make it complicated",
@@ -41,7 +41,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4"
+      "llmModel": "GPT-4"
     },
     "4": {
       "revisedPrompt": "Act as a senior test automation engineer. Create a practical task for interviewing a test automation engineer using Java. Focus on testing their knowledge about collections. Provide the task's solution and make it complicated",
@@ -50,7 +50,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4"
+      "llmModel": "GPT-4"
     },
     "5": {
       "revisedPrompt": "Act as a senior {{ROLE}}. Create a practical task for interviewing a {{ROLE}} using {{PROGRAMMING_LANGUAGE}}. {{TASK_CONTEXT}}. Provide the task's solution and make it complicated",
@@ -60,7 +60,7 @@
         "USER_PROMPT",
         "TEMPLATE_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4",
+      "llmModel": "GPT-4",
       "sampleData": [
         "ROLE: test automation engineer",
         "PROGRAMMING_LANGUAGE: Java",
@@ -75,7 +75,7 @@
         "USER_PROMPT",
         "TEMPLATE_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4",
+      "llmModel": "GPT-4",
       "sampleData": [
         "ROLE: test automation engineer",
         "PROGRAMMING_LANGUAGE: Java",
@@ -90,7 +90,7 @@
         "USER_PROMPT",
         "TEMPLATE_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4",
+      "llmModel": "GPT-4",
       "sampleData": [
         "ROLE: test automation engineer",
         "PROGRAMMING_LANGUAGE: Java",

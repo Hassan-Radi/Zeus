@@ -23,7 +23,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-3.5"
+      "llmModel": "GPT-3.5"
     },
     "2": {
       "revisedPrompt": "Suggest automation frameworks that can help me automate this endpoint 'https://petstore.swagger.io/#/user/updateUser'. Compare them and suggest what can be used in case I want only API tests and don't need UI tests.",
@@ -32,16 +32,16 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-3.5"
+      "llmModel": "GPT-3.5"
     },
     "3": {
       "revisedPrompt": "Suggest automation frameworks that can help me automate this endpoint 'https://petstore.swagger.io/#/user/updateUser'. Compare them and suggest what can be used in case I want only API tests and don't need UI tests.",
-      "changeLog": "Switched to OpenAI ChatGPT-4.",
+      "changeLog": "Switched to GPT-4.",
       "promptType": [
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4"
+      "llmModel": "GPT-4"
     },
     "4": {
       "revisedPrompt": "Act as a Senior Quality Engineer and then perform the following actions: 1. Suggest automation frameworks that can help me automate this endpoint 'https://petstore.swagger.io/#/user/updateUser'. 2. Compare between the suggested frameworks and then choose which one would be more suitable in this case.",
@@ -50,7 +50,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4"
+      "llmModel": "GPT-4"
     },
     "5": {
       "revisedPrompt": "Act as a Senior Quality Engineer and then perform the following actions: 1. Suggest automation frameworks that can help me automate this endpoint '{{ENDPOINT}}'. 2. Compare between the suggested frameworks and then choose which one would be more suitable in this case.",
@@ -60,7 +60,7 @@
         "USER_PROMPT",
         "TEMPLATE_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4",
+      "llmModel": "GPT-4",
       "sampleData": [
         "ENDPOINT: https://petstore.swagger.io/#/user/updateUser"
       ]
@@ -73,7 +73,7 @@
         "USER_PROMPT",
         "TEMPLATE_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4",
+      "llmModel": "GPT-4",
       "sampleData": [
         "ENDPOINT: https://petstore.swagger.io/#/user/updateUser",
         "PROGRAMMING_LANGUAGE: JS"

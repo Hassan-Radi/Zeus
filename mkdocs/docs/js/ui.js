@@ -17,8 +17,8 @@ class UI {
             json.promptHistory[i].promptType)} <br>
           <b>Changelog:</b> ${JSON.stringify(
             json.promptHistory[i].changeLog).replaceAll('\"', '')} <br>
-          <b>AI tool:</b> ${JSON.stringify(
-            json.promptHistory[i].aiTool).replaceAll('\"', '')} <br>
+          <b>LLM Model:</b> ${JSON.stringify(
+            json.promptHistory[i].llmModel).replaceAll('\"', '')} <br>
           <h5 class="link-primary">Prompt:</h5
         `;
 
@@ -56,9 +56,9 @@ class UI {
         <b>Type:</b> ${this.getPromptTypeAsLinks(
           json.promptHistory[Object.keys(
               json.promptHistory).length].promptType)} <br>
-        <b>AI tool:</b> ${JSON.stringify(
+        <b>LLM Model:</b> ${JSON.stringify(
           json.promptHistory[Object.keys(
-              json.promptHistory).length].aiTool).replaceAll('\"',
+              json.promptHistory).length].llmModel).replaceAll('\"',
           '')} <br>
         <hr>
         <h5 class="link-primary">Prompt:</h5>

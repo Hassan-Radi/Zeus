@@ -25,7 +25,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-3.5"
+      "llmModel": "GPT-3.5"
     },
     "2": {
       "revisedPrompt": "Suggest automation frameworks that can help me automate this endpoint 'https://petstore.swagger.io/#/user/updateUser'. Compare them and suggest what can be used in case I want only API tests and don't need UI tests.",
@@ -34,16 +34,16 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-3.5"
+      "llmModel": "GPT-3.5"
     },
     "3": {
       "revisedPrompt": "Suggest automation frameworks that can help me automate this endpoint 'https://petstore.swagger.io/#/user/updateUser'. Compare them and suggest what can be used in case I want only API tests and don't need UI tests.",
-      "changeLog": "Using OpenAI ChatGPT-4.",
+      "changeLog": "Using GPT-4.",
       "promptType": [
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4"
+      "llmModel": "GPT-4"
     },
     "4": {
       "revisedPrompt": "Act as a Senior Quality Engineer. Design test cases from the following endpoint 'https://petstore.swagger.io/#/user/updateUser'.",
@@ -52,7 +52,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4"
+      "llmModel": "GPT-4"
     },
     "5": {
       "revisedPrompt": "Act as a Senior Quality Engineer. Design test cases from the following endpoint '{{ENDPOINT}}'.",
@@ -62,7 +62,7 @@
         "USER_PROMPT",
         "TEMPLATE_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4",
+      "llmModel": "GPT-4",
       "sampleData": [
         "ENDPOINT: https://petstore.swagger.io/#/user/updateUser"
       ]
@@ -75,7 +75,7 @@
         "USER_PROMPT",
         "TEMPLATE_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4",
+      "llmModel": "GPT-4",
       "sampleData": [
         "ENDPOINT: https://petstore.swagger.io/#/user/updateUser"
       ]

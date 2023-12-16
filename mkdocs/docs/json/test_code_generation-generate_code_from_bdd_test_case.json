@@ -24,16 +24,16 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-3.5"
+      "llmModel": "GPT-3.5"
     },
     "2": {
       "revisedPrompt": "I need to automate this BDD test case in Cucumber.js\nSummary: Verify background color for header\nScenario:\nGiven IMR exists for employee\nAnd user opens IMR\nWhen the Opportunities header loads\nThen the Opportunities header background-color is #303240",
-      "changeLog": "Use OpenAI ChatGPT-4.",
+      "changeLog": "Use GPT-4.",
       "promptType": [
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4"
+      "llmModel": "GPT-4"
     },
     "3": {
       "revisedPrompt": "Act as a Senior Software Development Engineer in Test. Generate automation code from the following BDD test case using Cucumber.js.\nSummary: Verify background color for header\nScenario:\nGiven IMR exists for employee\nAnd user opens IMR\nWhen the Opportunities header loads\nThen the Opportunities header background-color is #303240",
@@ -42,7 +42,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4"
+      "llmModel": "GPT-4"
     },
     "4": {
       "revisedPrompt": "Act as a Senior Software Development Engineer in Test. Generate automation code from the following BDD test case using '{{AUTOMATION_TOOL}}' and '{{PROGRAMMING_LANGUAGE}}'.\n{{BDD_TEST_CASE}}",
@@ -52,7 +52,7 @@
         "USER_PROMPT",
         "TEMPLATE_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4",
+      "llmModel": "GPT-4",
       "sampleData": [
         "AUTOMATION_TOOL: Cucumber",
         "PROGRAMMING_LANGUAGE: JS",
@@ -67,7 +67,7 @@
         "USER_PROMPT",
         "TEMPLATE_PROMPT"
       ],
-      "aiTool": "OpenAI ChatGPT-4",
+      "llmModel": "GPT-4",
       "sampleData": [
         "AUTOMATION_TOOL: Cucumber",
         "PROGRAMMING_LANGUAGE: JS",
