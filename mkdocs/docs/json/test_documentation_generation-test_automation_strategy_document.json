@@ -24,7 +24,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "llmModel": "OpenAI ChatGPT-3 (API)"
+      "llmModel": "GPT-3.5"
     },
     "2": {
       "revisedPrompt": "Create a test automation strategy for testing a mobile application on iOS and Android with the following tools:\n1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system",
@@ -33,7 +33,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "llmModel": "OpenAI ChatGPT-3 (API)"
+      "llmModel": "GPT-3.5"
     },
     "3": {
       "revisedPrompt": "Write a formal test automation strategy document for testing a mobile application on iOS and Android using the following tools:\n1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system",
@@ -42,7 +42,7 @@
         "ZERO_SHOT_PROMPT",
         "USER_PROMPT"
       ],
-      "llmModel": "OpenAI ChatGPT-3 (API)"
+      "llmModel": "GPT-3.5"
     },
     "4": {
       "revisedPrompt": "Write a formal test automation strategy document for testing a mobile application on iOS and Android using the following tools:\n1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system",
