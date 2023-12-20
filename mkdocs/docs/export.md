@@ -37,5 +37,4 @@ whenever you are ready.
 <div>
     <a type="button" type="button" id="export-to-zeus" class="btn btn-sm btn-primary float-end m-1 link-light" data-toggle="tooltip" type="button" title="Export to our custom Zeus format" onclick="actions.exportToZeus(event);"><i class="fa-solid fa-medal"></i> Zeus</a>
     <a type="button" id="export-to-epam-dial" class="btn btn-sm btn-success float-end m-1 link-light" data-toggle="tooltip" type="button" title="Export to Epam AI Dial" onclick="actions.exportToEpamAIDial(event);"><i class="fa-solid fa-rocket"></i> Epam AI Dial</a>
-    <br><br>
 </div>

@@ -6,6 +6,9 @@ const BOOKMARK_ADDED_TOOLTIP = "Bookmarked!";
 const BOOKMARK_REMOVED_TOOLTIP = "Bookmark removed!";
 const ORIGINAL_CLEAR_ALL_PROMPTS_TOOLTIP = "Clear all bookmarked prompts";
 const ALL_JSON_PROMPTS_PATH = "config/allPrompts.json";
+const TOKEN_FILE_PATH = "/config/token.json";
+const GIT_BASE_URL = "https://git.epam.com";
+const PROJECT_ENCODED_URL = "epmc-tst%2Fzeus%2Fzeus-site-generator";
 
 class Actions {
 
@@ -401,5 +404,133 @@ class Actions {
     });
 
     return output;
+  }
+
+  submitNewPrompt(){
+    // check if the user didn't agree to the terms
+    if(!this.isCheckBoxChecked(document.getElementById('agreeToTerms'))){
+      alert("Please agree to the terms first.");
+      return;
+    }
+
+    // check if the user didn't select any badges
+    if($('#selectBadges').val() == 0){
+      alert("Please select at least one badge!");
+      return;
+    }
+
+    // check if the user didn't select any target audience
+    if($('#selectTargetAudience').val() == 0){
+      alert("Please select at least one target audience!");
+      return;
+    }
+
+    // check if the user didn't select any prompt type
+    if($('#selectPromptType').val() == 0){
+      alert("Please select at least one prompt type!");
+      return;
+    }
+
+    // user agreed, create a json object in preparation for the next steps
+    let newPromptData = {
+      "title": `${document.getElementById('promptTitle').value}`,
+      "pageHeader": `${document.getElementById('pageHeader').value}`,
+      "category": `${document.getElementById('category').value}`,
+      "badges": `${$('#selectBadges').val()}`.split(',').map(index => $('#selectBadges option').eq(index - 1).text()),
+      "targetAudience": `${$('#selectTargetAudience').val()}`.split(',').map(index => $('#selectTargetAudience option').eq(index - 1).text()),
+      "submittedOriginallyBy": `${document.getElementById('submittedBy').value}`.split(',').map(item => item.trim()),
+      "optimizedBy": `${document.getElementById('optimizedBy').value}`.split(',').map(item => item.trim()),
+      "promptHistory": {
+        "1": {
+          "revisedPrompt": `${document.getElementById('promptTextArea').value}`,
+          "changeLog": `${document.getElementById('changelogTextArea').value}`,
+          "promptType": `${$('#selectPromptType').val()}`.split(',').map(index => $('#selectPromptType option').eq(index - 1).text().toUpperCase()),
+          "llmModel": `${$("#llmModel option:selected").text()}`
+        }
+      }
+    };
+
+    let branchName = Date.now();
+    let createdFileName = newPromptData.category.replaceAll(' ', '_') + "-" +
+        newPromptData.title.replaceAll(' ', '_') + ".json";
+
+    // create a branch
+    this.createBranch(branchName).then(r => {
+      console.log(r);
+
+      // commit the json object as a file to the created branch
+      this.commitToBranch(branchName, createdFileName, newPromptData).then(r => {
+        console.log(r);
+
+        // create a merge request using the created branch
+        this.createMergeRequest(branchName, createdFileName).then(r => {
+          console.log(r)
+        }).catch(ex => console.log(ex));
+      }).catch(ex => console.log(ex));
+    }).catch(ex => console.log(ex));
+  }
+
+  async commitToBranch(branchName, createdFileName, newPromptData) {
+    return fetch(
+        `${GIT_BASE_URL}/api/v4/projects/${PROJECT_ENCODED_URL}/repository/commits`,
+        {
+          method: "POST",
+          headers: {
+            "PRIVATE-TOKEN": `${await this.readToken()}`,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            "branch": `${branchName}`,
+            "commit_message": "Automated PR creation from the GUI.",
+            "actions": [
+              {
+                "action": "create",
+                "file_path": "mkdocs/docs/json/" + `${createdFileName}`,
+                "content": `${JSON.stringify(newPromptData, null, 2)}`
+              }
+            ]
+          }),
+        });
+  }
+
+  async createBranch(branchName) {
+    return fetch(
+        `${GIT_BASE_URL}/api/v4/projects/${PROJECT_ENCODED_URL}/repository/branches?`+
+          `branch=${branchName}` +
+          `&ref=main`,
+        {
+          method: "POST",
+          headers: {
+            "PRIVATE-TOKEN": `${await this.readToken()}`
+          }
+    });
+  }
+
+  async createMergeRequest(branchName, createdFileName) {
+    return fetch(
+        `${GIT_BASE_URL}/api/v4/projects/${PROJECT_ENCODED_URL}/merge_requests?` +
+          `source_branch=${branchName}` +
+          `&target_branch=main` +
+          `&remove_source_branch=true` +
+          `&squash=true` +
+          `&title=[Zeus Bot] Added file "${createdFileName}"`,
+        {
+          method: "POST",
+          headers: {
+            "PRIVATE-TOKEN": `${await this.readToken()}`
+          }
+        });
+  }
+
+  async readToken(){
+    let tokenValue;
+
+    await fetch(TOKEN_FILE_PATH)
+    .then((response) => response.json())
+    .then((json) => {
+      tokenValue = json.token;
+    });
+
+    return tokenValue;
   }
 }

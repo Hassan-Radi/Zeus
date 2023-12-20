@@ -6,7 +6,8 @@
   "scripts": {
     "generateIntermediaryFiles": "node --test --require ts-node/register src/intermediary/*",
     "generateTargetAudienceMaps": "node --test --require ts-node/register src/maps/*",
-    "generateTargetAudiencePages": "node --test --require ts-node/register src/GenerateTargetAudiencePages.ts"
+    "generateTargetAudiencePages": "node --test --require ts-node/register src/GenerateTargetAudiencePages.ts",
+    "generateTokenFile": "node --test --require ts-node/register src/GenerateTokenFile.ts"
   },
   "keywords": [],
   "author": "",

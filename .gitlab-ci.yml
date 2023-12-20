@@ -9,6 +9,7 @@ generate-dynamic-content:
     - npm run generateIntermediaryFiles
     - npm run generateTargetAudienceMaps
     - npm run generateTargetAudiencePages
+    - npm run generateTokenFile
   artifacts:
     paths:
       - mkdocs/docs/config/*
