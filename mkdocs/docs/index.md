@@ -69,5 +69,13 @@ field of Quality Engineering (QE).<div class="mb-2"></div>The prompts are divers
         </div>
     </div>
 </div>
-<div class="mb-2"></div>
-<a class="link link-success float-end" href="export.html"><i class="fa-solid fa-circle-chevron-left"></i> Export prompts</a>
+
+<div class="container">
+    <div class="row float-end">
+        <a class="link link-danger" href="/prompts/create_edit_prompt.html"><i class="fa-solid fa-circle-chevron-right"></i> Create prompt</a>
+    </div>
+    <br>
+    <div class="row float-end">
+        <a class="link link-success" href="export.html"><i class="fa-solid fa-circle-chevron-left"></i> Export prompts</a>
+    </div>
+</div>

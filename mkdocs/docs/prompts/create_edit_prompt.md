@@ -115,13 +115,19 @@
         <label for="selectPromptType" class="col-md-3 text-primary"><small>Prompt type:</small></label>
         <div class="col">
             <select id="selectPromptType" multiple="multiple" style="width: 100%;" class="multiple-select" aria-label="Select prompt type">
-                <option value="1">Zero-shot prompt</option>
-                <option value="2">One-shot prompt</option>
-                <option value="3">Few-shot prompt</option>
-                <option value="4">User prompt</option>
-                <option value="5">System prompt</option>
-                <option value="6">Template prompt</option>
-                <option value="7">Interactive prompt</option>
+                <optgroup label="# of shots">
+                    <option value="1">Zero-shot prompt</option>
+                    <option value="2">One-shot prompt</option>
+                    <option value="3">Few-shot prompt</option>
+                </optgroup>
+                <optgroup label="User/System prompt">
+                    <option value="4">User prompt</option>
+                    <option value="5">System prompt</option>
+                </optgroup>
+                <optgroup label="Way of providing data/variables">
+                    <option value="6">Template prompt</option>
+                    <option value="7">Interactive prompt</option>
+                </optgroup>
             </select>
         </div>
     </div>

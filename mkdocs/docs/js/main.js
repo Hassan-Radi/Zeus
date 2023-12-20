@@ -12,7 +12,7 @@ function populateThePage() {
   actions.enableTooltips();
 
   ui.showPageTitle();
-  ui.showPromptBookmarkOptions();
+  ui.showPromptButtons(true, true, true, true);
   ui.showPromptDetails();
   ui.showPromptHistory();
 

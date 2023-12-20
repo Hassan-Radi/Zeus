@@ -456,15 +456,10 @@ class Actions {
 
     // create a branch
     this.createBranch(branchName).then(r => {
-      console.log(r);
-
       // commit the json object as a file to the created branch
       this.commitToBranch(branchName, createdFileName, newPromptData).then(r => {
-        console.log(r);
-
         // create a merge request using the created branch
         this.createMergeRequest(branchName, createdFileName).then(r => {
-          console.log(r)
         }).catch(ex => console.log(ex));
       }).catch(ex => console.log(ex));
     }).catch(ex => console.log(ex));
@@ -529,7 +524,7 @@ class Actions {
     .then((response) => response.json())
     .then((json) => {
       tokenValue = json.token;
-    });
+    }).catch(ex => console.log(ex));
 
     return tokenValue;
   }
