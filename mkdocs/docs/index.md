@@ -8,10 +8,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
 
-<div>Zeus is a prompt library developed by Epam&copy;. The project focuses on prompts in the
-field of Quality Engineering (QE).<br><br>The prompts are diverse and cover a wide-range of roles throughout the SDLC. The prompts are split by target audience groups.</div>
-
-<br>
+Zeus is a prompt library developed by Epam&copy;. The project focuses on prompts in the
+field of Quality Engineering (QE).<div class="mb-2"></div>The prompts are diverse and cover a wide-range of roles throughout the SDLC. The prompts are split by target audience groups.
+<div class="mb-4"></div>
 <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col">
         <div class="card" style="width: 10rem;">
@@ -70,5 +69,5 @@ field of Quality Engineering (QE).<br><br>The prompts are diverse and cover a wi
         </div>
     </div>
 </div>
-<br>
+<div class="mb-2"></div>
 <a class="link link-success float-end" href="export.html"><i class="fa-solid fa-circle-chevron-left"></i> Export prompts</a>
