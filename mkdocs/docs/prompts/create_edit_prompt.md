@@ -135,5 +135,20 @@
       <input class="form-check-input" type="checkbox" role="switch" id="agreeToTerms">
       <label class="form-check-label" for="agreeToTerms"><small>A prompt is a form of copyrighted material. By submitting this data, you are agreeing to relinquish all your rights over this prompt to Epam&copy; and its subsidiaries.</small></label>
     </div>
-    <a type="button" id="submitPrompt" class="btn btn-sm btn-success link-light float-end mb-2" onclick="actions.submitNewPrompt(event);"><i class="fa-regular fa-square-plus"></i> Submit</a>
+    <a type="button" id="submitPrompt" class="btn btn-sm btn-success link-light float-end mb-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="actions.submitNewPrompt(event);"><i class="fa-regular fa-square-plus"></i> Submit</a>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="submitPromptModalHeader"></h1>
+        </div>
+        <div id="submitPromptModalBody" class="modal-body"></div>
+        <div id="modalFooter" class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+        </div>
+    </div>
+  </div>
 </div>

@@ -406,28 +406,28 @@ class Actions {
     return output;
   }
 
-  submitNewPrompt(){
+  submitNewPrompt(event){
     // check if the user didn't agree to the terms
     if(!this.isCheckBoxChecked(document.getElementById('agreeToTerms'))){
-      alert("Please agree to the terms first.");
+      this.showModalMessage(false,"Error!", false, "Please agree to the terms first.");
       return;
     }
 
     // check if the user didn't select any badges
     if($('#selectBadges').val() == 0){
-      alert("Please select at least one badge!");
+      this.showModalMessage(false,"Error!", false, "Please select at least one badge!");
       return;
     }
 
     // check if the user didn't select any target audience
     if($('#selectTargetAudience').val() == 0){
-      alert("Please select at least one target audience!");
+      this.showModalMessage(false,"Error!", false, "Please select at least one target audience!");
       return;
     }
 
     // check if the user didn't select any prompt type
     if($('#selectPromptType').val() == 0){
-      alert("Please select at least one prompt type!");
+      this.showModalMessage(false, "Error!", false, "Please select at least one prompt type!");
       return;
     }
 
@@ -460,61 +460,86 @@ class Actions {
       this.commitToBranch(branchName, createdFileName, newPromptData).then(r => {
         // create a merge request using the created branch
         this.createMergeRequest(branchName, createdFileName).then(r => {
-        }).catch(ex => console.log(ex));
-      }).catch(ex => console.log(ex));
-    }).catch(ex => console.log(ex));
-  }
-
-  async commitToBranch(branchName, createdFileName, newPromptData) {
-    return fetch(
-        `${GIT_BASE_URL}/api/v4/projects/${PROJECT_ENCODED_URL}/repository/commits`,
-        {
-          method: "POST",
-          headers: {
-            "PRIVATE-TOKEN": `${await this.readToken()}`,
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            "branch": `${branchName}`,
-            "commit_message": "Automated PR creation from the GUI.",
-            "actions": [
-              {
-                "action": "create",
-                "file_path": "mkdocs/docs/json/" + `${createdFileName}`,
-                "content": `${JSON.stringify(newPromptData, null, 2)}`
-              }
-            ]
-          }),
+          this.showModalMessage(true, "Your prompt is getting created!", true,
+              "<br>Waiting for merge request to be approved and merged...");
         });
-  }
-
-  async createBranch(branchName) {
-    return fetch(
-        `${GIT_BASE_URL}/api/v4/projects/${PROJECT_ENCODED_URL}/repository/branches?`+
-          `branch=${branchName}` +
-          `&ref=main`,
-        {
-          method: "POST",
-          headers: {
-            "PRIVATE-TOKEN": `${await this.readToken()}`
-          }
+      });
     });
   }
 
-  async createMergeRequest(branchName, createdFileName) {
+  async commitToBranch(branchName, createdFileName, newPromptData) {
+    this.showModalMessage(true, "Your prompt is getting created!", true,
+        "<br>Creating a JSON file from the provided data and committing it to the branch...");
+
     return fetch(
-        `${GIT_BASE_URL}/api/v4/projects/${PROJECT_ENCODED_URL}/merge_requests?` +
-          `source_branch=${branchName}` +
-          `&target_branch=main` +
-          `&remove_source_branch=true` +
-          `&squash=true` +
-          `&title=[Zeus Bot] Added file "${createdFileName}"`,
+      `${GIT_BASE_URL}/api/v4/projects/${PROJECT_ENCODED_URL}/repository/commits`,
+      {
+        method: "POST",
+        headers: {
+          "PRIVATE-TOKEN": `${await this.readToken()}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          "branch": `${branchName}`,
+          "commit_message": "Automated PR creation from the GUI.",
+          "actions": [
+            {
+              "action": "create",
+              "file_path": "mkdocs/docs/json/" + `${createdFileName}`,
+              "content": `${JSON.stringify(newPromptData, null, 2)}`
+            }
+          ]
+        }),
+    }).then(async r => {
+      // Show file committed message
+      let commitUrl = await r.json().then(json => json.web_url);
+      this.showModalMessage(true, "Your prompt is getting created!", true,
+          `<br><i class="fa-solid fa-check" style="color: #00ff4c;"></i> File committed to branch [<a href=\"${commitUrl}\" target="_blank" rel="noopener">URL</a>].`);
+    }).catch(ex => console.log(ex));
+  }
+
+  async createBranch(branchName) {
+    this.showModalMessage(true, "Your prompt is getting created!", false, "Creating a new branch in the code repository...");
+
+    return fetch(
+      `${GIT_BASE_URL}/api/v4/projects/${PROJECT_ENCODED_URL}/repository/branches?`+
+        `branch=${branchName}` +
+        `&ref=main`,
+      {
+        method: "POST",
+        headers: {
+          "PRIVATE-TOKEN": `${await this.readToken()}`
+        }
+    }).then(async r => {
+      // show branch URL message
+      let branchUrl = await r.json().then(json => json.web_url);
+      this.showModalMessage(true, "Your prompt is getting created!", true,
+          `<br><i class="fa-solid fa-check" style="color: #00ff4c;"></i> Branch created [<a href=\"${branchUrl}\" target="_blank" rel="noopener">URL</a>].`);
+    }).catch(ex => console.log(ex));
+  }
+
+  async createMergeRequest(branchName, createdFileName) {
+    this.showModalMessage(true, "Your prompt is getting created!", true,
+        "<br>Creating a merge request to merge your changes to the main branch...");
+
+    return fetch(
+      `${GIT_BASE_URL}/api/v4/projects/${PROJECT_ENCODED_URL}/merge_requests?` +
+        `source_branch=${branchName}` +
+        `&target_branch=main` +
+        `&remove_source_branch=true` +
+        `&squash=true` +
+        `&title=[Zeus Bot] Added file "${createdFileName}"`,
         {
           method: "POST",
           headers: {
             "PRIVATE-TOKEN": `${await this.readToken()}`
           }
-        });
+    }).then(async r => {
+      // Show merge request message
+      let mergeRequestUrl = await r.json().then(json => json.web_url);
+      this.showModalMessage(true, "Your prompt is getting created!", true,
+          `<br><i class="fa-solid fa-check" style="color: #00ff4c;"></i> Merge request created [<a href=\"${mergeRequestUrl}\" target="_blank" rel="noopener">URL</a>].`);
+    }).catch(ex => console.log(ex));
   }
 
   async readToken(){
@@ -527,5 +552,17 @@ class Actions {
     }).catch(ex => console.log(ex));
 
     return tokenValue;
+  }
+
+  showModalMessage(hideFooter, headerText, isAppendMode, message){
+    if(hideFooter){
+      document.getElementById('modalFooter').classList.add('visually-hidden');
+    }
+
+    document.getElementById('submitPromptModalHeader').textContent = headerText;
+
+    isAppendMode ?
+      document.getElementById('submitPromptModalBody').innerHTML += message :
+      document.getElementById('submitPromptModalBody').innerHTML = message;
   }
 }
