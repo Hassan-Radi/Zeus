@@ -693,12 +693,10 @@ class Actions {
           }
         }).then(async r => {
       // TODO: handle the case where you receive multiple pipelines in the response
-      pipelineUrl = r.json().then(json => {
-        if(json.length > 0) {
-          json[0].web_url
-        }
-      });
-    }).catch(ex => console.log(ex));
+      pipelineUrl = r.json().then(json => json[0].web_url);
+    }).catch(ex => {
+      // ignore it and do nothing here
+    });
 
     return pipelineUrl;
   }
