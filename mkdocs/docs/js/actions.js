@@ -444,7 +444,10 @@ class Actions {
         "1": {
           "revisedPrompt": `${document.getElementById('promptTextArea').value}`,
           "changeLog": `${document.getElementById('changelogTextArea').value}`,
-          "promptType": `${$('#selectPromptType').val()}`.split(',').map(index => $('#selectPromptType option').eq(index - 1).text().toUpperCase()),
+          "promptType": `${$('#selectPromptType').val()}`.split(',').map(index =>
+              $('#selectPromptType option').eq(index - 1).text().toUpperCase()
+              .replaceAll(' ', '_')
+              .replaceAll('-', '_')),
           "llmModel": `${$("#llmModel option:selected").text()}`
         }
       }
@@ -459,12 +462,105 @@ class Actions {
       // commit the json object as a file to the created branch
       this.commitToBranch(branchName, createdFileName, newPromptData).then(r => {
         // create a merge request using the created branch
-        this.createMergeRequest(branchName, createdFileName).then(r => {
+        this.createMergeRequest(branchName, createdFileName).then(async mergeRequestID => {
           this.showModalMessage(true, "Your prompt is getting created!", true,
               "<br>Waiting for merge request to be approved and merged...");
+
+          await this.waitForMergeRequestToBeMerged(mergeRequestID, createdFileName);
         });
       });
     });
+  }
+
+  completeMergeRequestPipeline(mergeRequestState, createdFileName){
+    if (mergeRequestState === "merged") {
+      setTimeout(async () => {
+        // Get the pipeline ID
+        // TODO: find a way to tie the MR with the pipeline
+        let intervalID = window.setInterval(async () => {
+          await this.getPipelineUrl().then(pipelineUrl => {
+            if(pipelineUrl === undefined){
+              this.showModalMessage(true, "Your prompt is getting created!", true,
+                  "<br>Waiting for pipeline...");
+            } else {
+              this.showModalMessage(true, "Your prompt is getting created!", true,
+                  `<br><i class="fa-solid fa-check" style="color: #00ff4c;"></i> Pipeline created [<a href=\"${pipelineUrl}\" target="_blank" rel="noopener">URL</a>].`);
+              window.clearInterval(intervalID);
+            }
+          });
+        }, 1000);
+
+        // TODO: Find a better way to do this, so we don't repeat the request
+        await this.getPipelineUrl().then(pipelineUrl => {
+          let mergeRequestPipelineID = pipelineUrl.substring(pipelineUrl.lastIndexOf("/") + 1)
+          this.waitForPipelineToFinish(mergeRequestPipelineID, createdFileName);
+        });
+
+      }, 5000);
+    } else {
+      console.log("Merge request wasn't merged in time. Moving on...");
+    }
+  }
+
+  showNewPromptPage(createdFileName){
+    // Show the new page
+    setTimeout(() => {
+      window.location.href = `${window.location.origin}/prompts/prompt_page.html?prompt=${createdFileName.replace('.json', '')}`;
+    }, 1000);
+  }
+
+  async waitForMergeRequestToBeMerged(mergeRequestID, createdFileName) {
+    let x = 0;
+    let mergeRequestState;
+    let intervalID = window.setInterval(async () => {
+      mergeRequestState = await this.getMergeRequestState(mergeRequestID);
+
+      if (mergeRequestState === "merged") {
+        this.showModalMessage(true, "Your prompt is getting created!", true,
+            `<br><i class="fa-solid fa-check" style="color: #00ff4c;"></i> Merge request is successfully merged.`);
+
+        window.clearInterval(intervalID);
+        this.completeMergeRequestPipeline(mergeRequestState, createdFileName);
+      } else {
+        this.showModalMessage(true, "Your prompt is getting created!", true,
+            `<br>[${x
+            + 1}] Merge request is [${mergeRequestState}]. Waiting until it gets merged...`);
+      }
+
+      // show failure message when timing out
+      if (++x === 9) {
+        this.showModalMessage(true, "Your prompt is getting created!", true,
+            `<br>[${x
+            + 1}] No one approved the merge request on time, please contact one of the code maintainers to approve it.`);
+        window.clearInterval(intervalID);
+      }
+    }, 5000);
+  }
+
+  waitForPipelineToFinish(pipelineID, createdFileName){
+    let x = 0;
+    let intervalID = window.setInterval(async () => {
+      let pipelineStatus = await this.getPipelineStatus(pipelineID);
+
+      if(pipelineStatus === "success"){
+        this.showModalMessage(true, "Your prompt is getting created!", true,
+            `<br><i class="fa-solid fa-check" style="color: #00ff4c;"></i> Pipeline succeeded.`);
+        window.clearInterval(intervalID);
+        this.showNewPromptPage(createdFileName);
+      } else {
+        this.showModalMessage(true, "Your prompt is getting created!", true,
+            `<br>[${x
+            + 1}] Pipeline status is [${pipelineStatus}]. Waiting until it finishes...`);
+      }
+
+      // show failure message when timing out
+      if (++x === 30) {
+        this.showModalMessage(true, "Your prompt is getting created!", true,
+            `<br>[${x
+            + 1}] Pipeline timed out.`);
+        window.clearInterval(intervalID);
+      }
+    }, 10000);
   }
 
   async commitToBranch(branchName, createdFileName, newPromptData) {
@@ -522,7 +618,8 @@ class Actions {
     this.showModalMessage(true, "Your prompt is getting created!", true,
         "<br>Creating a merge request to merge your changes to the main branch...");
 
-    return fetch(
+    let mergeRequestID;
+    await fetch(
       `${GIT_BASE_URL}/api/v4/projects/${PROJECT_ENCODED_URL}/merge_requests?` +
         `source_branch=${branchName}` +
         `&target_branch=main` +
@@ -537,9 +634,61 @@ class Actions {
     }).then(async r => {
       // Show merge request message
       let mergeRequestUrl = await r.json().then(json => json.web_url);
+      mergeRequestID = mergeRequestUrl.substring(mergeRequestUrl.lastIndexOf("/") + 1);
       this.showModalMessage(true, "Your prompt is getting created!", true,
           `<br><i class="fa-solid fa-check" style="color: #00ff4c;"></i> Merge request created [<a href=\"${mergeRequestUrl}\" target="_blank" rel="noopener">URL</a>].`);
     }).catch(ex => console.log(ex));
+
+    return mergeRequestID;
+  }
+
+  async getMergeRequestState(mergeRequestID){
+    let mergeRequestState;
+    await fetch(
+      `${GIT_BASE_URL}/api/v4/projects/${PROJECT_ENCODED_URL}/merge_requests/${mergeRequestID}`,
+      {
+        method: "GET",
+        headers: {
+          "PRIVATE-TOKEN": `${await this.readToken()}`
+        }
+    }).then(async r => {
+      mergeRequestState = await r.json().then(json => json.state);
+    }).catch(ex => console.log(ex));
+
+    return mergeRequestState;
+  }
+
+  async getPipelineUrl(){
+    let pipelineUrl;
+    await fetch(
+        `${GIT_BASE_URL}/api/v4/projects/${PROJECT_ENCODED_URL}/pipelines?status=running`,
+        {
+          method: "GET",
+          headers: {
+            "PRIVATE-TOKEN": `${await this.readToken()}`
+          }
+    }).then(async r => {
+      // TODO: handle the case where you receive multiple pipelines in the response
+      pipelineUrl = r.json().then(json => json[0].web_url);
+    }).catch(ex => {});
+
+    return pipelineUrl;
+  }
+
+  async getPipelineStatus(pipelineID){
+    let pipelineStatus;
+    await fetch(
+        `${GIT_BASE_URL}/api/v4/projects/${PROJECT_ENCODED_URL}/pipelines/${pipelineID}`,
+        {
+          method: "GET",
+          headers: {
+            "PRIVATE-TOKEN": `${await this.readToken()}`
+          }
+    }).then(async r => {
+      pipelineStatus = await r.json().then(json => json.status);
+    }).catch(ex => console.log(ex));
+
+    return pipelineStatus;
   }
 
   async readToken(){
