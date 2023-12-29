@@ -479,7 +479,7 @@ class Actions {
         // TODO: find a way to tie the MR with the pipeline
         let intervalID = window.setInterval(async () => {
           await this.getPipelineUrl().then(pipelineUrl => {
-            if(pipelineUrl === undefined){
+            if(pipelineUrl === null || pipelineUrl === undefined || pipelineUrl.isEmpty()){
               this.showModalMessage(true, "Your prompt is getting created!", true,
                   "<br>Waiting for pipeline...");
             } else {
