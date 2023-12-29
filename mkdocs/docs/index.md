@@ -1,4 +1,5 @@
 # Zeus
+
 <script type="text/javascript" src="/js/ui.js"></script>
 <script type="text/javascript" src="/js/actions.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
@@ -9,7 +10,8 @@
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
 
 Zeus is a prompt library developed by Epam&copy;. The project focuses on prompts in the
-field of Quality Engineering (QE).<div class="mb-2"></div>The prompts are diverse and cover a wide-range of roles throughout the SDLC. The prompts are split by target audience groups.
+field of Quality Engineering (QE).<div class="mb-2"></div>The prompts are diverse and cover a
+wide-range of roles throughout the SDLC. The prompts are split by target audience groups.
 <div class="mb-4"></div>
 <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col">

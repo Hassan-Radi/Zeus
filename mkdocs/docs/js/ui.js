@@ -45,14 +45,14 @@ class UI {
       divElement.innerHTML = `
         <b>Submitted originally by:</b> ${JSON.stringify(
           json.submittedOriginallyBy).replaceAll('\"', '')
-          .replaceAll('[', '')
-          .replaceAll(']', '')
-          .replaceAll(',', ', ')} <br>
+      .replaceAll('[', '')
+      .replaceAll(']', '')
+      .replaceAll(',', ', ')} <br>
         <b>Optimized by:</b> ${JSON.stringify(
           json.optimizedBy).replaceAll('\"', '')
-          .replaceAll('[', '')
-          .replaceAll(']', '')
-          .replaceAll(',', ', ')} <br>
+      .replaceAll('[', '')
+      .replaceAll(']', '')
+      .replaceAll(',', ', ')} <br>
         <b>Type:</b> ${this.getPromptTypeAsLinks(
           json.promptHistory[Object.keys(
               json.promptHistory).length].promptType)} <br>
@@ -177,7 +177,7 @@ class UI {
     }
   }
 
-  showPageTitle(){
+  showPageTitle() {
     fetch(JSON_FILE_PATH)
     .then((response) => response.json())
     .then((json) => {
@@ -185,26 +185,27 @@ class UI {
     });
   }
 
-  showPromptButtons(showCreatePrompt, showExportPrompts, showBookmarkPrompt, showClearBookmarks) {
+  showPromptButtons(showCreatePrompt, showExportPrompts, showBookmarkPrompt,
+      showClearBookmarks) {
     const divElement = document.createElement('div');
     divElement.classList = 'float-end';
 
-    if(showClearBookmarks){
+    if (showClearBookmarks) {
       divElement.innerHTML += `
        <button id="clear-bookmarked-prompts" class="btn btn-light fa-solid fa-delete-left" data-toggle="tooltip" type="button" title="${ORIGINAL_CLEAR_ALL_PROMPTS_TOOLTIP}" onclick="actions.removeAllBookmarks(true);" onmouseleave="actions.resetRemoveAllBookmarksTooltip(event);"></button>`;
     }
 
-    if(showBookmarkPrompt){
+    if (showBookmarkPrompt) {
       divElement.innerHTML += `
        <button id="bookmark-prompt" class="btn btn-light fa-regular fa-bookmark" data-toggle="tooltip" type="button" title onclick="actions.bookmarkPrompt(event);" onmouseleave="actions.resetBookmarkTooltip(event);"></button>`;
     }
 
-    if(showExportPrompts){
+    if (showExportPrompts) {
       divElement.innerHTML += `
        <button id="export-prompts" class="btn btn-light fa-solid fa-file-export" data-toggle="tooltip" type="button" title="Export prompts" onclick="window.location='/export.html';"></button>`;
     }
 
-    if(showCreatePrompt){
+    if (showCreatePrompt) {
       divElement.innerHTML += `
        <button id="create-prompt" class="btn btn-light fa-regular fa-square-plus btn-block" data-toggle="tooltip" type="button" title="Create prompt" onclick="window.location='/prompts/create_edit_prompt.html';"></button>
       `;

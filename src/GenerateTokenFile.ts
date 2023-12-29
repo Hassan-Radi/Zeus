@@ -11,7 +11,7 @@ test('Create the token file', (t) => {
   // Get the token value from the environment variables
   let envValue = process.env.GIT_TOKEN ? process.env.GIT_TOKEN.toString() : "";
 
-  if(envValue !== ""){
+  if (envValue !== "") {
     jsonOutput.token = envValue;
   } else {
     throw new Error("There is no such variable with this name!");

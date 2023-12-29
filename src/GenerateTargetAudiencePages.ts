@@ -11,7 +11,7 @@ let outputText = "";
 test('Generate target audience pages', (t) => {
   let targetAudienceEntries = JSON.parse(fs.readFileSync("./" + TARGET_AUDIENCE_FILE, "utf8"));
   targetAudienceEntries.forEach((targetAudienceEntry: string) => {
-    let fileName = targetAudienceEntry.toLowerCase().replace(' ','_');
+    let fileName = targetAudienceEntry.toLowerCase().replace(' ', '_');
 
     // Add page header
     outputText += "# " + targetAudienceEntry;
@@ -44,9 +44,9 @@ test('Generate target audience pages', (t) => {
   });
 });
 
-function addPrompts(outputText: string, mapEntries: Map<string, string[]>){
+function addPrompts(outputText: string, mapEntries: Map<string, string[]>) {
   // Loop on all keys in the map and add them one by one
-  mapEntries.forEach( (values, key) => {
+  mapEntries.forEach((values, key) => {
     // Add the category header
     outputText += "\n## " + key + "\n";
 
@@ -61,12 +61,12 @@ function addPrompts(outputText: string, mapEntries: Map<string, string[]>){
       // Add the prompts in the category
       outputText += "    <li class=\"list-group-item d-flex justify-content-between align-items-start\">\n" +
           "        <div class=\"ms-2 me-auto\">\n";
-      outputText += "          <a href=\"../prompt_page.html?prompt="+ value + "\"><small>" + `${promptData.title}` + "</small></a>\n";
+      outputText += "          <a href=\"../prompt_page.html?prompt=" + value + "\"><small>" + `${promptData.title}` + "</small></a>\n";
       outputText += "        </div>\n";
 
       // Add badges
       let badges = `${promptData.badges}`.split(',');
-      if(badges.length != 0){
+      if (badges.length != 0) {
         outputText = addBadges(outputText, badges);
       }
 
@@ -83,8 +83,8 @@ function addPrompts(outputText: string, mapEntries: Map<string, string[]>){
 function addBadges(outputText: string, badges: string[]) {
   outputText += "        <div>\n";
 
-  badges.forEach( (badge) => {
-    switch (badge){
+  badges.forEach((badge) => {
+    switch (badge) {
       case ("New"):
         outputText += "            <span class=\"badge bg-primary rounded-pill\"><small>New</small></span>\n";
         break;

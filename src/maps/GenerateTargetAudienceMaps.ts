@@ -8,8 +8,7 @@ let jsonOutput = new Map<string, string[]>;
 
 test('Generate target audience maps', (t) => {
   let targetAudienceEntries = JSON.parse(fs.readFileSync("./" + TARGET_AUDIENCE_FILE, "utf8"));
-  targetAudienceEntries.forEach((targetAudienceEntry: string) =>
-  {
+  targetAudienceEntries.forEach((targetAudienceEntry: string) => {
     // Get all the files in the directory
     let files = fs.readdirSync(MK_DOCS_JSON_PATH);
 
@@ -18,12 +17,12 @@ test('Generate target audience maps', (t) => {
       let data = fs.readFileSync("./" + MK_DOCS_JSON_PATH + '/' + file, "utf8");
       let jsonObject = JSON.parse(data);
 
-      if(`${jsonObject.targetAudience}`.split(",").includes(targetAudienceEntry)) {
+      if (`${jsonObject.targetAudience}`.split(",").includes(targetAudienceEntry)) {
         // check if the key already exists in the map
-        if(jsonOutput.has(`${jsonObject.category}`)) {
+        if (jsonOutput.has(`${jsonObject.category}`)) {
           let internalArray = jsonOutput.get(`${jsonObject.category}`);
 
-          if(internalArray != undefined){
+          if (internalArray != undefined) {
             internalArray.push(file.replace('.json', ''));
             jsonOutput.set(`${jsonObject.category}`, internalArray);
           }
@@ -40,8 +39,7 @@ test('Generate target audience maps', (t) => {
 
     // Write the extracted info in a json file
     // TODO: convert file name to camelCase
-    const OUTPUT_FILE = OUTPUT_FILE_PATH + "/" + targetAudienceEntry.
-      toLowerCase().replace(' ', '_') + "Map.json";
+    const OUTPUT_FILE = OUTPUT_FILE_PATH + "/" + targetAudienceEntry.toLowerCase().replace(' ', '_') + "Map.json";
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(Object.fromEntries(jsonOutput)), "utf8");
 
     // clear the output object, so new iterations start fresh
