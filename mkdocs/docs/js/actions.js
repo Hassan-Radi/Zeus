@@ -488,7 +488,7 @@ class Actions {
     });
   }
 
-  completeMergeRequestPipeline(mergeRequestState, createdFileName) {
+  waitForPipelineToBeCreated(mergeRequestState, createdFileName) {
     if (mergeRequestState === "merged") {
       setTimeout(async () => {
         // Get the pipeline ID
@@ -500,23 +500,25 @@ class Actions {
             this.showModalMessage(true, "Your prompt is getting created!", true,
                 `<br><i class="fa-solid fa-check" style="color: #00ff4c;"></i> Pipeline created [<a href=\"${pipelineUrl}\" target="_blank" rel="noopener">URL</a>].`);
             window.clearInterval(intervalID);
+            this.completeMergeRequestPipeline(createdFileName);
           }).catch(ex => {
             this.showModalMessage(true, "Your prompt is getting created!", true,
                 "<br>Waiting for pipeline...");
           });
         }, 1000);
-
-        // TODO: Find a better way to do this, so we don't repeat the request
-        await this.getPipelineUrl().then(pipelineUrl => {
-          let mergeRequestPipelineID = pipelineUrl.substring(
-              pipelineUrl.lastIndexOf("/") + 1)
-          this.waitForPipelineToFinish(mergeRequestPipelineID, createdFileName);
-        });
-
       }, 5000);
     } else {
       console.log("Merge request wasn't merged in time. Moving on...");
     }
+  }
+
+  async completeMergeRequestPipeline(createdFileName) {
+    // TODO: Find a better way to do this, so we don't repeat the request
+    await this.getPipelineUrl().then(pipelineUrl => {
+      let mergeRequestPipelineID = pipelineUrl.substring(
+          pipelineUrl.lastIndexOf("/") + 1)
+      this.waitForPipelineToFinish(mergeRequestPipelineID, createdFileName);
+    });
   }
 
   showNewPromptPage(createdFileName) {
@@ -538,7 +540,7 @@ class Actions {
             `<br><i class="fa-solid fa-check" style="color: #00ff4c;"></i> Merge request is successfully merged.`);
 
         window.clearInterval(intervalID);
-        this.completeMergeRequestPipeline(mergeRequestState, createdFileName);
+        this.waitForPipelineToBeCreated(mergeRequestState, createdFileName);
       } else {
         this.showModalMessage(true, "Your prompt is getting created!", true,
             `<br>[${x
@@ -691,7 +693,11 @@ class Actions {
           }
         }).then(async r => {
       // TODO: handle the case where you receive multiple pipelines in the response
-      pipelineUrl = r.json().then(json => json[0].web_url);
+      pipelineUrl = r.json().then(json => {
+        if(json.length > 0) {
+          json[0].web_url
+        }
+      });
     }).catch(ex => console.log(ex));
 
     return pipelineUrl;
