@@ -441,7 +441,7 @@ class Actions {
     let newPromptData = {
       "title": `${document.getElementById('promptTitle').value}`,
       "pageHeader": `${document.getElementById('pageHeader').value}`,
-      "category": `${document.getElementById('category').value}`,
+      "category": `${$("#category option:selected").text()}`,
       "badges": `${$('#selectBadges').val()}`.split(',').map(
           index => $('#selectBadges option').eq(index - 1).text()),
       "targetAudience": `${$('#selectTargetAudience').val()}`.split(',').map(
@@ -479,7 +479,7 @@ class Actions {
                 async mergeRequestID => {
                   this.showModalMessage(true, "Your prompt is getting created!",
                       true,
-                      "<br>Waiting for merge request to be approved and merged...");
+                      "<br>To ensure prompt quality, your data has to be reviewed and approved by one of the code maintainers. Waiting for merge request to be merged...");
 
                   await this.waitForMergeRequestToBeMerged(mergeRequestID,
                       createdFileName);
@@ -550,8 +550,7 @@ class Actions {
       // show failure message when timing out
       if (++x === 9) {
         this.showModalMessage(true, "Your prompt is getting created!", true,
-            `<br>[${x
-            + 1}] No one approved the merge request on time, please contact one of the code maintainers to approve it.`);
+            `<br><i class="fa-solid fa-x" style="color: #ff0000;"></i> Timed out waiting for the merge request to be merged. Please contact one of the code maintainers.`);
         window.clearInterval(intervalID);
       }
     }, 5000);

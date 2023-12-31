@@ -1,3 +1,5 @@
+const CATEGORIES_FILE_PATH = "/config/categories.json";
+
 class UI {
 
   showPromptHistory() {
@@ -212,5 +214,21 @@ class UI {
     }
 
     document.getElementsByTagName('h1')[0].before(divElement);
+  }
+
+  loadCategoryOptions(){
+    fetch(CATEGORIES_FILE_PATH)
+    .then((response) => response.json())
+    .then((json) => {
+      let index = 0;
+      json.forEach(item => {
+        const newOption = document.createElement('option');
+        const optionText = document.createTextNode(item);
+        newOption.appendChild(optionText);
+        newOption.setAttribute('value', index.toString());
+        index++;
+        document.getElementById('category').appendChild(newOption); 
+      });
+    });
   }
 }

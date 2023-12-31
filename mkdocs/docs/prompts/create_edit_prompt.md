@@ -12,55 +12,70 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <script>
-  $(function() {
-    $('.multiple-select').select2();
-  })
+    $(function() {
+        $('.multiple-select').select2();
+        $('.multiple-select-tags').select2({
+            tags: true
+        });
+    });
+    ui.loadCategoryOptions();
 </script>
 
 <div class="container">
-  <div class="row">
-    <div class="input-group input-group-sm mb-2">
-      <span class="input-group-text text-primary"><small>Prompt title:</small></span>
-      <input type="text" class="form-control" aria-label="Prompt Title input" id="promptTitle">
-    </div>
-  </div>
-  <div class="row">
-    <div class="input-group input-group-sm mb-2">
-      <span class="input-group-text text-primary"><small>Page header:</small></span>
-      <input type="text" class="form-control" aria-label="Page Header input" id="pageHeader">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
+    <div class="row">
         <div class="input-group input-group-sm mb-2">
-          <span class="input-group-text text-primary"><small>Category:</small></span>
-          <input type="text" class="form-control" aria-label="Category input" id="category">
-        </div>
-        <div class="input-group input-group-sm mb-2">
-          <label class="input-group-text text-primary" for="llmModel"><small>LLM Model:</small></label>
-          <select class="form-select" id="llmModel">
-            <option>GPT-3.5</option>
-            <option value="1">GPT-4</option>
-            <option value="2">LLaMA</option>
-            <option value="3">LLaMA 2</option>
-            <option value="4">PaLM</option>
-            <option value="5">PaLM 2</option>
-            <option value="6">Med-PaLM</option>
-            <option value="7">Gemini</option>
-          </select>
+          <span class="input-group-text text-primary"><small>Prompt title:</small></span>
+          <input type="text" class="form-control" aria-label="Prompt Title input" id="promptTitle">
         </div>
     </div>
-    <div class="col mb-2">
+    <div class="row">
         <div class="input-group input-group-sm mb-2">
-          <span class="input-group-text text-primary"><small>Submitted by:</small></span>
-          <input type="text" class="form-control" aria-label="Submitted By input" id="submittedBy">
-        </div>
-        <div class="input-group input-group-sm">
-          <span class="input-group-text text-primary"><small>Optimized by:</small></span>
-          <input type="text" class="form-control" aria-label="Optimized By input" id="optimizedBy">
+          <span class="input-group-text text-primary"><small>Page header:</small></span>
+          <input type="text" class="form-control" aria-label="Page Header input" id="pageHeader">
         </div>
     </div>
-  </div>
+    <div class="row">
+        <div class="col mb-2">
+            <div class="input-group input-group-sm">
+              <span class="input-group-text text-primary"><small>Submitted by:</small></span>
+              <input type="text" class="form-control" aria-label="Submitted By input" id="submittedBy">
+            </div>
+        </div>
+        <div class="col mb-2">
+            <div class="input-group input-group-sm">
+              <span class="input-group-text text-primary"><small>Optimized by:</small></span>
+              <input type="text" class="form-control" aria-label="Optimized By input" id="optimizedBy">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="row mb-2">
+              <label class="col-md-4 text-primary" for="llmModel"><small>LLM Model:</small></label>
+                <div class="col">
+                  <select class="multiple-select-tags" style="width: 100%;" id="llmModel">
+                    <option>GPT-3.5</option>
+                    <option value="1">GPT-4</option>
+                    <option value="2">LLaMA</option>
+                    <option value="3">LLaMA 2</option>
+                    <option value="4">PaLM</option>
+                    <option value="5">PaLM 2</option>
+                    <option value="6">Med-PaLM</option>
+                    <option value="7">Gemini</option>
+                  </select>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <label class="col-md-3 text-primary" for="category"><small>Category:</small></label>
+                <div class="col-md-9">
+                    <select id="category" style="width: 100%;" class="multiple-select-tags" aria-label="Category">
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="container mb-2">
