@@ -184,6 +184,11 @@ class UI {
     .then((response) => response.json())
     .then((json) => {
       document.getElementById('header').innerText = json.pageHeader;
+      document.title = json.pageHeader;
+      /**
+       * Show the same header text when you scroll down
+       */
+      this.getElementByXpath("//div[@data-md-component='header-topic']/span").textContent = json.pageHeader;
     });
   }
 
@@ -227,8 +232,12 @@ class UI {
         newOption.appendChild(optionText);
         newOption.setAttribute('value', index.toString());
         index++;
-        document.getElementById('category').appendChild(newOption); 
+        document.getElementById('category').appendChild(newOption);
       });
     });
+  }
+
+  getElementByXpath(path) {
+    return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
   }
 }
