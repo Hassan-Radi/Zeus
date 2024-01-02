@@ -440,7 +440,6 @@ class Actions {
     // user agreed, create a json object in preparation for the next steps
     let newPromptData = {
       "title": `${document.getElementById('promptTitle').value}`,
-      "pageHeader": `${document.getElementById('pageHeader').value}`,
       "category": `${$("#category option:selected").text()}`,
       "badges": `${$('#selectBadges').val()}`.split(',').map(
           index => $('#selectBadges option').eq(index - 1).text()),

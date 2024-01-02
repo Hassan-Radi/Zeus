@@ -1,6 +1,5 @@
 {
   "title": "Generate automation code from a BDD test case",
-  "pageHeader": "[Test code generation] Generate automation code from a BDD test case",
   "category": "Test code generation",
   "badges": [
     "New",

@@ -183,12 +183,13 @@ class UI {
     fetch(JSON_FILE_PATH)
     .then((response) => response.json())
     .then((json) => {
-      document.getElementById('header').innerText = json.pageHeader;
-      document.title = json.pageHeader;
+      let pageTitle = `[${json.category}] ${json.title}`;
+      document.getElementById('header').innerText = pageTitle;
+      document.title = pageTitle;
       /**
        * Show the same header text when you scroll down
        */
-      this.getElementByXpath("//div[@data-md-component='header-topic']/span").textContent = json.pageHeader;
+      this.getElementByXpath("//div[@data-md-component='header-topic']/span").textContent = pageTitle;
     });
   }
 

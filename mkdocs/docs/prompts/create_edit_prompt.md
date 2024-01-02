@@ -24,14 +24,8 @@
 <div class="container">
     <div class="row">
         <div class="input-group input-group-sm mb-2">
-          <span class="input-group-text text-primary"><small>Prompt title:</small></span>
+          <span class="input-group-text text-primary"><small>Title:</small></span>
           <input type="text" class="form-control" aria-label="Prompt Title input" id="promptTitle">
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-group input-group-sm mb-2">
-          <span class="input-group-text text-primary"><small>Page header:</small></span>
-          <input type="text" class="form-control" aria-label="Page Header input" id="pageHeader">
         </div>
     </div>
     <div class="row">

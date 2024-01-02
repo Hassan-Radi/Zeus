@@ -1,6 +1,5 @@
 {
   "title": "Generate API test cases from a Swagger link",
-  "pageHeader": "[Test case generation] Generate API test cases from a Swagger link",
   "category": "Test case generation",
   "badges": [
     "New",

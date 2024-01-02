@@ -1,6 +1,5 @@
 {
   "title": "Convert plain test case to Gherkin-style",
-  "pageHeader": "[Test case conversion] Convert plain test case to Gherkin-style",
   "category": "Test case conversion",
   "badges": [
     "New",
