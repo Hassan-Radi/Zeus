@@ -19,8 +19,8 @@
       "revisedPrompt": "\"Suggest automation frameworks that can help me automate this endpoint https://petstore.swagger.io/#/user/updateUser\"\n\"Compare them and suggest what can be used in case if I want to have only API tests and don't need UI tests.\"\n",
       "changeLog": "Original version.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-3.5"
     },
@@ -28,8 +28,8 @@
       "revisedPrompt": "Suggest automation frameworks that can help me automate this endpoint 'https://petstore.swagger.io/#/user/updateUser'. Compare them and suggest what can be used in case I want only API tests and don't need UI tests.",
       "changeLog": "Fixed grammar and spelling mistakes.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-3.5"
     },
@@ -37,8 +37,8 @@
       "revisedPrompt": "Suggest automation frameworks that can help me automate this endpoint 'https://petstore.swagger.io/#/user/updateUser'. Compare them and suggest what can be used in case I want only API tests and don't need UI tests.",
       "changeLog": "Switched to GPT-4.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-4"
     },
@@ -46,8 +46,8 @@
       "revisedPrompt": "Act as a Senior Quality Engineer and then perform the following actions: 1. Suggest automation frameworks that can help me automate this endpoint 'https://petstore.swagger.io/#/user/updateUser'. 2. Compare between the suggested frameworks and then choose which one would be more suitable in this case.",
       "changeLog": "Rephrased and enhanced the prompt.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-4"
     },
@@ -55,9 +55,9 @@
       "revisedPrompt": "Act as a Senior Quality Engineer and then perform the following actions: 1. Suggest automation frameworks that can help me automate this endpoint '{{ENDPOINT}}'. 2. Compare between the suggested frameworks and then choose which one would be more suitable in this case.",
       "changeLog": "Converted to a template prompt.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT",
-        "TEMPLATE_PROMPT"
+        "Zero-shot prompt",
+        "User prompt",
+        "Template prompt"
       ],
       "llmModel": "GPT-4",
       "sampleData": [
@@ -68,9 +68,9 @@
       "revisedPrompt": "Act as a Senior Quality Engineer and then perform the following actions: 1. Suggest automation frameworks that can help me automate the endpoint '{{ENDPOINT}}' using '{{PROGRAMMING_LANGUAGE}}' as a programming language. 2. Compare between the suggested frameworks and then choose which one would be more suitable in this case.",
       "changeLog": "Extended the prompt by including the suggested programming language.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT",
-        "TEMPLATE_PROMPT"
+        "Zero-shot prompt",
+        "User prompt",
+        "Template prompt"
       ],
       "llmModel": "GPT-4",
       "sampleData": [

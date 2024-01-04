@@ -21,8 +21,8 @@
       "revisedPrompt": "\"Suggest automation frameworks that can help me automate this endpoint https://petstore.swagger.io/#/user/updateUser\"\n\"Compare them and suggest what can be used in case if I want to have only API tests and don't need UI tests.\"\n",
       "changeLog": "Original version.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-3.5"
     },
@@ -30,8 +30,8 @@
       "revisedPrompt": "Suggest automation frameworks that can help me automate this endpoint 'https://petstore.swagger.io/#/user/updateUser'. Compare them and suggest what can be used in case I want only API tests and don't need UI tests.",
       "changeLog": "Fixed grammar and spelling mistakes.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-3.5"
     },
@@ -39,8 +39,8 @@
       "revisedPrompt": "Suggest automation frameworks that can help me automate this endpoint 'https://petstore.swagger.io/#/user/updateUser'. Compare them and suggest what can be used in case I want only API tests and don't need UI tests.",
       "changeLog": "Using GPT-4.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-4"
     },
@@ -48,8 +48,8 @@
       "revisedPrompt": "Act as a Senior Quality Engineer. Design test cases from the following endpoint 'https://petstore.swagger.io/#/user/updateUser'.",
       "changeLog": "Rephrased the prompt to produce better results.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-4"
     },
@@ -57,9 +57,9 @@
       "revisedPrompt": "Act as a Senior Quality Engineer. Design test cases from the following endpoint '{{ENDPOINT}}'.",
       "changeLog": "Converted to a template prompt.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT",
-        "TEMPLATE_PROMPT"
+        "Zero-shot prompt",
+        "User prompt",
+        "Template prompt"
       ],
       "llmModel": "GPT-4",
       "sampleData": [
@@ -70,9 +70,9 @@
       "revisedPrompt": "Act as a Senior Software Development Engineer in Test. Design test cases from the following endpoint '{{ENDPOINT}}'.",
       "changeLog": "Updated the prompt.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT",
-        "TEMPLATE_PROMPT"
+        "Zero-shot prompt",
+        "User prompt",
+        "Template prompt"
       ],
       "llmModel": "GPT-4",
       "sampleData": [

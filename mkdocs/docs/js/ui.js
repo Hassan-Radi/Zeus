@@ -90,25 +90,25 @@ class UI {
 
       // we are using root-relative links here (that's why the links start with '/')
       switch (promptType) {
-        case 'ZERO_SHOT_PROMPT':
+        case 'Zero-shot prompt':
           outputLinks += '<a class="link-primary" href="/prompt_types.html#zero-shot-prompt">Zero-shot prompt</a>';
           break;
-        case 'ONESHOT_PROMPT':
+        case 'One-shot prompt':
           outputLinks += '<a class="link-secondary" href="/prompt_types.html#oneshot-prompt">Oneshot prompt</a>';
           break;
-        case 'FEW_SHOT_PROMPT':
+        case 'Few-shot prompt':
           outputLinks += '<a class="link-dark" href="/prompt_types.html#few-shot-prompt">Few-shot prompt</a>';
           break;
-        case 'USER_PROMPT':
+        case 'User prompt':
           outputLinks += '<a class="link-success" href="/prompt_types.html#user-prompt">User prompt</a>';
           break;
-        case 'SYSTEM_PROMPT':
+        case 'System prompt':
           outputLinks += '<a class="link-danger" href="/prompt_types.html#system-prompt">System prompt</a>';
           break;
-        case 'TEMPLATE_PROMPT':
+        case 'Template prompt':
           outputLinks += '<a class="link-warning" href="/prompt_types.html#template-prompt">Template prompt</a>';
           break;
-        case 'INTERACTIVE_PROMPT':
+        case 'Interactive prompt':
           outputLinks += '<a class="link-info" href="/prompt_types.html#interactive-prompt">Interactive prompt</a>';
           break;
       }

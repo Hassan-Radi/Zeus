@@ -19,8 +19,8 @@
       "revisedPrompt": "Act like a tester. Do a 3-point test estimation with the following data:\nTest team size: 1 person\nTotal number of cases: 38\nTime to complete the case for 1 person: 20 minutes\nTime for regression and retesting: 20 minutes on average",
       "changeLog": "Original version.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-3.5"
     },
@@ -28,8 +28,8 @@
       "revisedPrompt": "Act as a software tester. Do a 3-point test estimation with the following data:\nTest team size: 1 person\nTotal number of test cases: 38\nTime to complete one test case for 1 person: 20 minutes\nTime for regression and retesting: 20 minutes on average",
       "changeLog": "Corrected spelling and grammar mistakes.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-3.5"
     },
@@ -37,8 +37,8 @@
       "revisedPrompt": "Act as a software tester. Do a 3-point test estimation with the following data:\nTest team size: 1 person\nTotal number of test cases: 38\nTime to complete one test case for 1 person: 20 minutes\nTime for regression and retesting: 20 minutes on average",
       "changeLog": "Switched to using OpenAI GPT-4 for better results.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-4"
     },
@@ -46,9 +46,9 @@
       "revisedPrompt": "Act as a software tester. Do a 3-point test estimation with the following data:\nTest team size: {{TEAM_SIZE}} person\nTotal number of test cases: {{NUMBER_OF_TEST_CASES}}\nTime to complete one test case for 1 person: {{TIME_PER_TEST_CASE}} minutes\nTime for regression and retesting: {{REGRESSION_RETESTING_TIME}} minutes on average",
       "changeLog": "Converted to a template prompt.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT",
-        "TEMPLATE_PROMPT"
+        "Zero-shot prompt",
+        "User prompt",
+        "Template prompt"
       ],
       "llmModel": "GPT-4",
       "sampleData": [
@@ -62,9 +62,9 @@
       "revisedPrompt": "Act as a lead software development engineer in test. Do a 3-point test estimation with the following data:\nTest team size: {{TEAM_SIZE}} person.\nTotal number of test cases: {{NUMBER_OF_TEST_CASES}}.\nTime to complete one test case for 1 person: {{TIME_PER_TEST_CASE}} minutes.\nTime for regression and retesting: {{REGRESSION_RETESTING_TIME}} minutes on average.",
       "changeLog": "Rephrased and reformatted the prompt.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT",
-        "TEMPLATE_PROMPT"
+        "Zero-shot prompt",
+        "User prompt",
+        "Template prompt"
       ],
       "llmModel": "GPT-4",
       "sampleData": [

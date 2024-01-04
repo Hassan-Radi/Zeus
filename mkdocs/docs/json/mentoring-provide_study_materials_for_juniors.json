@@ -19,8 +19,8 @@
       "revisedPrompt": "provide materials about api testing",
       "changeLog": "Original version.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-3.5"
     },
@@ -28,8 +28,8 @@
       "revisedPrompt": "Act as a senior software development engineer in test, provide materials about api testing",
       "changeLog": "Added more context to the prompt.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-3.5"
     },
@@ -37,8 +37,8 @@
       "revisedPrompt": "Act as a senior software development engineer in test, provide materials about api testing",
       "changeLog": "Use OpenAI Chat-GPT-4",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-4"
     },
@@ -46,9 +46,9 @@
       "revisedPrompt": "Act as a {{ROLE}}, provide materials about {{TOPIC}}.",
       "changeLog": "Convert the prompt to a template one.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT",
-        "TEMPLATE_PROMPT"
+        "Zero-shot prompt",
+        "User prompt",
+        "Template prompt"
       ],
       "llmModel": "GPT-4",
       "sampleData": [
@@ -60,9 +60,9 @@
       "revisedPrompt": "Act as a Quality Architect, collect online training materials about {{TOPIC}} to help a junior learn about it.",
       "changeLog": "Optimise the prompt to add more context and make it more relevant.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT",
-        "TEMPLATE_PROMPT"
+        "Zero-shot prompt",
+        "User prompt",
+        "Template prompt"
       ],
       "llmModel": "GPT-4",
       "sampleData": [

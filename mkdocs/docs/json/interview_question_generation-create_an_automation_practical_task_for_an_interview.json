@@ -19,8 +19,8 @@
       "revisedPrompt": "Create some practical task for Test automation engineer on Java for checking his knowledge about collections and provide solution\n\ncan you complicate this task",
       "changeLog": "Original version.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-3.5"
     },
@@ -28,8 +28,8 @@
       "revisedPrompt": "Create a practical task for interviewing a test automation engineer using Java. Focus on testing their knowledge about collections. Provide the task's solution and make it complicated",
       "changeLog": "Corrected spelling and grammar mistakes.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-3.5"
     },
@@ -37,8 +37,8 @@
       "revisedPrompt": "Create a practical task for interviewing a test automation engineer using Java. Focus on testing their knowledge about collections. Provide the task's solution and make it complicated",
       "changeLog": "Switched to using GPT-4 for better results.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-4"
     },
@@ -46,8 +46,8 @@
       "revisedPrompt": "Act as a senior test automation engineer. Create a practical task for interviewing a test automation engineer using Java. Focus on testing their knowledge about collections. Provide the task's solution and make it complicated",
       "changeLog": "Added more context for the AI.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-4"
     },
@@ -55,9 +55,9 @@
       "revisedPrompt": "Act as a senior {{ROLE}}. Create a practical task for interviewing a {{ROLE}} using {{PROGRAMMING_LANGUAGE}}. {{TASK_CONTEXT}}. Provide the task's solution and make it complicated",
       "changeLog": "Converted the prompt to a template one.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT",
-        "TEMPLATE_PROMPT"
+        "Zero-shot prompt",
+        "User prompt",
+        "Template prompt"
       ],
       "llmModel": "GPT-4",
       "sampleData": [
@@ -70,9 +70,9 @@
       "revisedPrompt": "Act as a senior {{ROLE}} and then perform the following actions: - Create a practical task for interviewing a {{ROLE}} using {{PROGRAMMING_LANGUAGE}}. {{TASK_CONTEXT}}. - Provide the task's solution and make it complicated",
       "changeLog": "Split the prompt to actions to perform.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT",
-        "TEMPLATE_PROMPT"
+        "Zero-shot prompt",
+        "User prompt",
+        "Template prompt"
       ],
       "llmModel": "GPT-4",
       "sampleData": [
@@ -85,9 +85,9 @@
       "revisedPrompt": "Act as a senior {{ROLE}} and then perform the following actions: 1. Create a practical task for interviewing a {{ROLE}} using {{PROGRAMMING_LANGUAGE}}. {{TASK_CONTEXT}}. 2. Provide the task's solution and make it complicated",
       "changeLog": "Optimized the prompt a bit.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT",
-        "TEMPLATE_PROMPT"
+        "Zero-shot prompt",
+        "User prompt",
+        "Template prompt"
       ],
       "llmModel": "GPT-4",
       "sampleData": [

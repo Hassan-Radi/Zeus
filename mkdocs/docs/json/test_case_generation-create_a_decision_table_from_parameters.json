@@ -17,8 +17,8 @@
       "revisedPrompt": "create decision table for testing 2 conditions – UserID, Password; 2 Actions – Login Successfully, Error showing ‘Invalid Credentials’; 3 Options — Blank, Valid, Invalid.",
       "changeLog": "Original version.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-3.5"
     },
@@ -26,8 +26,8 @@
       "revisedPrompt": "Create a decision table for testing 2 conditions – UserID, Password; 2 Actions – Login Successfully, Error showing ‘Invalid Credentials’; 3 Options — Blank, Valid, Invalid.",
       "changeLog": "Corrected spelling and grammar mistakes.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-3.5"
     },
@@ -35,8 +35,8 @@
       "revisedPrompt": "Create a decision table for testing 2 conditions – UserID, Password; 2 Actions – Login Successfully, Error showing ‘Invalid Credentials’; 3 Options — Blank, Valid, Invalid.",
       "changeLog": "Switched to using OpenAI GPT-4 for better results.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-4"
     },
@@ -44,8 +44,8 @@
       "revisedPrompt": "Act as a software tester and then create a decision table for testing the following: - 2 conditions: UserID, Password. - 2 Actions: Login Successfully, Error showing ‘Invalid Credentials’. - 3 Options: Blank, Valid, Invalid.",
       "changeLog": "Added more context for the AI + rephrased the prompt.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-4"
     },
@@ -53,9 +53,9 @@
       "revisedPrompt": "Act as a software tester and then create a decision table for testing the following: {{PARAMETERS}}",
       "changeLog": "Converted to a template prompt.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT",
-        "TEMPLATE_PROMPT"
+        "Zero-shot prompt",
+        "User prompt",
+        "Template prompt"
       ],
       "llmModel": "GPT-4",
       "sampleData": [
@@ -66,9 +66,9 @@
       "revisedPrompt": "Act as a software tester and then create a decision table for testing the following parameters delimited by triple backticks: ```{{PARAMETERS}}```",
       "changeLog": "Use delimiters to separate the text to process from the actions to perform.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT",
-        "TEMPLATE_PROMPT"
+        "Zero-shot prompt",
+        "User prompt",
+        "Template prompt"
       ],
       "llmModel": "GPT-4",
       "sampleData": [
@@ -79,9 +79,9 @@
       "revisedPrompt": "Act as a Senior Quality Assurance Engineer and then create a decision table for testing the following parameters delimited by triple backticks: ```{{PARAMETERS}}```",
       "changeLog": "Update prompt and its sample data.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT",
-        "TEMPLATE_PROMPT"
+        "Zero-shot prompt",
+        "User prompt",
+        "Template prompt"
       ],
       "llmModel": "GPT-4",
       "sampleData": [

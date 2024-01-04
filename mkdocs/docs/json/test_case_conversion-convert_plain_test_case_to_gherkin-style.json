@@ -20,8 +20,8 @@
       "revisedPrompt": "For the next Text case need to change format to BDD\n\n1) Precondition: Logged in as:\nEmployee\nResource Manager\nRMs by hierarchy\nHR\nDelivery Manager (for their subordinates)\nAM\nProject Manager\nIM coordinator\n\nSteps to reproduce:\n1. Open \"Relocation and IM\" tab.\n2. Click \"Start IM process\" button.\n3. Fill in mandatory fields and click \"Save\" button.\nExpected result:\nIMR full form is created.",
       "changeLog": "Original version.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-3.5"
     },
@@ -29,8 +29,8 @@
       "revisedPrompt": "Change the format of the next test case to BDD:\n\n1) Precondition: Logged in as:\nEmployee\nResource Manager\nRMs by hierarchy\nHR\nDelivery Manager (for their subordinates)\nAM\nProject Manager\nIM coordinator\n\nSteps to reproduce:\n1. Open 'Relocation and IM' tab.\n2. Click 'Start IM process' button.\n3. Fill in mandatory fields and click 'Save' button.\nExpected result:\nIMR full form is created.",
       "changeLog": "Fixed grammar and spelling mistakes.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-3.5"
     },
@@ -38,8 +38,8 @@
       "revisedPrompt": "Change the format of the next test case to BDD:\n\n1) Precondition: Logged in as:\nEmployee\nResource Manager\nRMs by hierarchy\nHR\nDelivery Manager (for their subordinates)\nAM\nProject Manager\nIM coordinator\n\nSteps to reproduce:\n1. Open 'Relocation and IM' tab.\n2. Click 'Start IM process' button.\n3. Fill in mandatory fields and click 'Save' button.\nExpected result:\nIMR full form is created.",
       "changeLog": "Switched to OpenAI Chat-GPT-4.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-4"
     },
@@ -47,8 +47,8 @@
       "revisedPrompt": "Act as a senior quality engineer. Convert the following test case to Gherkin-style:\n\nPrecondition: Logged in as:\nEmployee\nResource Manager\nRMs by hierarchy\nHR\nDelivery Manager (for their subordinates)\nAM\nProject Manager\nIM coordinator\n\nSteps to reproduce:\n1. Open 'Relocation and IM' tab.\n2. Click 'Start IM process' button.\n3. Fill in mandatory fields and click 'Save' button.\nExpected results:\nIMR full form is created.",
       "changeLog": "Rephrased and enhanced the prompt.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-4"
     },
@@ -56,9 +56,9 @@
       "revisedPrompt": "Act as a Senior Quality Engineer. Convert the following test case to Gherkin-style:\n\nPrecondition: {{PRECONDITIONS}}\n\nSteps to reproduce:\n{{STEPS_TO_REPRODUCE}}\nExpected results:\n{{EXPECTED_RESULTS}}",
       "changeLog": "Convert to a template prompt.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT",
-        "TEMPLATE_PROMPT"
+        "Zero-shot prompt",
+        "User prompt",
+        "Template prompt"
       ],
       "llmModel": "GPT-4",
       "sampleData": [

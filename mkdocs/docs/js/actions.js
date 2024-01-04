@@ -454,11 +454,7 @@ class Actions {
           "revisedPrompt": `${document.getElementById('promptTextArea').value}`,
           "changeLog": `${document.getElementById('changelogTextArea').value}`,
           "promptType": `${$('#selectPromptType').val()}`.split(',').map(
-              index =>
-                  $('#selectPromptType option').eq(
-                      index - 1).text().toUpperCase()
-                  .replaceAll(' ', '_')
-                  .replaceAll('-', '_')),
+              index => $('#selectPromptType option').eq(index - 1).text()),
           "llmModel": `${$("#llmModel option:selected").text()}`
         }
       }

@@ -19,8 +19,8 @@
       "revisedPrompt": "Imagine that you are a tester. You\u0027re testing an airline ticketing application: you\u0027ve applied some filters and clicked on the \"Find Tickets\" button. After a while you got the results on the screen. However, while waiting for these results, everything that was before pressing the \"Find Tickets\" button was reflected on the screen (there were no changes on the screen). Note: there are no requirements for this situation, no test cases. You need to analyze this situation by evaluating heuristics. Have you noticed anything in this situation that does not correspond to the principles (features) of heuristics?",
       "changeLog": "Original version.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-3.5"
     },
@@ -28,8 +28,8 @@
       "revisedPrompt": "Imagine that you are a tester. You are testing an airline ticketing application. you've applied some filters and clicked on the 'Find Tickets' button. After a while you got the results on the screen. However, while waiting for these results, everything that was before pressing the \"Find Tickets\" button was reflected on the screen (there were no changes on the screen). Note: there are no requirements for this situation and no test cases. You need to analyze this situation by evaluating heuristics. Have you noticed anything in this situation that does not correspond to the principles (features) of heuristics?",
       "changeLog": "Fixing some grammar and spellnig mistakes.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-3.5"
     },
@@ -37,8 +37,8 @@
       "revisedPrompt": "Imagine that you are a tester. You are testing an airline ticketing application. you've applied some filters and clicked on the 'Find Tickets' button. After a while you got the results on the screen. However, while waiting for these results, everything that was before pressing the \"Find Tickets\" button was reflected on the screen (there were no changes on the screen). Note: there are no requirements for this situation and no test cases. You need to analyze this situation by evaluating heuristics. Have you noticed anything in this situation that does not correspond to the principles (features) of heuristics?",
       "changeLog": "Changed the AI model to GPT-4",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-4"
     },
@@ -46,8 +46,8 @@
       "revisedPrompt": "Act as a software tester. Perform the following actions: - Analyze the below situation delimited by triple backticks by evaluating heuristics - Have you noticed anything in this situation that does not correspond to the principles (features) of heuristics? Note: there are no requirements for this situation and no test cases. ```You are testing an airline ticketing application: you\u0027ve applied some filters and clicked on the \"Find Tickets\" button. After a while you got the results on the screen. However, while waiting for these results, everything that was before pressing the \"Find Tickets\" button was reflected on the screen (there were no changes on the screen)```",
       "changeLog": "Added the 'delimiter' part to distinguish the requested actions from the text to analyze. Added the 'actions to perform' part",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-4"
     },
@@ -55,9 +55,9 @@
       "revisedPrompt": "Act as a Usability software tester. Perform the following actions: - Analyze the below situation, delimited by triple backticks, by evaluating heuristics - Did you notice anything in this situation that does not correspond to the principles (features) of heuristics? Note: there are no requirements for this situation and no test cases. ```{{SITUATION}}```",
       "changeLog": "Converted the prompt to a template prompt + minor changes",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT",
-        "TEMPLATE_PROMPT"
+        "Zero-shot prompt",
+        "User prompt",
+        "Template prompt"
       ],
       "llmModel": "GPT-4",
       "sampleData": [
@@ -68,9 +68,9 @@
       "revisedPrompt": "Act as a Usability software tester. Perform the following actions: - Analyze the below situation, delimited by triple backticks, by evaluating heuristics - Do you notice anything in this situation that does not correspond to the principles (features) of heuristics? Note: there are no requirements for this situation and no test cases. ```{{SITUATION}}```",
       "changeLog": "Minor grammar fix.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT",
-        "TEMPLATE_PROMPT"
+        "Zero-shot prompt",
+        "User prompt",
+        "Template prompt"
       ],
       "llmModel": "GPT-4",
       "sampleData": [

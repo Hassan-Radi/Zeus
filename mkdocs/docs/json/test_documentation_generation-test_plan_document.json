@@ -19,8 +19,8 @@
       "revisedPrompt": "I want you to act as a software testing engineer. Give me please entry criteria for test process which I can write in test plan.",
       "changeLog": "Original version.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-4"
     },
@@ -28,8 +28,8 @@
       "revisedPrompt": "Act as a Senior Software Testing Engineer. Write a test plan document with entry criteria and test process.",
       "changeLog": "Fixed spelling and grammar mistakes + rephrased the prompt.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-4"
     }

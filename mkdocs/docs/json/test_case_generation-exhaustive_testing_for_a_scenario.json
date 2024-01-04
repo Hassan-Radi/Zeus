@@ -18,8 +18,8 @@
       "revisedPrompt": "I would like to get table with all possible variants for testing.\n\nIn scope:\nI must update revenue forecast for different month\nAll possible GBU: Fake GBU/EU1 Fake\n\nGBU/APAC/L\n\nGBU/APAC/L/ANZ\n\nGBU/APAC/L/HK\n\nGBU/APAC/L/SG\n\nGBU/APAC/L/UBS\n\nGBU/APAC/MBJV\n\nGBU/CIS/V/CM\n\nGBU/CIS/V/INS\n\nGBU/CIS/V/NF\n\nGBU/CIS/V/RB\n\nGBU/CIS/V/RET\n\nGBU/EU/CH/FS\n\nGBU/EU/CH/FSNL\n\nGBU/EU/CH/HCLS\n\nGBU/EU/CH/INS\n\nGBU/EU/CH/OTH\n\nGBU/EU/Core\n\nGBU/EU/CPG\u0026R/CPG\n\nGBU/EU/CPG\u0026R/Retail\n\nGBU/EU/Emakina\n\nGBU/EU/Emerging/Austria\n\nGBU/EU/Emerging/Org\n\nGBU/EU/F\n\nGBU/EU/France\n\nGBU/EU/Germany\n\nGBU/EU/Ireland\n\nGBU/EU/Ireland/Belfast\n\nGBU/EU/Ireland/Dublin\n\nGBU/EU/ME/Emakina\n\nGBU/EU/Nearshore\n\nGBU/EU/Optiva\n\nGBU/EU/T\n\nGBU/EU/T\u0026H\n\nGBU/EU/UKFS\n\nGBU/EU/UKM\n\nGBU/EU/West1/B2B\n\nGBU/EU/West1/EmakinaNL\n\nGBU/EU/West1/NL\n\nGBU/EU/West1/TMEEU\n\nProbability:\n0%\n10%\n20%\n40%\n60%\n80%\n90%\n100%",
       "changeLog": "Original version.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-3.5"
     },
@@ -27,8 +27,8 @@
       "revisedPrompt": "Give me a table with all possible variations for testing the following scenario:\nI must update revenue forecast for different month\nAll possible GBU: Fake GBU/EU1 Fake\n\nGBU/APAC/L\n\nGBU/APAC/L/ANZ\n\nGBU/APAC/L/HK\n\nGBU/APAC/L/SG\n\nGBU/APAC/L/UBS\n\nGBU/APAC/MBJV\n\nGBU/CIS/V/CM\n\nGBU/CIS/V/INS\n\nGBU/CIS/V/NF\n\nGBU/CIS/V/RB\n\nGBU/CIS/V/RET\n\nGBU/EU/CH/FS\n\nGBU/EU/CH/FSNL\n\nGBU/EU/CH/HCLS\n\nGBU/EU/CH/INS\n\nGBU/EU/CH/OTH\n\nGBU/EU/Core\n\nGBU/EU/CPG\u0026R/CPG\n\nGBU/EU/CPG\u0026R/Retail\n\nGBU/EU/Emakina\n\nGBU/EU/Emerging/Austria\n\nGBU/EU/Emerging/Org\n\nGBU/EU/F\n\nGBU/EU/France\n\nGBU/EU/Germany\n\nGBU/EU/Ireland\n\nGBU/EU/Ireland/Belfast\n\nGBU/EU/Ireland/Dublin\n\nGBU/EU/ME/Emakina\n\nGBU/EU/Nearshore\n\nGBU/EU/Optiva\n\nGBU/EU/T\n\nGBU/EU/T\u0026H\n\nGBU/EU/UKFS\n\nGBU/EU/UKM\n\nGBU/EU/West1/B2B\n\nGBU/EU/West1/EmakinaNL\n\nGBU/EU/West1/NL\n\nGBU/EU/West1/TMEEU\n\nProbability:\n0%\n10%\n20%\n40%\n60%\n80%\n90%\n100%",
       "changeLog": "Corrected spelling and grammar mistakes + Rephrased the prompt a bit.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-3.5"
     },
@@ -36,8 +36,8 @@
       "revisedPrompt": "Give me a table with all possible variations for testing the following scenario:\nI must update revenue forecast for different month\nAll possible GBU: Fake GBU/EU1 Fake\n\nGBU/APAC/L\n\nGBU/APAC/L/ANZ\n\nGBU/APAC/L/HK\n\nGBU/APAC/L/SG\n\nGBU/APAC/L/UBS\n\nGBU/APAC/MBJV\n\nGBU/CIS/V/CM\n\nGBU/CIS/V/INS\n\nGBU/CIS/V/NF\n\nGBU/CIS/V/RB\n\nGBU/CIS/V/RET\n\nGBU/EU/CH/FS\n\nGBU/EU/CH/FSNL\n\nGBU/EU/CH/HCLS\n\nGBU/EU/CH/INS\n\nGBU/EU/CH/OTH\n\nGBU/EU/Core\n\nGBU/EU/CPG\u0026R/CPG\n\nGBU/EU/CPG\u0026R/Retail\n\nGBU/EU/Emakina\n\nGBU/EU/Emerging/Austria\n\nGBU/EU/Emerging/Org\n\nGBU/EU/F\n\nGBU/EU/France\n\nGBU/EU/Germany\n\nGBU/EU/Ireland\n\nGBU/EU/Ireland/Belfast\n\nGBU/EU/Ireland/Dublin\n\nGBU/EU/ME/Emakina\n\nGBU/EU/Nearshore\n\nGBU/EU/Optiva\n\nGBU/EU/T\n\nGBU/EU/T\u0026H\n\nGBU/EU/UKFS\n\nGBU/EU/UKM\n\nGBU/EU/West1/B2B\n\nGBU/EU/West1/EmakinaNL\n\nGBU/EU/West1/NL\n\nGBU/EU/West1/TMEEU\n\nProbability:\n0%\n10%\n20%\n40%\n60%\n80%\n90%\n100%",
       "changeLog": "Switched to using GPT-4 for better results.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-4"
     },
@@ -45,8 +45,8 @@
       "revisedPrompt": "Act as a senior software development engineer in test. Give me a table with all possible variations for testing the following scenario:\nI must update revenue forecast for different month\nAll possible GBU: Fake GBU/EU1 Fake\n\nGBU/APAC/L\n\nGBU/APAC/L/ANZ\n\nGBU/APAC/L/HK\n\nGBU/APAC/L/SG\n\nGBU/APAC/L/UBS\n\nGBU/APAC/MBJV\n\nGBU/CIS/V/CM\n\nGBU/CIS/V/INS\n\nGBU/CIS/V/NF\n\nGBU/CIS/V/RB\n\nGBU/CIS/V/RET\n\nGBU/EU/CH/FS\n\nGBU/EU/CH/FSNL\n\nGBU/EU/CH/HCLS\n\nGBU/EU/CH/INS\n\nGBU/EU/CH/OTH\n\nGBU/EU/Core\n\nGBU/EU/CPG\u0026R/CPG\n\nGBU/EU/CPG\u0026R/Retail\n\nGBU/EU/Emakina\n\nGBU/EU/Emerging/Austria\n\nGBU/EU/Emerging/Org\n\nGBU/EU/F\n\nGBU/EU/France\n\nGBU/EU/Germany\n\nGBU/EU/Ireland\n\nGBU/EU/Ireland/Belfast\n\nGBU/EU/Ireland/Dublin\n\nGBU/EU/ME/Emakina\n\nGBU/EU/Nearshore\n\nGBU/EU/Optiva\n\nGBU/EU/T\n\nGBU/EU/T\u0026H\n\nGBU/EU/UKFS\n\nGBU/EU/UKM\n\nGBU/EU/West1/B2B\n\nGBU/EU/West1/EmakinaNL\n\nGBU/EU/West1/NL\n\nGBU/EU/West1/TMEEU\n\nProbability:\n0%\n10%\n20%\n40%\n60%\n80%\n90%\n100%",
       "changeLog": "Added the act as part.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT"
+        "Zero-shot prompt",
+        "User prompt"
       ],
       "llmModel": "GPT-4"
     },
@@ -54,9 +54,9 @@
       "revisedPrompt": "Act as a senior software development engineer in test. Give me a table with all possible variations for testing the following scenario:\n{{SCENARIO}}. {{VARIABLES}}",
       "changeLog": "Converted the prompt to a template one.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT",
-        "TEMPLATE_PROMPT"
+        "Zero-shot prompt",
+        "User prompt",
+        "Template prompt"
       ],
       "llmModel": "GPT-4",
       "sampleData": [
@@ -68,9 +68,9 @@
       "revisedPrompt": "Act as a Senior Software Development Engineer in Test. Give me a table with all possible variations for testing the following scenario:\n{{SCENARIO}}. {{VARIABLES}}",
       "changeLog": "Fix the display of the sample data + enhanced prompt.",
       "promptType": [
-        "ZERO_SHOT_PROMPT",
-        "USER_PROMPT",
-        "TEMPLATE_PROMPT"
+        "Zero-shot prompt",
+        "User prompt",
+        "Template prompt"
       ],
       "llmModel": "GPT-4",
       "sampleData": [
