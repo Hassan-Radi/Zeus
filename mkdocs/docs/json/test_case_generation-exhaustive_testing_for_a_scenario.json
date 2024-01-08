@@ -59,7 +59,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "SCENARIO: I must update revenue forecast for different months",
         "VARIABLES: All possible GBU: Fake GBU/EU1 Fake\n\nGBU/APAC/L\n\nGBU/APAC/L/ANZ\n\nGBU/APAC/L/HK\n\nGBU/APAC/L/SG\n\nGBU/APAC/L/UBS\n\nGBU/APAC/MBJV\n\nGBU/CIS/V/CM\n\nGBU/CIS/V/INS\n\nGBU/CIS/V/NF\n\nGBU/CIS/V/RB\n\nGBU/CIS/V/RET\n\nGBU/EU/CH/FS\n\nGBU/EU/CH/FSNL\n\nGBU/EU/CH/HCLS\n\nGBU/EU/CH/INS\n\nGBU/EU/CH/OTH\n\nGBU/EU/Core\n\nGBU/EU/CPG&R/CPG\n\nGBU/EU/CPG&R/Retail\n\nGBU/EU/Emakina\n\nGBU/EU/Emerging/Austria\n\nGBU/EU/Emerging/Org\n\nGBU/EU/F\n\nGBU/EU/France\n\nGBU/EU/Germany\n\nGBU/EU/Ireland\n\nGBU/EU/Ireland/Belfast\n\nGBU/EU/Ireland/Dublin\n\nGBU/EU/ME/Emakina\n\nGBU/EU/Nearshore\n\nGBU/EU/Optiva\n\nGBU/EU/T\n\nGBU/EU/T&H\n\nGBU/EU/UKFS\n\nGBU/EU/UKM\n\nGBU/EU/West1/B2B\n\nGBU/EU/West1/EmakinaNL\n\nGBU/EU/West1/NL\n\nGBU/EU/West1/TMEEU\n\nProbability:\n0%\n10%\n20%\n40%\n60%\n80%\n90%\n100%"
       ]
@@ -73,7 +73,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "SCENARIO: I'd like to update revenue forecast for different months",
         "VARIABLES: <br>All possible GBU: <br>&emsp;Fake GBU/EU1 Fake<br>&emsp;GBU/APAC/L<br>&emsp;GBU/APAC/L/ANZ<br>&emsp;GBU/APAC/L/HK<br>&emsp;GBU/APAC/L/SG<br>&emsp;GBU/APAC/L/UBS<br>&emsp;GBU/APAC/MBJV<br>&emsp;GBU/CIS/V/CM<br>&emsp;GBU/CIS/V/INS<br>&emsp;GBU/CIS/V/NF<br>&emsp;GBU/CIS/V/RB<br>&emsp;GBU/CIS/V/RET<br>&emsp;GBU/EU/CH/FS<br>&emsp;GBU/EU/CH/FSNL<br>&emsp;GBU/EU/CH/HCLS<br>&emsp;GBU/EU/CH/INS<br>&emsp;GBU/EU/CH/OTH<br>&emsp;GBU/EU/Core<br>&emsp;GBU/EU/CPG&R/CPG<br>&emsp;GBU/EU/CPG&R/Retail<br>&emsp;GBU/EU/Emakina<br>&emsp;GBU/EU/Emerging/Austria<br>&emsp;GBU/EU/Emerging/Org<br>&emsp;GBU/EU/F<br>&emsp;GBU/EU/France<br>&emsp;GBU/EU/Germany<br>&emsp;GBU/EU/Ireland<br>&emsp;GBU/EU/Ireland/Belfast<br>&emsp;GBU/EU/Ireland/Dublin<br>&emsp;GBU/EU/ME/Emakina<br>&emsp;GBU/EU/Nearshore<br>&emsp;GBU/EU/Optiva<br>&emsp;GBU/EU/T<br>&emsp;GBU/EU/T&H<br>&emsp;GBU/EU/UKFS<br>&emsp;GBU/EU/UKM<br>&emsp;GBU/EU/West1/B2B<br>&emsp;GBU/EU/West1/EmakinaNL<br>&emsp;GBU/EU/West1/NL<br>&emsp;GBU/EU/West1/TMEEU<br>Probability:<br>&emsp;0%<br>&emsp;10%<br>&emsp;20%<br>&emsp;40%<br>&emsp;60%<br>&emsp;80%<br>&emsp;90%<br>&emsp;100%"
       ]

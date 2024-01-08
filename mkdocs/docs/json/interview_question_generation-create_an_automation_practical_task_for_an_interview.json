@@ -60,7 +60,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "ROLE: test automation engineer",
         "PROGRAMMING_LANGUAGE: Java",
         "TASK_CONTEXT: Focus on testing their knowledge about collections"
@@ -75,7 +75,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "ROLE: test automation engineer",
         "PROGRAMMING_LANGUAGE: Java",
         "TASK_CONTEXT: Focus on testing their knowledge about collections"
@@ -90,7 +90,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "ROLE: test automation engineer",
         "PROGRAMMING_LANGUAGE: Java",
         "TASK_CONTEXT: Focus on testing the candidate's knowledge about collections"

@@ -74,7 +74,7 @@ wide-range of roles throughout the SDLC. The prompts are split by target audienc
 
 <div class="container">
     <div class="row float-end">
-        <a class="link link-danger" href="/prompts/create_edit_prompt.html"><i class="fa-solid fa-circle-chevron-right"></i> Create prompt</a>
+        <a class="link link-danger" href="/prompts/create_prompt.html"><i class="fa-solid fa-circle-chevron-right"></i> Create prompt</a>
     </div>
     <br>
     <div class="row float-end">

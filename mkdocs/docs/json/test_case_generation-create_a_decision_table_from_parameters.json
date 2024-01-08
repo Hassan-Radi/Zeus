@@ -58,7 +58,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "PARAMETERS: - 2 conditions: UserID, Password. - 2 Actions: Login Successfully, Error showing ‘Invalid Credentials’. - 3 Options: Blank, Valid, Invalid."
       ]
     },
@@ -71,7 +71,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "PARAMETERS: - 2 conditions: UserID, Password. - 2 Actions: Login Successfully, Error showing ‘Invalid Credentials’. - 3 Options: Blank, Valid, Invalid."
       ]
     },
@@ -84,7 +84,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "PARAMETERS: <br>- 2 conditions: UserID, Password.<br>- 2 Actions: Login Successfully, Error showing ‘Invalid Credentials’.<br>- 3 Options: Blank, Valid, Invalid."
       ]
     }

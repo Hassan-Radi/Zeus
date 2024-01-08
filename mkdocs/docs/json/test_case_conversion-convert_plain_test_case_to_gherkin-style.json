@@ -61,7 +61,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "PRECONDITIONS: Logged in as: Employee, Resource Manager, RMs by hierarchy, HR, Delivery Manager (for their subordinates), AM, Project Manager, IM coordinator",
         "STEPS_TO_REPRODUCE: 1. Open 'Relocation and IM' tab.\n2. Click 'Start IM process' button.\n3. Fill in mandatory fields and click 'Save' button.",
         "EXPECTED_RESULTS: IMR full form is created."

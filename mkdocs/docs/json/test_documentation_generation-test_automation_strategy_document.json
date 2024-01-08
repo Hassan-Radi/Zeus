@@ -61,7 +61,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "APPLICATION_TYPE: mobile application",
         "SUPPORTED_PLATFORMS: iOS and Android",
         "SUPPORTED_TOOLS: 1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system."
@@ -76,7 +76,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "APPLICATION_TYPE: mobile application",
         "SUPPORTED_PLATFORMS: iOS and Android",
         "SUPPORTED_TOOLS: 1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system."
@@ -91,7 +91,7 @@
         "Interactive prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "1st input: mobile application",
         "2nd input: iOS and Android",
         "3rd input: 1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system."

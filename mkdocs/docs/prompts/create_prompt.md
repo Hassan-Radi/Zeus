@@ -19,6 +19,22 @@
         });
     });
     ui.loadCategoryOptions();
+    actions.injectEnableTooltipsEventListener();
+    
+    document.addEventListener("DOMContentLoaded", () => {
+        let params = getUrlParameters();
+        let action = params.get("action");
+
+        if(action !== "edit"){
+            ui.showEditFields(false);
+        } else {
+            document.title = "Edit prompt";
+            ui.getElementByXpath("//div[@data-md-component='header-topic']/span").textContent = "Edit prompt";
+            document.getElementsByTagName('h1')[0].innerText = "Edit prompt";
+
+            ui.loadValuesInFields(params.get('prompt'));
+        }
+    });
 </script>
 
 <div class="container">
@@ -35,7 +51,7 @@
               <input type="text" class="form-control" aria-label="Submitted By input" id="submittedBy">
             </div>
         </div>
-        <div class="col mb-2">
+        <div id="optimizedByGroupDiv" class="col mb-2">
             <div class="input-group input-group-sm">
               <span class="input-group-text text-primary"><small>Optimized by:</small></span>
               <input type="text" class="form-control" aria-label="Optimized By input" id="optimizedBy">
@@ -83,7 +99,26 @@
     </div>
 </div>
 
-<div class="container mb-2">
+<div id="variables" class="container overflow-auto mb-2" style="max-height: clamp(20em,10vh,50px);">
+    <div class="card">
+        <div class="card-header text-primary"><small>Variables:</small><a type="button" id="addVariables" class="link-dark float-end" data-toggle="tooltip" title="Add variable" onclick="actions.showVariablesModal(true, 'Add variable', '', '');"><i class="fa-regular fa-square-plus"></i></a></div>
+        <div class="card-body">
+            <table id="variablesTable" class="table table-sm table-bordered table-responsive table-hover">
+                <thead class="sticky-top table-secondary">
+                    <tr class="bg-light">
+                        <th class="text-center fw-bold" scope="col"><small>Name</small></th>
+                        <th class="text-center fw-bold" scope="col"><small>Sample value</small></th>
+                        <th class="text-center fw-bold" scope="col" style="width: 10%"></th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="changelogDiv" class="container mb-2">
     <div class="row">
         <div class="col">
             <div class="form-floating">
@@ -144,20 +179,45 @@
       <input class="form-check-input" type="checkbox" role="switch" id="agreeToTerms">
       <label class="form-check-label" for="agreeToTerms"><small>A prompt is a form of copyrighted material. By submitting this data, you are agreeing to relinquish all your rights over this prompt to Epam&copy; and its subsidiaries.</small></label>
     </div>
-    <a type="button" id="submitPrompt" class="btn btn-sm btn-success link-light float-end mb-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="actions.submitNewPrompt(event);"><i class="fa-regular fa-square-plus"></i> Submit</a>
+    <a type="button" id="submitPrompt" class="btn btn-sm btn-success link-light float-end mb-2" data-bs-toggle="modal" data-bs-target="#createEditPrompt" onclick="actions.submitPrompt();"><i class="fa-regular fa-square-plus"></i> Submit</a>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- Create/Edit Prompt Modal -->
+<div class="modal fade" id="createEditPrompt" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="submitPromptModalHeader" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
         <div class="modal-header">
             <h1 class="modal-title fs-5" id="submitPromptModalHeader"></h1>
         </div>
         <div id="submitPromptModalBody" class="modal-body"></div>
-        <div id="modalFooter" class="modal-footer">
+        <div id="promptModalFooter" class="modal-footer">
             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
         </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Variable Modal -->
+<div class="modal fade" id="addVariableModal" tabindex="-1" aria-labelledby="variablesModalHeader" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="variablesModalHeader">Add variable</h1>
+      </div>
+      <div class="modal-body">
+        <div class="input-group input-group-sm mb-2">
+            <span id="variableNameLabel" class="input-group-text text-primary"><small>Name:</small></span>
+            <input id="variableNameInput" type="text" class="form-control" aria-label="Variable-name-input" aria-describedby="variableNameLabel">
+        </div>
+        <div class="form-floating">
+          <textarea class="form-control" style="height: 150px" placeholder="Add a variable sample value here" id="sampleValueTextArea"></textarea>
+          <label class="text-primary" for="sampleValueTextArea"><small>Sample value:</small></label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="actions.submitVariable();">Submit</button>
+      </div>
     </div>
   </div>
 </div>

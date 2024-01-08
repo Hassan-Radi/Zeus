@@ -15,7 +15,7 @@ whenever you are ready.
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
 <script type="text/javascript">
-    actions.enableTooltips();
+    actions.injectEnableTooltipsEventListener();
     actions.loadRemoveAllBookmarksIcon();
     actions.listAllPrompt();
 </script>
@@ -24,9 +24,9 @@ whenever you are ready.
     <table class="table table-sm table-bordered table-responsive table-hover">
       <thead class="sticky-top table-secondary">
         <tr class="bg-light">
-          <th class="text-center" scope="col" width="5%"><input id="select-all-checkbox" class="form-check-input" type="checkbox" onclick="actions.toggleCheckAllPrompts(event);"></th>
-          <th class="text-center fw-bold" scope="col" width="5%">#</th>
-          <th class="fw-bold" scope="col" width="90%">Prompt name</th>
+          <th class="text-center" scope="col" style="width: 5%;"><input id="select-all-checkbox" class="form-check-input" type="checkbox" onclick="actions.toggleCheckAllPrompts(event);"></th>
+          <th class="text-center fw-bold" scope="col" style="width: 5%;">#</th>
+          <th class="fw-bold" scope="col" style="width: 90%">Prompt name</th>
         </tr>
       </thead>
       <tbody id="table-body">
@@ -35,6 +35,6 @@ whenever you are ready.
 </div>
 <h4>Formats</h4>
 <div>
-    <a type="button" type="button" id="export-to-zeus" class="btn btn-sm btn-primary float-end m-1 link-light" data-toggle="tooltip" type="button" title="Export to our custom Zeus format" onclick="actions.exportToZeus(event);"><i class="fa-solid fa-medal"></i> Zeus</a>
-    <a type="button" id="export-to-epam-dial" class="btn btn-sm btn-success float-end m-1 link-light" data-toggle="tooltip" type="button" title="Export to Epam AI Dial" onclick="actions.exportToEpamAIDial(event);"><i class="fa-solid fa-rocket"></i> Epam AI Dial</a>
+    <a id="export-to-zeus" class="btn btn-sm btn-primary float-end m-1 link-light" data-toggle="tooltip" type="button" title="Export to our custom Zeus format" onclick="actions.exportToZeus(event);"><i class="fa-solid fa-medal"></i> Zeus</a>
+    <a id="export-to-epam-dial" class="btn btn-sm btn-success float-end m-1 link-light" data-toggle="tooltip" type="button" title="Export to Epam AI Dial" onclick="actions.exportToEpamAIDial(event);"><i class="fa-solid fa-rocket"></i> Epam AI Dial</a>
 </div>
