@@ -62,7 +62,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "ENDPOINT: https://petstore.swagger.io/#/user/updateUser"
       ]
     },
@@ -75,7 +75,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "ENDPOINT: https://petstore.swagger.io/#/user/updateUser"
       ]
     }

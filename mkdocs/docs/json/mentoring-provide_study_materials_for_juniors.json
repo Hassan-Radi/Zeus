@@ -51,7 +51,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "ROLE: Senior software development engineer in test",
         "TOPIC: API testing"
       ]
@@ -65,7 +65,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "TOPIC: API testing"
       ]
     }

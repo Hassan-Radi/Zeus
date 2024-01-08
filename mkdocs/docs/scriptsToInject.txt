@@ -9,7 +9,7 @@
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
 
 <script type="text/javascript">
-    actions.enableTooltips();
-    ui.showPromptButtons(true, false, false, false);
+    actions.injectEnableTooltipsEventListener();
+    ui.showPromptButtons(true, false, false, false, false);
 </script>
 

@@ -52,7 +52,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "DB_TABLE_NAME: mobility_service_request",
         "NUMBER_OF_RECORDS: 100",
         "CONTEXT: Use status 'IN_PROGRESS' for all the created records."

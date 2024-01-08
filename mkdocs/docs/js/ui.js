@@ -28,7 +28,7 @@ class UI {
             'link-primary',
             json.promptHistory[i].revisedPrompt.replaceAll('\"', ''))
 
-        this.displaySampleData(json, divElement, i);
+        this.displayVariables(json, divElement, i);
 
         // add the text to the HTML document
         document.getElementById('prompt-iterations-history').after(
@@ -72,7 +72,7 @@ class UI {
               json.promptHistory).length].revisedPrompt.replaceAll(
               '\"', ''))
 
-      this.displaySampleData(json, divElement,
+      this.displayVariables(json, divElement,
           Object.keys(json.promptHistory).length);
 
       // add the download as .json button
@@ -151,31 +151,31 @@ class UI {
     return html;
   }
 
-  displaySampleData(json, divElement, entryIndex) {
+  displayVariables(json, divElement, entryIndex) {
     // add the sample data if any exists
-    if (json.promptHistory[entryIndex].sampleData !== undefined) {
-      let sampleDataHtml = "";
+    if (json.promptHistory[entryIndex].variables !== undefined) {
+      let variablesHtml = "";
       let numberOfEntries = Object.keys(
-          json.promptHistory[entryIndex].sampleData).length;
+          json.promptHistory[entryIndex].variables).length;
 
       for (let i = 0; i < numberOfEntries; i++) {
-        let dataItemName = json.promptHistory[entryIndex].sampleData[i].split(
+        let dataItemName = json.promptHistory[entryIndex].variables[i].split(
             ':')[0].trim();
-        let dataItemValue = json.promptHistory[entryIndex].sampleData[i].substring(
+        let dataItemValue = json.promptHistory[entryIndex].variables[i].substring(
             dataItemName.length + 1).trim();
 
-        sampleDataHtml = this.addDataItemGroup(sampleDataHtml, dataItemName,
+        variablesHtml = this.addDataItemGroup(variablesHtml, dataItemName,
             'link-success',
             dataItemValue);
 
         // add a space if we aren't processing the last entry
         if (i != numberOfEntries - 1) {
-          sampleDataHtml += '<br>';
+          variablesHtml += '<br>';
         }
       }
 
       // add all the sample data
-      divElement.innerHTML += `<h5 class="link-danger">Sample data:</h5>${sampleDataHtml}`;
+      divElement.innerHTML += `<h5 class="link-danger">Variables:</h5>${variablesHtml}`;
     }
   }
 
@@ -194,7 +194,7 @@ class UI {
   }
 
   showPromptButtons(showCreatePrompt, showExportPrompts, showBookmarkPrompt,
-      showClearBookmarks) {
+      showClearBookmarks, showEditPrompt) {
     const divElement = document.createElement('div');
     divElement.classList = 'float-end';
 
@@ -213,16 +213,19 @@ class UI {
        <button id="export-prompts" class="btn btn-light fa-solid fa-file-export" data-toggle="tooltip" type="button" title="Export prompts" onclick="window.location='/export.html';"></button>`;
     }
 
+    if (showEditPrompt) {
+      divElement.innerHTML += `<button id="edit-prompt" class="btn btn-light fa-regular fa-pen-to-square btn-block" data-toggle="tooltip" type="button" title="Edit prompt" onClick="window.location='/prompts/create_prompt.html?action=edit&prompt=${JSON_FILE_NAME}';"></button>`;
+    }
+
     if (showCreatePrompt) {
       divElement.innerHTML += `
-       <button id="create-prompt" class="btn btn-light fa-regular fa-square-plus btn-block" data-toggle="tooltip" type="button" title="Create prompt" onclick="window.location='/prompts/create_edit_prompt.html';"></button>
-      `;
+       <button id="create-prompt" class="btn btn-light fa-regular fa-square-plus btn-block" data-toggle="tooltip" type="button" title="Create prompt" onclick="window.location='/prompts/create_prompt.html';"></button>`;
     }
 
     document.getElementsByTagName('h1')[0].before(divElement);
   }
 
-  loadCategoryOptions(){
+  loadCategoryOptions() {
     fetch(CATEGORIES_FILE_PATH)
     .then((response) => response.json())
     .then((json) => {
@@ -238,7 +241,51 @@ class UI {
     });
   }
 
+  showEditFields(show){
+    if(!show){
+      document.getElementById('variables').classList.add('d-none');
+      document.getElementById('changelogDiv').classList.add('d-none');
+      document.getElementById('optimizedByGroupDiv').classList.add('d-none');
+    }
+  }
+
   getElementByXpath(path) {
     return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+  }
+
+  loadValuesInFields(jsonFileName) {
+    let jsonFilePath = '/json/' + jsonFileName + '.json';
+
+    fetch(jsonFilePath)
+    .then((response) => response.json())
+    .then((json) => {
+      document.getElementById('promptTitle').value = json.title;
+      document.getElementById('submittedBy').value = json.submittedOriginallyBy;
+      document.getElementById('optimizedBy').value = json.optimizedBy;
+      this.selectByText("category", json.category);
+      this.selectByText("llmModel", json.promptHistory[Object.keys(
+          json.promptHistory).length].llmModel);
+      document.getElementById('promptTextArea').value = json.promptHistory[Object.keys(
+          json.promptHistory).length].revisedPrompt;
+
+      // Here we use +2 to ignore the extra space after the :
+      json.promptHistory[Object.keys(
+          json.promptHistory).length].variables.forEach(variable => {
+            actions.addVariableToTable(variable.split(":")[0].trim(), variable.substring(variable.indexOf(':') + 2));
+          });
+
+      json.badges.forEach(badge => this.selectByText("selectBadges", badge));
+      json.targetAudience.forEach(targetAudience => this.selectByText("selectTargetAudience", targetAudience));
+      json.promptHistory[Object.keys(
+          json.promptHistory).length].promptType.forEach(type => this.selectByText("selectPromptType", type));
+    });
+  }
+
+  selectByText(id, text){
+    $(`#${id} option`).filter(function() {
+      return $(this).text() === text.trim();
+    }).prop('selected', true);
+
+    $(`#${id}`).trigger('change');
   }
 }

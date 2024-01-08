@@ -51,7 +51,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "TEAM_SIZE: 1",
         "NUMBER_OF_TEST_CASES: 38",
         "TIME_PER_TEST_CASE: 20",
@@ -67,7 +67,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "TEAM_SIZE: 1",
         "NUMBER_OF_TEST_CASES: 38",
         "TIME_PER_TEST_CASE: 20",

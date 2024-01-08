@@ -60,7 +60,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "SITUATION: You are testing an airline ticketing application. You applied some filters and clicked on the 'Find Tickets' button. After a while you got the results on the screen. However, while waiting for these results, there were no changes on the screen."
       ]
     },
@@ -73,7 +73,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "SITUATION: You are testing an airline ticketing application. You applied some filters and clicked on the 'Find Tickets' button. After a while you got the results on the screen. However, while waiting for these results, there were no changes displayed on the screen."
       ]
     }

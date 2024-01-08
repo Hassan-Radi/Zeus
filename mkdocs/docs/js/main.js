@@ -1,73 +1,25 @@
 const actions = new Actions;
 const ui = new UI;
-let JSON_FILE_PATH;
-let JSON_FILE_NAME;
+let JSON_FILE_PATH; // TODO: find a better way to replace this
+let JSON_FILE_NAME; // TODO: find a better way to replace this
+
+function getUrlParameters() {
+  return new URLSearchParams(window.location.href.split('?')[1]);
+}
 
 function populateThePage() {
-  const urlParams = new URLSearchParams(window.location.href.split('?')[1]);
-  const jsonFileName = urlParams.get('prompt');
+  const jsonFileName = getUrlParameters().get('prompt');
   JSON_FILE_NAME = jsonFileName;
   JSON_FILE_PATH = '/json/' + jsonFileName + '.json';
 
-  actions.enableTooltips();
+  actions.injectEnableTooltipsEventListener();
 
   ui.showPageTitle();
-  ui.showPromptButtons(true, true, true, true);
+  ui.showPromptButtons(true, true, true, true, true);
   ui.showPromptDetails();
   ui.showPromptHistory();
 
   // show the correct bookmark icons
   actions.loadBookmarkIcon();
   actions.loadRemoveAllBookmarksIcon();
-}
-
-function injectLink(linkHref, linkRel, linkIntegrity, linkCrossOrigin,
-    linkReferrerPolicy) {
-  const linkEle = document.createElement('link');
-
-  if (linkHref != null) {
-    linkEle.href = linkHref;
-  }
-
-  if (linkRel != null) {
-    linkEle.rel = linkRel;
-  }
-
-  if (linkIntegrity != null) {
-    linkEle.integrity = linkIntegrity;
-  }
-
-  if (linkCrossOrigin != null) {
-    linkEle.crossOrigin = linkCrossOrigin;
-  }
-
-  if (linkReferrerPolicy != null) {
-    linkEle.referrerPolicy = linkReferrerPolicy;
-  }
-
-  // inject the link in the head of the page
-  document.head.appendChild(linkEle);
-}
-
-function injectScript(scriptSrc, scriptIntegrity, scriptCrossOrigin,
-    scriptType) {
-  const scriptEle = document.createElement('script');
-
-  if (scriptSrc != null) {
-    scriptEle.src = scriptSrc;
-  }
-
-  if (scriptIntegrity != null) {
-    scriptEle.integrity = scriptIntegrity;
-  }
-
-  if (scriptCrossOrigin != null) {
-    scriptEle.crossOrigin = scriptCrossOrigin;
-  }
-
-  if (scriptType != null) {
-    scriptEle.type = scriptType;
-  }
-
-  document.body.lastChild.before(scriptEle);
 }

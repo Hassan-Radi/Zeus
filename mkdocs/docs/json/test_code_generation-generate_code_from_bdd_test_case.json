@@ -52,7 +52,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "AUTOMATION_TOOL: Cucumber",
         "PROGRAMMING_LANGUAGE: JS",
         "BDD_TEST_CASE: Summary: Verify background color for header\nScenario:\nGiven IMR exists for employee\nAnd user opens IMR\nWhen the Opportunities header loads\nThen the Opportunities header background-color is #303240"
@@ -67,7 +67,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "AUTOMATION_TOOL: Cucumber",
         "PROGRAMMING_LANGUAGE: JS",
         "BDD_TEST_CASE: <br>Feature: Verify background color for header<br><br>Scenario:<br>&emsp;Given IMR exists for employee<br>&emsp;And user opens IMR<br>&emsp;When the Opportunities header loads<br>&emsp;Then the Opportunities header background-color is #303240"

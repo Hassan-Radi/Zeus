@@ -50,7 +50,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "REQUEST_TYPE: POST",
         "REQUEST_BODY: {\n  \"fileId\": \"150aaaa9-80e2-419b-a747-67f3771c8d0c\",\n  \"accountId\": \"4060741400042390599\"\n}"
       ]
@@ -64,7 +64,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "REQUEST_TYPE: POST",
         "REQUEST_BODY: {\n  \"fileId\": \"150aaaa9-80e2-419b-a747-67f3771c8d0c\",\n  \"accountId\": \"4060741400042390599\"\n}"
       ]
@@ -78,7 +78,7 @@
         "Template prompt"
       ],
       "llmModel": "GPT-4",
-      "sampleData": [
+      "variables": [
         "REQUEST_TYPE: POST",
         "REQUEST_PARAMETERS: <br>{<br>&emsp;\"fileId\": \"150aaaa9-80e2-419b-a747-67f3771c8d0c\",<br>&emsp;\"accountId\": \"4060741400042390599\"<br>}",
         "REQUEST_HEADERS: <br>{<br>&emsp;\"connection\": \"keep-alive\",<br>&emsp;\"content-type\" : \"application/json; charset=utf-8\"<br>}"
