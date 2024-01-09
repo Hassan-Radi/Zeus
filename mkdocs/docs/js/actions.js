@@ -1,3 +1,8 @@
+/**
+ * TODO: Move constants to a separate file (kay/value pairs).
+ * & make sure to move the Git-related URLs, waits and timeouts to their own
+ * file (to easily edit that when using something else).
+ */
 const PROMPTS_NAME_IN_LOCAL_STORAGE = "prompts";
 const ORIGINAL_COPY_TO_CLIPBOARD_TOOLTIP = "Copy to clipboard";
 const COPIED_TO_CLIPBOARD_TOOLTIP = "Copied!";
@@ -13,6 +18,10 @@ const EDIT_VARIABLE_HEADER_TEXT = "Edit variable";
 const ADD_VARIABLE_HEADER_TEXT = "Add variable";
 const CREATE_PROMPT_HEADER_TEXT = "Creating the prompt!";
 const EDIT_PROMPT_HEADER_TEXT = "Editing the prompt!";
+const MR_WAITING_FOR_APPROVAL_NUMBER_OF_RETRIES = 19;
+const MR_WAITING_FOR_APPROVAL_INTERVAL_TIME = 5000;
+const WAITING_FOR_PIPELINE_NUMBER_OF_RETRIES = 39;
+const WAITING_FOR_PIPELINE_INTERVAL_TIME = 10000;
 
 let sourceTableRow; // TODO: find a better way to replace this
 
@@ -592,12 +601,12 @@ class Actions {
       }
 
       // show failure message when timing out
-      if (++x === 9) {
+      if (++x === MR_WAITING_FOR_APPROVAL_NUMBER_OF_RETRIES) {
         this.showModalMessage(true, getUrlParameters().get("action") === "edit"? EDIT_PROMPT_HEADER_TEXT: CREATE_PROMPT_HEADER_TEXT, true,
             `<br><i class="fa-solid fa-x" style="color: #ff0000;"></i> Timed out waiting for the merge request to be merged. Please contact one of the code maintainers.`);
         window.clearInterval(intervalID);
       }
-    }, 5000);
+    }, MR_WAITING_FOR_APPROVAL_INTERVAL_TIME);
   }
 
   waitForPipelineToFinish(pipelineID, createdFileName) {
@@ -617,13 +626,13 @@ class Actions {
       }
 
       // show failure message when timing out
-      if (++x === 30) {
+      if (++x === WAITING_FOR_PIPELINE_NUMBER_OF_RETRIES) {
         this.showModalMessage(true, getUrlParameters().get("action") === "edit"? EDIT_PROMPT_HEADER_TEXT: CREATE_PROMPT_HEADER_TEXT, true,
             `<br>[${x
             + 1}] Pipeline timed out.`);
         window.clearInterval(intervalID);
       }
-    }, 10000);
+    }, WAITING_FOR_PIPELINE_INTERVAL_TIME);
   }
 
   async commitToBranch(branchName, createdFileName, newPromptData) {
@@ -779,9 +788,11 @@ class Actions {
 
     document.getElementById('submitPromptModalHeader').textContent = headerText;
 
-    isAppendMode ?
-        document.getElementById('submitPromptModalBody').innerHTML += message :
-        document.getElementById('submitPromptModalBody').innerHTML = message;
+    let modalBody = document.getElementById('submitPromptModalBody');
+    isAppendMode ? modalBody.innerHTML += message : modalBody.innerHTML = message;
+
+    // Scroll automatically to the bottom of the text
+    modalBody.scrollTo(0, modalBody.scrollHeight);
   }
 
   submitVariable() {

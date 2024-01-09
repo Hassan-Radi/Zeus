@@ -269,10 +269,12 @@ class UI {
           json.promptHistory).length].revisedPrompt;
 
       // Here we use +2 to ignore the extra space after the :
-      json.promptHistory[Object.keys(
-          json.promptHistory).length].variables.forEach(variable => {
-            actions.addVariableToTable(variable.split(":")[0].trim(), variable.substring(variable.indexOf(':') + 2));
-          });
+      if(json.promptHistory[Object.keys(json.promptHistory).length].variables){
+        json.promptHistory[Object.keys(
+            json.promptHistory).length].variables.forEach(variable => {
+          actions.addVariableToTable(variable.split(":")[0].trim(), variable.substring(variable.indexOf(':') + 2));
+        });
+      }
 
       json.badges.forEach(badge => this.selectByText("selectBadges", badge));
       json.targetAudience.forEach(targetAudience => this.selectByText("selectTargetAudience", targetAudience));

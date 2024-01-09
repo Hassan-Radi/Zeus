@@ -189,7 +189,7 @@
         <div class="modal-header">
             <h1 class="modal-title fs-5" id="submitPromptModalHeader"></h1>
         </div>
-        <div id="submitPromptModalBody" class="modal-body"></div>
+        <rte class="overflow-auto form-control" style="max-height: 300px;" id="submitPromptModalBody"></rte>
         <div id="promptModalFooter" class="modal-footer">
             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
         </div>
