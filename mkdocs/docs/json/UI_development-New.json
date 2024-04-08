@@ -1,0 +1,24 @@
+{
+  "title": "New",
+  "category": "UI development",
+  "badges": [
+    "New"
+  ],
+  "targetAudience": [
+    "Developer"
+  ],
+  "submittedOriginallyBy": [
+    "Viktor"
+  ],
+  "optimizedBy": [],
+  "promptHistory": {
+    "1": {
+      "revisedPrompt": "We love Zeus",
+      "changeLog": "Original version.",
+      "promptType": [
+        "Zero-shot prompt"
+      ],
+      "llmModel": "GPT-3.5"
+    }
+  }
+}
