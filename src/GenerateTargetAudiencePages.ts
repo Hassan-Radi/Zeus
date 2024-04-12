@@ -45,62 +45,72 @@ test('Generate target audience pages', (t) => {
 });
 
 function addPrompts(outputText: string, mapEntries: Map<string, string[]>) {
+  const liClassName = "list-group-item prompt-list__item d-flex justify-content-between align-items-center";
+  const arrowRight = "    <span>\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"none\">\n" +
+      "        <path d=\"M9.39777 5.66281L3.36027 0.947189C3.34449 0.934768 3.32553 0.92705 3.30557 0.924919C3.2856 0.922788 3.26544 0.926332 3.2474 0.935143C3.22936 0.943955 3.21417 0.957676 3.20357 0.974732C3.19298 0.991787 3.18741 1.01149 3.1875 1.03156V2.06683C3.1875 2.13246 3.2183 2.1954 3.2692 2.23558L8.09063 6.00031L3.2692 9.76505C3.21697 9.80522 3.1875 9.86817 3.1875 9.9338V10.9691C3.1875 11.0588 3.29063 11.1083 3.36027 11.0534L9.39777 6.33781C9.44908 6.29779 9.4906 6.24658 9.51915 6.1881C9.5477 6.12962 9.56254 6.06539 9.56254 6.00031C9.56254 5.93523 9.5477 5.87101 9.51915 5.81253C9.4906 5.75404 9.44908 5.70284 9.39777 5.66281Z\" fill=\"#A2AAB5\"/>\n" +
+      "      </svg>\n    </span>\n"
   // Loop on all keys in the map and add them one by one
   mapEntries.forEach((values, key) => {
     // Add the category header
     outputText += "\n## " + key + "\n";
 
-    outputText += "<ol class=\"list-group list-group-numbered\">\n";
+    outputText += "<ol class=\"list-group list-group-numbered prompt-list\">\n";
 
     // Loop on all prompts and add each of them
-    values.forEach(value => {
+    values.forEach((value, index) => {
       // Read the prompt's JSON file first
-      let promptFilePath = PROMPTS_JSON_PATH + "/" + value + ".json";
-      let promptData = JSON.parse(fs.readFileSync("./" + promptFilePath, "utf8"));
+      const promptFilePath = `${PROMPTS_JSON_PATH}/${value}.json`;
+      const promptData = JSON.parse(fs.readFileSync(`./${promptFilePath}`, "utf8"));
+      const liCounter = index + 1;
 
       // Add the prompts in the category
-      outputText += "    <li class=\"list-group-item d-flex justify-content-between align-items-start\">\n" +
-          "        <div class=\"ms-2 me-auto\">\n";
-      outputText += "          <a href=\"../prompt_page.html?prompt=" + value + "\"><small>" + `${promptData.title}` + "</small></a>\n";
-      outputText += "        </div>\n";
+      outputText += `  <li onclick='navigateTo("../prompt_page.html?prompt=${value}")' class='${liClassName}'>
+    <div class="prompt-list__item-content d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center">
+      <div class=\"mb-1 mb-sm-0\">${liCounter}. ${promptData.title}</div>\n`;
 
       // Add badges
       let badges = `${promptData.badges}`.split(',');
-      if (badges.length != 0) {
+      if (badges.length) {
         outputText = addBadges(outputText, badges);
+      } else {
+        outputText += "  </div>\n";
       }
 
       // Add the ending tags
-      outputText += "    </li>\n";
+      outputText += arrowRight + "  </li>\n";
     });
 
     outputText += "</ol>\n";
   });
 
+  outputText += "<script type=\"text/javascript\">\n" +
+                "  ui.showCreatePromptButton();\n" +
+                "</script>\n";
+
   return outputText;
 }
 
 function addBadges(outputText: string, badges: string[]) {
-  outputText += "        <div>\n";
+  outputText += "      <div>\n";
 
   badges.forEach((badge) => {
     switch (badge) {
       case ("New"):
-        outputText += "            <span class=\"badge bg-primary rounded-pill\"><small>New</small></span>\n";
+        outputText += "        <span class=\"badge bg-new\">New</span>\n";
         break;
       case ("Advanced"):
-        outputText += "            <span class=\"badge bg-danger rounded-pill\"><small>Advanced</small></span>\n";
+        outputText += "        <span class=\"badge bg-advanced\">Advanced</span>\n";
         break;
       case ("Interactive"):
-        outputText += "            <span class=\"badge bg-success rounded-pill\"><small>Interactive</small></span>\n";
+        outputText += "        <span class=\"badge bg-interactive\">Interactive</span>\n";
         break;
       case ("Intermediate"):
-        outputText += "            <span class=\"badge bg-warning rounded-pill\"><small>Intermediate</small></span>\n";
+        outputText += "        <span class=\"badge bg-intermediate\">Intermediate</span>\n";
         break;
     }
   })
 
-  outputText += "        </div>\n";
+  outputText += "      </div>\n    </div>\n";
 
   return outputText;
 }

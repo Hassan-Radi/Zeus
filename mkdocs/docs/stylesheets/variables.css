@@ -1,0 +1,16 @@
+:root {
+    --primary-colors-white: #FFF;
+    --background-bg-100: #F7F7F8;
+    --primary-colors-almost-black: #3F3F3F;
+    --tag-value: #C6ECD3;
+    --tag-value-text: #417252;
+    --tag-operator: #CED8FC;
+    --tag-operator-text: #394DB6;
+    --tag-key: #DAC3E5;
+    --tag-key-text: #6F4599;
+    --tag-custom: #F9E6CB;
+    --tag-custom-text: #D87400;
+    --topaz-topaz: #00829B;
+    --topaz-hover: #009DBB;
+    --elements-e-300: #A2AAB5;
+}
