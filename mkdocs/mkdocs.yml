@@ -24,3 +24,5 @@ extra_css:
   - stylesheets/variables.css
   - stylesheets/common.css
   - stylesheets/prompts.css
+  - stylesheets/table-of-content.css
+  - stylesheets/navigation.css

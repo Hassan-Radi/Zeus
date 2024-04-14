@@ -1,6 +1,9 @@
 const CATEGORIES_FILE_PATH = "/config/categories.json";
 
 class UI {
+  constructor() {
+    this.addActiveClass();
+  }
 
   showPromptHistory() {
     fetch(JSON_FILE_PATH)
@@ -310,5 +313,15 @@ class UI {
     }).prop('selected', true);
 
     $(`#${id}`).trigger('change');
+  }
+
+  addActiveClass() {
+    if (window.location.pathname === '/') {
+      const li = document.querySelector(".md-nav--primary > .md-nav__list > li:first-child");
+      const link = li.querySelector('a');
+
+      li.classList.add('md-nav__item--active');
+      link.classList.add('md-nav__link--active');
+    }
   }
 }
