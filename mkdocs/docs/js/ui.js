@@ -317,11 +317,11 @@ class UI {
 
   addActiveClass() {
     if (window.location.pathname === '/') {
-      const li = document.querySelector(".md-nav--primary > .md-nav__list > li:first-child");
-      const link = li.querySelector('a');
+      const homeNavListItem = document.querySelector(".md-nav--primary > .md-nav__list > li:first-child");
+      const homeNavListItemLink = homeNavListItem.querySelector('a');
 
-      li.classList.add('md-nav__item--active');
-      link.classList.add('md-nav__link--active');
+      homeNavListItem.classList.add('md-nav__item--active');
+      homeNavListItemLink.classList.add('md-nav__link--active');
     }
   }
 }
