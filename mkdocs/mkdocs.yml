@@ -17,7 +17,7 @@ nav:
   - Prompt types: prompt_types.md
 theme:
   name: material
-copyright: Made with ❤️ by EPAM&copy; Systems, Inc. All Rights Reserved. 2023&emsp;(v3.2.10)&emsp;-&emsp;<a href="/features.html">Features</a>&emsp;-&emsp;<div class="float-end md-copyright__highlight">- Made with <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">Material for MkDocs</a></div><div class="float-end"><a href="https://chat.lab.epam.com/" target="_blank" rel="noopener">EPAM AI Dial</a>&emsp;</div>
+copyright: Made with ❤️ by EPAM&copy; Systems, Inc. All Rights Reserved. 2023&emsp;(v3.3.0)&emsp;-&emsp;<a href="/features.html">Features</a>&emsp;-&emsp;<div class="float-end md-copyright__highlight">- Made with <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">Material for MkDocs</a></div><div class="float-end"><a href="https://chat.lab.epam.com/" target="_blank" rel="noopener">EPAM AI Dial</a>&emsp;</div>
 extra:
   generator: false
 extra_css:
