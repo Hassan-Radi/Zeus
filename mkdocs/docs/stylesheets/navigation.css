@@ -67,12 +67,12 @@
 
         .md-nav__item--nested {
             @media screen and (min-width: 1220px) {
-                &:has(.md-nav[aria-expanded="false"]) {
-                    height: 40px;
-                }
+                height: 40px;
+                transition: height .25s cubic-bezier(.86,0,.07,1);;
 
-                .md-nav[aria-expanded="false"] {
-                    height: 0;
+                &:has(.md-nav__toggle:checked) {
+                    transition: height .25s cubic-bezier(.86,0,.07,1);;
+                    height: 100%;
                 }
             }
 
