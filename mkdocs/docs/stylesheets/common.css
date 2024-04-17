@@ -1,0 +1,23 @@
+.md-container {
+    > .md-main {
+        background-color: var(--background-bg-100);
+
+        .md-content {
+            margin-bottom: 110px;
+        }
+    }
+
+    .md-content__inner {
+        h1 {
+            margin-bottom: 24px;
+            font: normal 400 20px / 31px "Open Sans";
+            color: var(--primary-colors-almost-black);
+        }
+
+        h2, p {
+            margin: 24px 0 16px;
+            font: normal 500 15px / 24px Roboto;
+            color: var(--primary-colors-almost-black);
+        }
+    }
+}

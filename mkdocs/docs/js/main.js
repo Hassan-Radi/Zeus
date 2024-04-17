@@ -7,6 +7,10 @@ function getUrlParameters() {
   return new URLSearchParams(window.location.href.split('?')[1]);
 }
 
+const navigateTo = path => {
+  window.location.href = path;
+}
+
 function populateThePage() {
   const jsonFileName = getUrlParameters().get('prompt');
   JSON_FILE_NAME = jsonFileName;

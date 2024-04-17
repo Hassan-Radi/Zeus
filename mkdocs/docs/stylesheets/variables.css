@@ -1,0 +1,20 @@
+:root {
+    --primary-colors-white: #FFF;
+    --primary-colors-almost-black: #3F3F3F;
+    --background-bg-100: #F7F7F8;
+    --background-bg-200: #ECEFF4;
+    --background-bg-topaz-50: #E5F5F8;
+    --tag-value: #C6ECD3;
+    --tag-value-text: #417252;
+    --tag-operator: #CED8FC;
+    --tag-operator-text: #394DB6;
+    --tag-key: #DAC3E5;
+    --tag-key-text: #6F4599;
+    --tag-custom: #F9E6CB;
+    --tag-custom-text: #D87400;
+    --topaz-topaz: #00829B;
+    --topaz-hover: #009DBB;
+    --topaz-pressed: #00758C;
+    --elements-e-100: #E3E7EC;
+    --elements-e-300: #A2AAB5;
+}
