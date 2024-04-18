@@ -26,4 +26,7 @@ extra_css:
   - stylesheets/prompts.css
   - stylesheets/table-of-content.css
   - stylesheets/navigation.css
+  - stylesheets/prompt-form.css
+  - stylesheets/buttons.css
+  - stylesheets/dropdowns.css
   - stylesheets/prompt-details.css

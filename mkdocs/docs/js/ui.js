@@ -335,6 +335,7 @@ class UI {
       document.getElementById('variables').classList.add('d-none');
       document.getElementById('changelogDiv').classList.add('d-none');
       document.getElementById('optimizedByGroupDiv').classList.add('d-none');
+      document.getElementById('cancelEditPrompt').classList.add('d-none');
     }
   }
 

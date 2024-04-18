@@ -545,6 +545,12 @@ class Actions {
     });
   }
 
+  cancelPromptEdit() {
+    const currentPath = window.location.href;
+
+    navigateTo(currentPath.replace('create_prompt.html?action=edit&', 'prompt_page.html?'));
+  }
+
   waitForPipelineToBeCreated(mergeRequestState, createdFileName) {
     if (mergeRequestState === 'merged') {
       setTimeout(async () => {
@@ -926,10 +932,10 @@ class Actions {
     tableRow.innerHTML +=
       `<td id="variableName" class="text-center">${variable}</td>` +
       `<td id="sampleValue" class="text-center">${sampleValue}</td>` +
-      '<td class="text-center">' +
-      '<a type="button" data-toggle="tooltip" title="Edit variable" id="editVariable" class="link-dark float-start"><i class="fa-regular fa-pen-to-square" onclick="actions.editVariableEntry(event);"></i>' +
-      '<a type="button" data-toggle="tooltip" title="Delete variable" id="deleteVariable" class="link-dark float-end"><i class="fa-regular fa-trash-can" onclick="actions.deleteVariableEntry(event);"></i>' +
-      '</td>';
+      `<td class="prompt-table__icons">` +
+      `<a type="button" data-toggle="tooltip" title="Edit variable" id="editVariable"><i class="fa-solid fa-pen" onclick="actions.editVariableEntry(event);"></i>` +
+      `<a type="button" data-toggle="tooltip" title="Delete variable" id="deleteVariable"><i class="fa-solid fa-trash" onclick="actions.deleteVariableEntry(event);"></i>` +
+      `</td>`;
 
     // Add the row to the table
     document.getElementById('table-body').appendChild(tableRow);
