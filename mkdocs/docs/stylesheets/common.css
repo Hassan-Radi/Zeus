@@ -1,23 +1,93 @@
 .md-container {
-    > .md-main {
-        background-color: var(--background-bg-100);
+  > .md-main {
+    background-color: var(--background-bg-100);
 
-        .md-content {
-            margin-bottom: 110px;
-        }
+    .md-content {
+      margin-bottom: 110px;
+    }
+  }
+
+  .md-content__inner {
+    h1 {
+      margin-bottom: 24px;
+      font: normal 400 20px / 31px "Open Sans";
+      color: var(--primary-colors-almost-black);
     }
 
-    .md-content__inner {
-        h1 {
-            margin-bottom: 24px;
-            font: normal 400 20px / 31px "Open Sans";
-            color: var(--primary-colors-almost-black);
-        }
-
-        h2, p {
-            margin: 24px 0 16px;
-            font: normal 500 15px / 24px Roboto;
-            color: var(--primary-colors-almost-black);
-        }
+    h2, p {
+      margin: 24px 0 16px;
+      font: normal 500 15px / 24px Roboto;
+      color: var(--primary-colors-almost-black);
     }
+  }
+}
+
+.button {
+  display: flex;
+  height: 36px;
+  padding: 6px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  border-radius: 3px;
+  font-family: Roboto;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.button-primary {
+  background: var(--topaz-topaz);
+  color: var(--primary-colors-white);
+
+  &:hover {
+    background: var(--topaz-hover);
+  }
+
+  &:active {
+    background: var(--topaz-pressed);
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    background: var(--topaz-topaz);
+  }
+
+  &:focus {
+    border: 2px solid var(--topaz-focused);
+    background: var(--topaz-topaz);
+  }
+}
+
+.button-secondary, a.button-secondary {
+  color: var(--topaz-topaz);
+  border: 1px solid var(--topaz-topaz);
+
+  &:hover {
+    color: var(--topaz-hover);
+    border: 1px solid var(--topaz-hover);
+  }
+
+  &:active {
+    color: var(--topaz-pressed);
+    border: 1px solid var(--topaz-pressed);
+  }
+
+  &:disabled {
+    border: 1px solid var(--topaz-topaz);
+    opacity: 0.3;
+  }
+
+  &:focus {
+    border: 2px solid var(--topaz-focused);
+    color: var(--topaz-focused);
+  }
+}
+
+.button-icon {
+  width: 37px;
+  height: 36px;
+  padding: 0;
 }

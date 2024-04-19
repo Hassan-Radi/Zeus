@@ -9,33 +9,45 @@ class UI {
     fetch(JSON_FILE_PATH)
     .then((response) => response.json())
     .then((json) => {
-      for (let i = 1; i <= Object.keys(json.promptHistory).length;
-          i++) {
+      for (let i = 1; i <= Object.keys(json.promptHistory).length; i++) {
         let detailsElement = document.createElement("details");
+        detailsElement.classList.add("details");
         let summaryElement = document.createElement("summary");
-        let summaryText = document.createTextNode("Version " + i)
-        summaryElement.appendChild(summaryText);
+        summaryElement.classList.add("summary");
+        let summaryWrapperElement = document.createElement("div")
+        summaryWrapperElement.classList.add("summary-wrapper");
+
+        summaryWrapperElement.innerHTML = `
+          <div class="summary-closed-image">${SUMMARY_CLOSED_ICON}</div>
+          <div class="summary-open-image">${SUMMARY_OPEN_ICON}</div>
+          <div class="summary-title">Version ${i}</div>`;
+
+        summaryElement.appendChild(summaryWrapperElement);
 
         let divElement = document.createElement("div");
         divElement.innerHTML = `
-          <br><b>Type:</b> ${this.getPromptTypeAsLinks(
-            json.promptHistory[i].promptType)} <br>
-          <b>Changelog:</b> ${JSON.stringify(
-            json.promptHistory[i].changeLog).replaceAll('\"', '')} <br>
-          <b>LLM Model:</b> ${JSON.stringify(
-            json.promptHistory[i].llmModel).replaceAll('\"', '')} <br>
-          <h5 class="link-primary">Prompt:</h5
-        `;
+          <div class="info-block">
+            <div class="info-block__general">
+                <div>Type:</div>
+                <div>Changelog:</div>
+                <div>LLM Model:</div>
+            </div>
+            <div class="info-block__data">
+                <div>${this.getPromptTypeAsLinks(json.promptHistory[i].promptType)}</div>
+                <div>${JSON.stringify(json.promptHistory[i].changeLog).replaceAll('\"', '')}</div>
+                <div>${JSON.stringify(json.promptHistory[i].llmModel).replaceAll('\"', '')}</div>
+            </div>
+          </div>
+          <div class="prompt-block-heading">Prompt</div>`;
 
-        divElement.innerHTML = this.addDataItemGroup(divElement.innerHTML, null,
-            'link-primary',
-            json.promptHistory[i].revisedPrompt.replaceAll('\"', ''))
+        divElement.innerHTML = this.addDataItemGroup(divElement.innerHTML, null, json.promptHistory[i].revisedPrompt.replaceAll('\"', ''))
 
         this.displayVariables(json, divElement, i);
 
         // add the text to the HTML document
-        document.getElementById('prompt-iterations-history').after(
-            detailsElement);
+        const historyHeading = document.getElementById('prompt-iterations-history');
+        historyHeading.classList.add('iterations-history-heading', 'prompt-block-heading');
+        historyHeading.after(detailsElement);
         detailsElement.appendChild(summaryElement);
         detailsElement.appendChild(divElement);
       }
@@ -48,38 +60,35 @@ class UI {
     .then((json) => {
       let divElement = document.createElement("div");
       divElement.innerHTML = `
-        <b>Submitted originally by:</b> ${JSON.stringify(
-          json.submittedOriginallyBy).replaceAll('\"', '')
-      .replaceAll('[', '')
-      .replaceAll(']', '')
-      .replaceAll(',', ', ')} <br>
-        <b>Optimized by:</b> ${JSON.stringify(
-          json.optimizedBy).replaceAll('\"', '')
-      .replaceAll('[', '')
-      .replaceAll(']', '')
-      .replaceAll(',', ', ')} <br>
-        <b>Type:</b> ${this.getPromptTypeAsLinks(
-          json.promptHistory[Object.keys(
-              json.promptHistory).length].promptType)} <br>
-        <b>LLM Model:</b> ${JSON.stringify(
-          json.promptHistory[Object.keys(
-              json.promptHistory).length].llmModel).replaceAll('\"',
-          '')} <br>
-        <hr>
-        <h5 class="link-primary">Prompt:</h5>
-      `;
+        <div class="info-block">
+          <div class="info-block__general">
+              <div>Submitted originally by:</div>
+              <div>Optimized by:</div>
+              <div>Type:</div>
+              <div>LLM Model:</div>
+          </div>
+          <div class="info-block__data">
+              <div>${json.submittedOriginallyBy.join(', ')}</div>
+              <div>${json.optimizedBy.join(', ')}</div>
+              <div>${this.getPromptTypeAsLinks(json.promptHistory[Object.keys(json.promptHistory).length].promptType)}</div>
+              <div>${JSON.stringify(json.promptHistory[Object.keys(json.promptHistory).length].llmModel).replaceAll('\"', '')}</div>
+          </div>
+        </div>
+        <div class="prompt-block-heading">Prompt</div>`;
 
       divElement.innerHTML = this.addDataItemGroup(divElement.innerHTML, null,
-          'link-primary',
-          json.promptHistory[Object.keys(
-              json.promptHistory).length].revisedPrompt.replaceAll(
-              '\"', ''))
+          json.promptHistory[Object.keys(json.promptHistory).length].revisedPrompt.replaceAll('\"', ''))
 
       this.displayVariables(json, divElement,
           Object.keys(json.promptHistory).length);
 
       // add the download as .json button
-      divElement.innerHTML += `<br><a type="button" class="btn btn-sm btn-primary link-light float-end" href="${JSON_FILE_PATH}"><i class="fa-solid fa-download"></i> Download as .json</a><br>`;
+      divElement.innerHTML += `
+        <button class="button button-primary download-json-button" onclick="navigateTo(JSON_FILE_PATH);">
+          ${DOWNLOAD_ICON}
+          Download as .json
+        </button>
+`;
 
       // add the text to the HTML document
       document.getElementsByTagName('h1')[0].after(divElement);
@@ -94,63 +103,56 @@ class UI {
       // we are using root-relative links here (that's why the links start with '/')
       switch (promptType) {
         case 'Zero-shot prompt':
-          outputLinks += '<a class="link-primary" href="/prompt_types.html#zero-shot-prompt">Zero-shot prompt</a>';
+          outputLinks += '<a class="button-secondary prompt__link" href="/prompt_types.html#zero-shot-prompt">Zero-shot prompt</a>';
           break;
         case 'One-shot prompt':
-          outputLinks += '<a class="link-secondary" href="/prompt_types.html#oneshot-prompt">Oneshot prompt</a>';
+          outputLinks += '<a class="button-secondary prompt__link" href="/prompt_types.html#oneshot-prompt">One-shot prompt</a>';
           break;
         case 'Few-shot prompt':
-          outputLinks += '<a class="link-dark" href="/prompt_types.html#few-shot-prompt">Few-shot prompt</a>';
+          outputLinks += '<a class="button-secondary prompt__link" href="/prompt_types.html#few-shot-prompt">Few-shot prompt</a>';
           break;
         case 'User prompt':
-          outputLinks += '<a class="link-success" href="/prompt_types.html#user-prompt">User prompt</a>';
+          outputLinks += '<a class="button-secondary prompt__link" href="/prompt_types.html#user-prompt">User prompt</a>';
           break;
         case 'System prompt':
-          outputLinks += '<a class="link-danger" href="/prompt_types.html#system-prompt">System prompt</a>';
+          outputLinks += '<a class="button-secondary prompt__link" href="/prompt_types.html#system-prompt">System prompt</a>';
           break;
         case 'Template prompt':
-          outputLinks += '<a class="link-warning" href="/prompt_types.html#template-prompt">Template prompt</a>';
+          outputLinks += '<a class="button-secondary prompt__link" href="/prompt_types.html#template-prompt">Template prompt</a>';
           break;
         case 'Interactive prompt':
-          outputLinks += '<a class="link-info" href="/prompt_types.html#interactive-prompt">Interactive prompt</a>';
+          outputLinks += '<a class="button-secondary prompt__link" href="/prompt_types.html#interactive-prompt">Interactive prompt</a>';
           break;
-      }
-
-      // add a comma as long as we aren't processing the last entry in the array
-      if (i != promptTypes.length - 1) {
-        outputLinks += ', ';
       }
     }
 
     return outputLinks;
   }
 
-  addDataItemGroup(html, dataItemName, dataItemNameColor,
-      dataItemValue) {
-    html += `
-        <div class="card">
-          <div class="card-body">
-          `;
+  addDataItemGroup(html, dataItemName, dataItemValue) {
+    html += '<div class="clipboard-block">';
 
-    if (dataItemName != null) {
-      html += `<small class="${dataItemNameColor}"><b>${dataItemName}:</b></small>`;
+    if (dataItemName !== null) {
+      html += `<div class="clipboard-block__name">${dataItemName}</div>`;
     }
 
-    html += `
-            <button id="copy-button" class="btn btn-sm btn-outline-secondary float-end fa-regular fa-clipboard" data-toggle="tooltip" type="button" title="${ORIGINAL_COPY_TO_CLIPBOARD_TOOLTIP}" onclick="actions.copyToClipboard(event);" onmouseleave="actions.resetClipboardTooltip(event);"></button>
-          `;
-
-    if (dataItemName == null) {
-      html += `<p class="card-text">${dataItemValue}</p>
-            `;
-    } else {
-      html += `<small class="card-text">${dataItemValue}</small>`;
-    }
+    html += `<div class="clipboard-block__text">${dataItemValue}</div>`;
 
     html += `
-          </div>
-        </div>
-          `;
+      <button 
+        id="copy-button" 
+        class="clipboard-block__button" 
+        data-toggle="tooltip" 
+        type="button" 
+        title="${ORIGINAL_COPY_TO_CLIPBOARD_TOOLTIP}" 
+        onclick="actions.copyToClipboard(event);" 
+        onmouseleave="actions.resetClipboardTooltip(event);"
+      >
+        ${COPY_TO_CLIPBOARD_ICON}
+      </button>`;
+
+    html += '</div>';
+
     return html;
   }
 
@@ -158,27 +160,20 @@ class UI {
     // add the sample data if any exists
     if (json.promptHistory[entryIndex].variables !== undefined) {
       let variablesHtml = "";
-      let numberOfEntries = Object.keys(
-          json.promptHistory[entryIndex].variables).length;
+      let numberOfEntries = Object.keys(json.promptHistory[entryIndex].variables).length;
 
       for (let i = 0; i < numberOfEntries; i++) {
-        let dataItemName = json.promptHistory[entryIndex].variables[i].split(
-            ':')[0].trim();
-        let dataItemValue = json.promptHistory[entryIndex].variables[i].substring(
-            dataItemName.length + 1).trim();
+        let dataItemName = json.promptHistory[entryIndex].variables[i].split(':')[0].trim();
+        let dataItemValue = json.promptHistory[entryIndex].variables[i].substring(dataItemName.length + 1).trim();
 
-        variablesHtml = this.addDataItemGroup(variablesHtml, dataItemName,
-            'link-success',
-            dataItemValue);
-
-        // add a space if we aren't processing the last entry
-        if (i != numberOfEntries - 1) {
-          variablesHtml += '<br>';
-        }
+        variablesHtml = this.addDataItemGroup(variablesHtml, dataItemName, dataItemValue);
       }
 
       // add all the sample data
-      divElement.innerHTML += `<h5 class="link-danger">Variables:</h5>${variablesHtml}`;
+      divElement.innerHTML += `
+        <div class="variables-block">
+          <div class="prompt-block-heading">Variables</div>${variablesHtml}
+        </div>`;
     }
   }
 
@@ -186,8 +181,9 @@ class UI {
     fetch(JSON_FILE_PATH)
     .then((response) => response.json())
     .then((json) => {
-      let pageTitle = `[${json.category}] ${json.title}`;
-      document.getElementById('header').innerText = pageTitle;
+      const pageTitle = `[${json.category}] ${json.title}`;
+
+      document.getElementById('header').innerHTML = `<span class="header--category">[${json.category}]</span></br> ${json.title}`;
       document.title = pageTitle;
       /**
        * Show the same header text when you scroll down
@@ -196,33 +192,76 @@ class UI {
     });
   }
 
-  showPromptButtons(showCreatePrompt, showExportPrompts, showBookmarkPrompt,
-      showClearBookmarks, showEditPrompt) {
+  showPromptButtons(showCreatePrompt, showExportPrompts, showBookmarkPrompt, showClearBookmarks, showEditPrompt) {
     const divElement = document.createElement('div');
-    divElement.classList.add('float-end');
+    divElement.classList.add('d-flex', 'justify-content-end', 'prompt-buttons');
 
     if (showClearBookmarks) {
       divElement.innerHTML += `
-       <button id="clear-bookmarked-prompts" class="btn btn-light fa-solid fa-delete-left" data-toggle="tooltip" type="button" title="${ORIGINAL_CLEAR_ALL_PROMPTS_TOOLTIP}" onclick="actions.removeAllBookmarks(true);" onmouseleave="actions.resetRemoveAllBookmarksTooltip(event);"></button>`;
-    }
-
-    if (showBookmarkPrompt) {
-      divElement.innerHTML += `
-       <button id="bookmark-prompt" class="btn btn-light fa-regular fa-bookmark" data-toggle="tooltip" type="button" title onclick="actions.bookmarkPrompt(event);" onmouseleave="actions.resetBookmarkTooltip(event);"></button>`;
+        <button 
+          id="clear-bookmarked-prompts" 
+          class="btn btn-light fa-solid fa-delete-left" 
+          data-toggle="tooltip" 
+          type="button" 
+          title="${ORIGINAL_CLEAR_ALL_PROMPTS_TOOLTIP}" 
+          onclick="actions.removeAllBookmarks(true);" 
+          onmouseleave="actions.resetRemoveAllBookmarksTooltip(event);"
+        >
+        </button>`;
     }
 
     if (showExportPrompts) {
       divElement.innerHTML += `
-       <button id="export-prompts" class="btn btn-light fa-solid fa-file-export" data-toggle="tooltip" type="button" title="Export prompts" onclick="window.location='/export.html';"></button>`;
+        <button 
+          id="export-prompts" 
+          class="button button-secondary" 
+          type="button" 
+          title="Export prompts" 
+          onclick="window.location='/export.html';"
+        >
+          ${ADD_TO_EXPORT_ICON}
+          Add to Export
+        </button>`;
+    }
+
+    if (showBookmarkPrompt) {
+      divElement.innerHTML += `
+        <button 
+          id="bookmark-prompt" 
+          class="button button-secondary button-icon bookmark-removed"  
+          type="button" 
+          title 
+          onclick="actions.bookmarkPrompt(event);"
+          onmouseleave="actions.resetBookmarkTooltip(event);"
+        >
+          ${BOOKMARK_ICON}
+        </button>`;
     }
 
     if (showEditPrompt) {
-      divElement.innerHTML += `<button id="edit-prompt" class="btn btn-light fa-regular fa-pen-to-square btn-block" data-toggle="tooltip" type="button" title="Edit prompt" onClick="window.location='/prompts/create_prompt.html?action=edit&prompt=${JSON_FILE_NAME}';"></button>`;
+      divElement.innerHTML += `
+        <button 
+          id="edit-prompt" 
+          class="button button-secondary button-icon" 
+          type="button" 
+          title="Edit prompt" 
+          onClick="window.location='/prompts/create_prompt.html?action=edit&prompt=${JSON_FILE_NAME}';"
+        >
+          ${EDIT_ICON}
+        </button>`;
     }
 
     if (showCreatePrompt) {
       divElement.innerHTML += `
-       <button id="create-prompt" class="btn btn-light fa-regular fa-square-plus btn-block" data-toggle="tooltip" type="button" title="Create prompt" onclick="window.location='/prompts/create_prompt.html';"></button>`;
+        <button 
+         id="create-prompt" 
+         class="button button-secondary button-icon" 
+         type="button" 
+         title="Create prompt" 
+         onclick="window.location='/prompts/create_prompt.html';"
+        >
+          ${CREATE_ICON}
+        </button>`;
     }
 
     document.getElementsByTagName('h1')[0].before(divElement);

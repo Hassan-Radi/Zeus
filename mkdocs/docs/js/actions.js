@@ -46,17 +46,15 @@ class Actions {
   copyToClipboard(event) {
     new ClipboardJS('#copy-button', {
       target: function (trigger) {
-        $(trigger).attr('data-bs-original-title', COPIED_TO_CLIPBOARD_TOOLTIP)
-        .tooltip('show');
+        $(trigger).attr('data-bs-original-title', COPIED_TO_CLIPBOARD_TOOLTIP).tooltip('show');
 
-        return trigger.nextElementSibling;
+        return trigger.previousElementSibling;
       }
     });
   }
 
   resetClipboardTooltip(event) {
-    event.target.setAttribute('data-bs-original-title',
-        ORIGINAL_COPY_TO_CLIPBOARD_TOOLTIP);
+    event.target.setAttribute('data-bs-original-title', ORIGINAL_COPY_TO_CLIPBOARD_TOOLTIP);
 
     // hide the tooltip
     $(event.target).tooltip("hide");
@@ -68,27 +66,27 @@ class Actions {
   // bookmark actions
   bookmarkPrompt(event) {
     // check whether the prompt is bookmarked or not
-    if (event.target.classList.contains('fa-regular')) {
+    if (event.currentTarget.classList.contains('bookmark-removed')) {
       // change tooltip
-      $(event.target).attr('data-bs-original-title', BOOKMARK_ADDED_TOOLTIP)
-      .tooltip('show');
+      $(event.currentTarget).attr('data-bs-original-title', BOOKMARK_ADDED_TOOLTIP).tooltip('show');
 
       // change the icon
-      event.target.classList.remove('fa-regular');
-      event.target.classList.add('fa-solid');
+      event.currentTarget.classList.remove('bookmark-removed');
+      event.currentTarget.classList.add('bookmark-added');
 
       this.storePromptInLocalStorage(JSON_FILE_NAME);
     } else {
       // change tooltip
-      $(event.target).attr('data-bs-original-title', BOOKMARK_REMOVED_TOOLTIP)
-      .tooltip('show');
+      $(event.currentTarget).attr('data-bs-original-title', BOOKMARK_REMOVED_TOOLTIP).tooltip('show');
 
       // change the icon
-      event.target.classList.remove('fa-solid');
-      event.target.classList.add('fa-regular');
+      event.currentTarget.classList.remove('bookmark-added');
+      event.currentTarget.classList.add('bookmark-removed');
 
       this.removePromptFromLocalStorage(JSON_FILE_NAME);
     }
+
+    event.currentTarget.blur();
 
     // update the remove all bookmarks button
     this.loadRemoveAllBookmarksIcon();
@@ -96,9 +94,8 @@ class Actions {
 
   resetBookmarkTooltip(event) {
     // reset the bookmark's tooltip if we removed the bookmark
-    if (event.target.classList.contains('fa-regular')) {
-      event.target.setAttribute('data-bs-original-title',
-          ORIGINAL_BOOKMARK_TOOLTIP);
+    if (event.target.classList.contains('bookmark-removed')) {
+      event.target.setAttribute('data-bs-original-title', ORIGINAL_BOOKMARK_TOOLTIP);
     }
 
     // hide the tooltip
@@ -137,20 +134,19 @@ class Actions {
 
   loadBookmarkIcon() {
     const element = document.getElementById('bookmark-prompt');
+
     if (this.isPromptInLocalStorage(JSON_FILE_NAME)) {
-      element.classList.remove('fa-regular');
-      element.classList.add('fa-solid');
+      element.classList.remove('bookmark-removed');
+      element.classList.add('bookmark-added');
 
       // update the tooltip
-      element.setAttribute('data-bs-original-title',
-          BOOKMARK_ADDED_TOOLTIP);
+      element.setAttribute('data-bs-original-title', BOOKMARK_ADDED_TOOLTIP);
     } else {
-      element.classList.remove('fa-solid');
-      element.classList.add('fa-regular');
+      element.classList.remove('bookmark-added');
+      element.classList.add('bookmark-removed');
 
       // update the tooltip
-      element.setAttribute('data-bs-original-title',
-          ORIGINAL_BOOKMARK_TOOLTIP);
+      element.setAttribute('data-bs-original-title', ORIGINAL_BOOKMARK_TOOLTIP);
     }
   }
 
@@ -172,10 +168,9 @@ class Actions {
 
   toggleCheckAllPrompts(event) {
     document.querySelectorAll('#prompt-checkbox').forEach(checkBox => {
-      let checkAllCheckBoxesElment = document.getElementById(
-          'select-all-checkbox');
+      let checkAllCheckBoxesElement = document.getElementById('select-all-checkbox');
 
-      if ($(checkAllCheckBoxesElment).prop('checked') === true) {
+      if ($(checkAllCheckBoxesElement).prop('checked') === true) {
         $(checkBox).prop('checked', true);
       } else {
         $(checkBox).prop('checked', false);
@@ -185,8 +180,7 @@ class Actions {
 
   hasBookmarks() {
     return localStorage.getItem(PROMPTS_NAME_IN_LOCAL_STORAGE) !== null
-        && JSON.parse(
-            localStorage.getItem(PROMPTS_NAME_IN_LOCAL_STORAGE)).length !== 0;
+        && JSON.parse(localStorage.getItem(PROMPTS_NAME_IN_LOCAL_STORAGE)).length !== 0;
   }
 
   // local storage actions
@@ -206,15 +200,13 @@ class Actions {
       prompts.push(prompt);
 
       // add all prompts back to local storage
-      localStorage.setItem(PROMPTS_NAME_IN_LOCAL_STORAGE,
-          JSON.stringify(prompts));
+      localStorage.setItem(PROMPTS_NAME_IN_LOCAL_STORAGE, JSON.stringify(prompts));
     }
   }
 
   removePromptFromLocalStorage(prompt) {
     // check if there are any prompts in local storage to load first
-    let prompts = JSON.parse(
-        localStorage.getItem(PROMPTS_NAME_IN_LOCAL_STORAGE));
+    let prompts = JSON.parse(localStorage.getItem(PROMPTS_NAME_IN_LOCAL_STORAGE));
 
     // only add the prompt if it is not in local storage already
     if (this.isPromptInLocalStorage(prompt)) {
@@ -228,8 +220,7 @@ class Actions {
       }
 
       // add all prompts back to local storage
-      localStorage.setItem(PROMPTS_NAME_IN_LOCAL_STORAGE,
-          JSON.stringify(newPromptsArray));
+      localStorage.setItem(PROMPTS_NAME_IN_LOCAL_STORAGE, JSON.stringify(newPromptsArray));
     }
   }
 
@@ -238,8 +229,7 @@ class Actions {
     if (localStorage.getItem(PROMPTS_NAME_IN_LOCAL_STORAGE) === null) {
       return false;
     } else {
-      let prompts = JSON.parse(
-          localStorage.getItem(PROMPTS_NAME_IN_LOCAL_STORAGE));
+      let prompts = JSON.parse(localStorage.getItem(PROMPTS_NAME_IN_LOCAL_STORAGE));
 
       return prompts.includes(prompt);
     }
@@ -333,8 +323,8 @@ class Actions {
 
     // check if no prompts are selected
     if (this.isNoCheckBoxesChecked(allRows)) {
-      alert(
-          "No prompts are selected. Please select at least one prompt to export.");
+      alert("No prompts are selected. Please select at least one prompt to export.");
+
       return;
     }
 
@@ -343,16 +333,14 @@ class Actions {
     };
 
     for (let i = 0; i < allRows.length; i++) {
-      let isChecked = this.isCheckBoxChecked(allRows[i].querySelector(
-          '#prompt-checkbox'));
+      let isChecked = this.isCheckBoxChecked(allRows[i].querySelector('#prompt-checkbox'));
 
       // move on quickly if the prompt is not selected
       if (!isChecked) {
         continue;
       }
 
-      let promptJsonFileName = await this.getPromptJsonFile(
-          allRows[i].querySelector('#prompt-name').textContent);
+      let promptJsonFileName = await this.getPromptJsonFile(allRows[i].querySelector('#prompt-name').textContent);
 
       await fetch(promptJsonFileName)
       .then((response) => response.json())
@@ -368,8 +356,7 @@ class Actions {
 
   isNoCheckBoxesChecked(allRows) {
     for (let i = 0; i < allRows.length; i++) {
-      if (this.isCheckBoxChecked(allRows[i].querySelector(
-          '#prompt-checkbox'))) {
+      if (this.isCheckBoxChecked(allRows[i].querySelector('#prompt-checkbox'))) {
         return false;
       }
     }
@@ -383,14 +370,12 @@ class Actions {
   }
 
   saveAsJson(filename, dataObjToWrite) {
-    const blob = new Blob([JSON.stringify(dataObjToWrite)],
-        {type: "text/json"});
+    const blob = new Blob([JSON.stringify(dataObjToWrite)], {type: "text/json"});
     const link = document.createElement("a");
 
     link.download = filename;
     link.href = window.URL.createObjectURL(blob);
-    link.dataset.downloadurl = ["text/json", link.download, link.href].join(
-        ":");
+    link.dataset.downloadurl = ["text/json", link.download, link.href].join(":");
 
     const evt = new MouseEvent("click", {
       view: window,
@@ -410,8 +395,7 @@ class Actions {
   }
 
   async getPromptJsonFile(promptReadableName) {
-    let promptTitle = promptReadableName.substring(
-        promptReadableName.indexOf('-') + 1).trim();
+    let promptTitle = promptReadableName.substring(promptReadableName.indexOf('-') + 1).trim();
     let output;
 
     await fetch(ALL_JSON_PROMPTS_PATH)
@@ -430,29 +414,29 @@ class Actions {
   validateData(){
     // check if the user didn't agree to the terms
     if (!this.isCheckBoxChecked(document.getElementById('agreeToTerms'))) {
-      this.showModalMessage(false, "Error!", false,
-          "Please agree to the terms first.");
+      this.showModalMessage(false, "Error!", false, "Please agree to the terms first.");
+
       return false;
     }
 
     // check if the user didn't select any badges
     if ($('#selectBadges').val() == 0) {
-      this.showModalMessage(false, "Error!", false,
-          "Please select at least one badge!");
+      this.showModalMessage(false, "Error!", false, "Please select at least one badge!");
+
       return false;
     }
 
     // check if the user didn't select any target audience
     if ($('#selectTargetAudience').val() == 0) {
-      this.showModalMessage(false, "Error!", false,
-          "Please select at least one target audience!");
+      this.showModalMessage(false, "Error!", false, "Please select at least one target audience!");
+
       return false;
     }
 
     // check if the user didn't select any prompt type
     if ($('#selectPromptType').val() == 0) {
-      this.showModalMessage(false, "Error!", false,
-          "Please select at least one prompt type!");
+      this.showModalMessage(false, "Error!", false, "Please select at least one prompt type!");
+
       return false;
     }
 
@@ -460,7 +444,7 @@ class Actions {
   }
 
   async submitPrompt() {
-    if(!this.validateData()){
+    if (!this.validateData()) {
       return;
     }
 

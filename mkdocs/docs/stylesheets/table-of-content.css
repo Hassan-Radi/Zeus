@@ -1,53 +1,53 @@
 .md-nav--secondary {
-    .md-nav__title {
-        border-radius: 8px 8px 0 0;
-        border-bottom: 1px solid var(--elements-e-100);
-        padding: 16px;
-        background: var(--background-bg-200);
-        box-shadow: none;
-        font: normal 500 15px / 24px Roboto;
+  .md-nav__title {
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid var(--elements-e-100);
+    padding: 16px;
+    background: var(--background-bg-200);
+    box-shadow: none;
+    font: normal 500 15px / 24px Roboto;
+    color: var(--primary-colors-almost-black);
+
+    @media screen and (max-width: 960px) {
+      display: flex;
+      align-items: end;
+      border-radius: 0;
+      background: var(--primary-colors-almost-black);
+      font-size: 17px;
+      color: var(--primary-colors-white);
+    }
+  }
+
+  .md-nav__list {
+    padding-left: 0 !important;
+
+    .md-nav__item {
+      border-bottom: 1px solid var(--elements-e-100);
+      padding: 16px;
+      background: var(--primary-colors-white);
+
+      @media screen and (max-width: 960px) {
+        border-bottom: none;
+      }
+
+      .md-nav__link {
+        margin-top: 0;
+        font: normal 400 13px / 20px Roboto;
         color: var(--primary-colors-almost-black);
+        text-decoration: none;
 
         @media screen and (max-width: 960px) {
-            display: flex;
-            align-items: end;
-            border-radius: 0;
-            background: var(--primary-colors-almost-black);
-            font-size: 17px;
-            color: var(--primary-colors-white);
+          padding: 0;
         }
+      }
+
+      &:has(a.md-nav__link--active) {
+        background: var(--background-bg-topaz-50);
+      }
+
+      &:last-child {
+        border-radius: 0 0 8px 8px;
+      }
     }
-
-    .md-nav__list {
-        padding-left: 0 !important;
-
-        .md-nav__item {
-            border-bottom: 1px solid var(--elements-e-100);
-            padding: 16px;
-            background: var(--primary-colors-white);
-
-            @media screen and (max-width: 960px) {
-                border-bottom: none;
-            }
-
-            .md-nav__link {
-                margin-top: 0;
-                font: normal 400 13px / 20px Roboto;
-                color: var(--primary-colors-almost-black);
-                text-decoration: none;
-
-                @media screen and (max-width: 960px) {
-                    padding: 0;
-                }
-            }
-
-            &:has(a.md-nav__link--active) {
-                background: var(--background-bg-topaz-50);
-            }
-
-            &:last-child {
-                border-radius: 0 0 8px 8px;
-            }
-        }
-    }
+  }
 }

@@ -1,5 +1,6 @@
 # header
 
+<script type="text/javascript" src="/js/constants.js"></script>
 <script type="text/javascript" src="/js/ui.js"></script>
 <script type="text/javascript" src="/js/actions.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
