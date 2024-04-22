@@ -1,65 +1,39 @@
 {
   "title": "Test automation strategy document",
   "category": "Test documentation generation",
-  "badges": [
-    "Interactive",
-    "Advanced"
-  ],
-  "targetAudience": [
-    "SDET",
-    "Architect"
-  ],
-  "submittedOriginallyBy": [
-    "Davud Murtazin"
-  ],
-  "optimizedBy": [
-    "Hassan Radi"
-  ],
+  "badges": ["Interactive", "Advanced"],
+  "targetAudience": ["SDET", "Architect"],
+  "submittedOriginallyBy": ["Davud Murtazin"],
+  "optimizedBy": ["Hassan Radi"],
   "promptHistory": {
     "1": {
       "revisedPrompt": "Create test automation strategy for mobile application testing on iOS and Android with tools:\n1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system",
       "changeLog": "Original version.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-3.5"
     },
     "2": {
       "revisedPrompt": "Create a test automation strategy for testing a mobile application on iOS and Android with the following tools:\n1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system",
       "changeLog": "Minor fixes to make the prompt better.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-3.5"
     },
     "3": {
       "revisedPrompt": "Write a formal test automation strategy document for testing a mobile application on iOS and Android using the following tools:\n1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system",
       "changeLog": "Updated the prompt to make it better.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-3.5"
     },
     "4": {
       "revisedPrompt": "Write a formal test automation strategy document for testing a mobile application on iOS and Android using the following tools:\n1) TestNG 4.4\n2) Java SE 14\n3) RestAssured 5\n4) Appium\n5) Maven\n6) Android Studio 2021\n7) XCode simulator\n8) Gitlab VCS\n9) Gitlab CI\n10) Report portal - reporting tool\n11) JIRA bug tracking system",
       "changeLog": "Switched to GPT-4 for better results and longer content in the produced document.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-4"
     },
     "5": {
       "revisedPrompt": "Write a formal test automation strategy document for testing a {{APPLICATION_TYPE}} on {{SUPPORTED_PLATFORMS}} using the following tools: {{SUPPORTED_TOOLS}}",
       "changeLog": "Converted the prompt to a template prompt.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt",
-        "Template prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt", "Template prompt"],
       "llmModel": "GPT-4",
       "variables": [
         "APPLICATION_TYPE: mobile application",
@@ -70,11 +44,7 @@
     "6": {
       "revisedPrompt": "Act as a lead software development engineer in test. Your job is to write a formal test automation strategy document for testing a {{APPLICATION_TYPE}} on {{SUPPORTED_PLATFORMS}} using the following tools: {{SUPPORTED_TOOLS}}",
       "changeLog": "Rephrased the prompt a bit in preparation to convert it to a system prompt.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt",
-        "Template prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt", "Template prompt"],
       "llmModel": "GPT-4",
       "variables": [
         "APPLICATION_TYPE: mobile application",
@@ -85,11 +55,7 @@
     "7": {
       "revisedPrompt": "Act as a lead software development engineer in test. Your job is to write a formal test automation strategy document. Perform the following actions: 1. Great the user politely 2. Ask the user to provide the type of application they want to test. This can be either a web or a mobile application. 3. Ask the user to provide a list of platforms they want to support. 4. Ask the user to provide a list of tools they want to use. 5. Write the formal test automation strategy document using all of the above provided information. Split the document into sections and provide as much details as possible.",
       "changeLog": "Converted the prompt to a system interactive prompt.",
-      "promptType": [
-        "Zero-shot prompt",
-        "System prompt",
-        "Interactive prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "System prompt", "Interactive prompt"],
       "llmModel": "GPT-4",
       "variables": [
         "1st input: mobile application",

@@ -1,64 +1,39 @@
 {
   "title": "Create an automation practical task for an interview",
   "category": "Interview question generation",
-  "badges": [
-    "Advanced"
-  ],
-  "targetAudience": [
-    "SDET",
-    "Architect"
-  ],
-  "submittedOriginallyBy": [
-    "Anton Chyrko"
-  ],
-  "optimizedBy": [
-    "Hassan Radi"
-  ],
+  "badges": ["Advanced"],
+  "targetAudience": ["SDET", "Architect"],
+  "submittedOriginallyBy": ["Anton Chyrko"],
+  "optimizedBy": ["Hassan Radi"],
   "promptHistory": {
     "1": {
       "revisedPrompt": "Create some practical task for Test automation engineer on Java for checking his knowledge about collections and provide solution\n\ncan you complicate this task",
       "changeLog": "Original version.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-3.5"
     },
     "2": {
       "revisedPrompt": "Create a practical task for interviewing a test automation engineer using Java. Focus on testing their knowledge about collections. Provide the task's solution and make it complicated",
       "changeLog": "Corrected spelling and grammar mistakes.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-3.5"
     },
     "3": {
       "revisedPrompt": "Create a practical task for interviewing a test automation engineer using Java. Focus on testing their knowledge about collections. Provide the task's solution and make it complicated",
       "changeLog": "Switched to using GPT-4 for better results.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-4"
     },
     "4": {
       "revisedPrompt": "Act as a senior test automation engineer. Create a practical task for interviewing a test automation engineer using Java. Focus on testing their knowledge about collections. Provide the task's solution and make it complicated",
       "changeLog": "Added more context for the AI.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-4"
     },
     "5": {
       "revisedPrompt": "Act as a senior {{ROLE}}. Create a practical task for interviewing a {{ROLE}} using {{PROGRAMMING_LANGUAGE}}. {{TASK_CONTEXT}}. Provide the task's solution and make it complicated",
       "changeLog": "Converted the prompt to a template one.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt",
-        "Template prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt", "Template prompt"],
       "llmModel": "GPT-4",
       "variables": [
         "ROLE: test automation engineer",
@@ -69,11 +44,7 @@
     "6": {
       "revisedPrompt": "Act as a senior {{ROLE}} and then perform the following actions: - Create a practical task for interviewing a {{ROLE}} using {{PROGRAMMING_LANGUAGE}}. {{TASK_CONTEXT}}. - Provide the task's solution and make it complicated",
       "changeLog": "Split the prompt to actions to perform.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt",
-        "Template prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt", "Template prompt"],
       "llmModel": "GPT-4",
       "variables": [
         "ROLE: test automation engineer",
@@ -84,11 +55,7 @@
     "7": {
       "revisedPrompt": "Act as a senior {{ROLE}} and then perform the following actions: 1. Create a practical task for interviewing a {{ROLE}} using {{PROGRAMMING_LANGUAGE}}. {{TASK_CONTEXT}}. 2. Provide the task's solution and make it complicated",
       "changeLog": "Optimized the prompt a bit.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt",
-        "Template prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt", "Template prompt"],
       "llmModel": "GPT-4",
       "variables": [
         "ROLE: test automation engineer",

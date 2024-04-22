@@ -1,87 +1,49 @@
 {
   "title": "Decompose a user story & test it",
   "category": "Test case generation",
-  "badges": [
-    "Advanced"
-  ],
-  "targetAudience": [
-    "QA Engineer",
-    "Business Analyst",
-    "Product Owner",
-    "Architect"
-  ],
-  "submittedOriginallyBy": [
-    "Vladislav Razakov"
-  ],
-  "optimizedBy": [
-    "Hassan Radi"
-  ],
+  "badges": ["Advanced"],
+  "targetAudience": ["QA Engineer", "Business Analyst", "Product Owner", "Architect"],
+  "submittedOriginallyBy": ["Vladislav Razakov"],
+  "optimizedBy": ["Hassan Radi"],
   "promptHistory": {
     "1": {
       "revisedPrompt": "Act like a business analyst. Create a user story for buying a ticket to the cinema. Decompose stories whenever possible to make it easier for developers to implement.\n\nThen act like a tester. Test this business requirements.",
       "changeLog": "Original version.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-3.5"
     },
     "2": {
       "revisedPrompt": "Act as a business analyst. Create a user story for buying a ticket to the cinema. Decompose stories whenever possible to make it easier for the developers to implement them.\n\nThen act as a tester and test these business requirements.",
       "changeLog": "Fixed grammar and spelling mistakes",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-3.5"
     },
     "3": {
       "revisedPrompt": "Act as a business analyst. Create a user story for buying a ticket to the cinema. Decompose stories whenever possible to make it easier for the developers to implement them.\n\nThen act as a tester and test these business requirements.",
       "changeLog": "Switched to OpenAI GPT-4",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-4"
     },
     "4": {
       "revisedPrompt": "Act as a business analyst. Create a user story for the below scenario delimited by triple backticks. Decompose stories whenever possible to make it easier for the developers to implement them.\n\nThen act as a tester and test these business requirements.```{{SCENARIO}}```",
       "changeLog": "Converted the prompt to a template one + using delimiters",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt",
-        "Template prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt", "Template prompt"],
       "llmModel": "GPT-4",
-      "variables": [
-        "SCENARIO: buying a ticket to the cinema"
-      ]
+      "variables": ["SCENARIO: buying a ticket to the cinema"]
     },
     "5": {
       "revisedPrompt": "Perform the following actions: - Act as a business analyst. Create a user story for the below scenario delimited by triple backticks. - Decompose the created stories whenever possible to make it easier for the developers to implement them. - Then act as a tester and test these business requirements.```{{SCENARIO}}```",
       "changeLog": "Rephrased the prompt and split it into actions to perform.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt",
-        "Template prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt", "Template prompt"],
       "llmModel": "GPT-4",
-      "variables": [
-        "SCENARIO: buying a ticket to the cinema"
-      ]
+      "variables": ["SCENARIO: buying a ticket to the cinema"]
     },
     "6": {
       "revisedPrompt": "Perform the following actions: 1. Act as a Business Analyst and then create a user story for the below scenario delimited by triple backticks. 2. Decompose the created user stories whenever possible, to make it easier for the developers to implement them. 3. Then act as a Quality Assurance Engineer and test these business requirements.```{{SCENARIO}}```",
       "changeLog": "Enhanced the prompt a bit.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt",
-        "Template prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt", "Template prompt"],
       "llmModel": "GPT-4",
-      "variables": [
-        "SCENARIO: buying a ticket to the cinema"
-      ]
+      "variables": ["SCENARIO: buying a ticket to the cinema"]
     }
   }
 }

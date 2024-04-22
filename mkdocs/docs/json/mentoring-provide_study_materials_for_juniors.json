@@ -1,73 +1,42 @@
 {
   "title": "Provide study materials for juniors",
   "category": "Mentoring",
-  "badges": [
-    "New"
-  ],
-  "targetAudience": [
-    "QA Engineer",
-    "SDET"
-  ],
-  "submittedOriginallyBy": [
-    "Daniyar Kushkinbayev"
-  ],
-  "optimizedBy": [
-    "Hassan Radi"
-  ],
+  "badges": ["New"],
+  "targetAudience": ["QA Engineer", "SDET"],
+  "submittedOriginallyBy": ["Daniyar Kushkinbayev"],
+  "optimizedBy": ["Hassan Radi"],
   "promptHistory": {
     "1": {
       "revisedPrompt": "provide materials about api testing",
       "changeLog": "Original version.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-3.5"
     },
     "2": {
       "revisedPrompt": "Act as a senior software development engineer in test, provide materials about api testing",
       "changeLog": "Added more context to the prompt.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-3.5"
     },
     "3": {
       "revisedPrompt": "Act as a senior software development engineer in test, provide materials about api testing",
       "changeLog": "Use OpenAI Chat-GPT-4",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-4"
     },
     "4": {
       "revisedPrompt": "Act as a {{ROLE}}, provide materials about {{TOPIC}}.",
       "changeLog": "Convert the prompt to a template one.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt",
-        "Template prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt", "Template prompt"],
       "llmModel": "GPT-4",
-      "variables": [
-        "ROLE: Senior software development engineer in test",
-        "TOPIC: API testing"
-      ]
+      "variables": ["ROLE: Senior software development engineer in test", "TOPIC: API testing"]
     },
     "5": {
       "revisedPrompt": "Act as a Quality Architect, collect online training materials about {{TOPIC}} to help a junior learn about it.",
       "changeLog": "Optimise the prompt to add more context and make it more relevant.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt",
-        "Template prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt", "Template prompt"],
       "llmModel": "GPT-4",
-      "variables": [
-        "TOPIC: API testing"
-      ]
+      "variables": ["TOPIC: API testing"]
     }
   }
 }

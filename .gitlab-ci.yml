@@ -21,7 +21,7 @@ build-mkdocs:
   rules:
     - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   image: ubuntu:latest
-  needs: ["generate-dynamic-content"]
+  needs: ['generate-dynamic-content']
   before_script:
     - apt-get update
     - apt-get install -y zip
@@ -42,7 +42,7 @@ deploy-site:
   rules:
     - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   image: ubuntu:latest
-  needs: ["build-mkdocs"]
+  needs: ['build-mkdocs']
   before_script:
     - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
     - eval $(ssh-agent -s)

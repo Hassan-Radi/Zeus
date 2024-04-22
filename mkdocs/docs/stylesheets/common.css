@@ -8,39 +8,39 @@
   }
 
   .md-content__inner {
-    h1 {
+   & h1 {
       margin-bottom: 24px;
-      font: normal 400 20px / 31px "Open Sans";
       color: var(--primary-colors-almost-black);
+      font: normal 400 20px / 31px "Open Sans", sans-serif;
     }
 
-    h2, p {
+   & h2, & p {
       margin: 24px 0 16px;
-      font: normal 500 15px / 24px Roboto;
       color: var(--primary-colors-almost-black);
+      font: normal 500 15px / 24px Roboto, sans-serif;
     }
   }
 }
 
 .button {
   display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
   height: 36px;
   padding: 6px 16px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
   border-radius: 3px;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
+  gap: 8px;
 }
 
 .button-primary {
-  background: var(--topaz-topaz);
   color: var(--primary-colors-white);
+  background: var(--topaz-topaz);
 
   &:hover {
     background: var(--topaz-hover);
@@ -51,8 +51,8 @@
   }
 
   &:disabled {
-    opacity: 0.3;
     background: var(--topaz-topaz);
+    opacity: 0.3;
   }
 
   &:focus {
@@ -62,17 +62,17 @@
 }
 
 .button-secondary, a.button-secondary {
-  color: var(--topaz-topaz);
   border: 1px solid var(--topaz-topaz);
+  color: var(--topaz-topaz);
 
   &:hover {
-    color: var(--topaz-hover);
     border: 1px solid var(--topaz-hover);
+    color: var(--topaz-hover);
   }
 
   &:active {
-    color: var(--topaz-pressed);
     border: 1px solid var(--topaz-pressed);
+    color: var(--topaz-pressed);
   }
 
   &:disabled {

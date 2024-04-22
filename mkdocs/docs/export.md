@@ -6,6 +6,7 @@
 Below you'll find a list of all the available prompts, with the ones that you bookmarked already
 pre-selected. Check any other prompts you'd like to export and then click on the export option
 whenever you are ready.
+
 <script type="text/javascript" src="/js/ui.js"></script>
 <script type="text/javascript" src="/js/actions.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>

@@ -6,13 +6,13 @@
       .prompt-list__item {
         display: flex;
         margin-left: 24px;
-        border-radius: 4px;
-        border-top-width: 1px !important;
         padding: 12px 16px;
+        border-top-width: 1px !important;
+        border-radius: 4px;
+        color: var(--primary-colors-almost-black);
+        font: normal 400 13px / 20px Roboto, sans-serif;
         background: var(--primary-colors-white);
         box-shadow: 0 1px 3px 0 rgba(55, 67, 98, 0.10);
-        font: normal 400 13px / 20px Roboto;
-        color: var(--primary-colors-almost-black);
 
         &::before {
           display: none;
@@ -30,29 +30,29 @@
 
           .badge {
             margin-right: 8px;
-            border-radius: 6px !important;
             padding: 2px 8px;
-            font: normal 500 13px / 20px Roboto;
+            border-radius: 6px !important;
+            font: normal 500 13px / 20px Roboto, sans-serif;
 
 
             &.bg-new {
-              background: var(--tag-value);
               color: var(--tag-value-text);
+              background: var(--tag-value);
             }
 
             &.bg-advanced {
-              background: var(--tag-operator);
               color: var(--tag-operator-text);
+              background: var(--tag-operator);
             }
 
             &.bg-interactive {
-              background: var(--tag-custom);
               color: var(--tag-custom-text);
+              background: var(--tag-custom);
             }
 
             &.bg-intermediate {
-              background: var(--tag-key);
               color: var(--tag-key-text);
+              background: var(--tag-key);
             }
           }
         }
@@ -60,15 +60,15 @@
     }
 
     .create-prompt-button {
-      gap: 8px;
       height: 36px;
       margin: 34px 0 41px;
-      border-radius: 3px;
       padding: 7px 16px;
-      background: var(--topaz-topaz);
-      font: normal 500 13px / 20px Roboto;
-      text-align: center;
+      border-radius: 3px;
       color: var(--primary-colors-white);
+      font: normal 500 13px / 20px Roboto, sans-serif;
+      text-align: center;
+      background: var(--topaz-topaz);
+      gap: 8px;
 
       &:hover {
         background: var(--topaz-hover);

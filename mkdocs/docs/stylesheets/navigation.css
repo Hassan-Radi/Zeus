@@ -1,10 +1,10 @@
 .md-sidebar--primary {
   .md-nav--primary {
-    &:before {
+    &::before {
       position: absolute;
+      z-index: -1;
       top: -30px;
       right: 0;
-      z-index: -1;
       display: block;
       width: 200%;
       height: calc(100vh - 21px);
@@ -14,23 +14,23 @@
     }
 
     .md-nav__title {
-      @media screen and (max-width: 1220px) {
+      @media screen and (width <= 1220px) {
         display: flex;
         align-items: end;
-        border-radius: 0;
         padding: 16px;
-        background: var(--primary-colors-almost-black);
-        font: 500 17px / 24px Roboto;
+        border-radius: 0;
         color: var(--primary-colors-white);
+        font: 500 17px / 24px Roboto, sans-serif;
+        background: var(--primary-colors-almost-black);
       }
 
-      @media screen and (min-width: 1220px) {
+      @media screen and (width >= 1220px) {
         display: none;
       }
     }
 
     .md-nav__list {
-      @media screen and (max-width: 1220px) {
+      @media screen and (width <= 1220px) {
         margin-top: 24px;
         box-shadow: none;
       }
@@ -39,7 +39,7 @@
         margin-bottom: 8px;
         padding: 8px 16px;
 
-        @media screen and (max-width: 1220px) {
+        @media screen and (width <= 1220px) {
           border-top: none;
         }
 
@@ -50,8 +50,8 @@
         .md-nav__link {
           margin-top: 0;
           padding: 0;
-          font: normal 500 15px / 24px Roboto;
           color: var(--primary-colors-almost-black);
+          font: normal 500 15px / 24px Roboto, sans-serif;
           text-decoration: none;
 
           &:hover {
@@ -66,28 +66,28 @@
     }
 
     .md-nav__item--nested {
-      @media screen and (min-width: 1220px) {
+      @media screen and (width >= 1220px) {
         height: 40px;
         transition: height .25s cubic-bezier(.86,0,.07,1);;
 
-        &:has(.md-nav__toggle:checked) {
-          transition: height .25s cubic-bezier(.86,0,.07,1);;
+        &:has(.md-nav__toggle:checked) {;
           height: 100%;
+          transition: height .25s cubic-bezier(.86,0,.07,1);
         }
       }
 
       .md-nav__list {
-        @media screen and (min-width: 1220px) {
+        @media screen and (width >= 1220px) {
           margin-top: 16px;
           padding-bottom: 0;
         }
 
         .md-nav__item {
           .md-nav__link {
-            font: normal 400 13px / 20px Roboto;
             color: var(--primary-colors-almost-black);
+            font: normal 400 13px / 20px Roboto, sans-serif;
 
-            @media screen and (max-width: 1220px) {
+            @media screen and (width <= 1220px) {
               border-top: none;
               font-size: 15px;
               font-weight: 500;
