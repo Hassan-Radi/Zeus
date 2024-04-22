@@ -1,0 +1,160 @@
+.prompt-wrapper {
+  margin: 0 auto;
+}
+
+.prompt-form {
+  font-family: Roboto, sans-serif;
+
+  .prompt-form__row {
+    margin-bottom: 16px;
+  }
+
+  & label {
+    margin-bottom: 4px;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    text-indent: 1px;
+  }
+
+  .form-control {
+    height: 36px;
+    padding: 8px 12px;
+    border: 1px solid #c1c7d0;
+    border-radius: 3px;
+    color: var(--primary-colors-almost-black);
+    font-size: 13px;
+    line-height: 20px;
+    text-indent: 1px;
+
+    &::placeholder {
+      color: var(--elements-e-300);
+    }
+
+    &:focus {
+      border: var(--focused-border);
+      box-shadow: none;
+    }
+  }
+
+  .prompt-form__textarea {
+    height: 128px;
+  }
+
+  .prompt-form__copyright {
+    margin-bottom: 32px;
+
+    .form-check-input {
+      border: 1px solid var(--elements-e-300);
+      border-radius: 3px;
+      cursor: pointer;
+
+      &:hover {
+        border: 1px solid var(--elements-e-400);
+      }
+
+      &:focus {
+        border: var(--focused-border);
+        box-shadow: none;
+      }
+
+      &:checked {
+        border-color: var(--topaz-topaz);
+        background-color: var(--topaz-topaz);
+
+        &:hover {
+          border-color: var(--topaz-hover);
+          background-color: var(--topaz-hover);
+        }
+      }
+    }
+
+    .form-check-label {
+      margin-bottom: 0;
+      color: var(--primary-colors-almost-black);
+      font: var(--roboto-13-400);
+    }
+  }
+
+  .prompt-form__dropdowns {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+
+    & div {
+      width: 100%;
+    }
+  }
+}
+
+.prompt-table {
+  border-spacing: 0 4px;
+  border-collapse: separate;
+  width: 100%;
+  margin-bottom: 8px;
+  font-family: Roboto, sans-serif;
+
+  .prompt-table__header th {
+    padding: 8px 16px;
+    color: var(--elements-e-300);
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+  }
+
+  .prompt-table__header tr {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  & tr td:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    font-weight: 500;
+  }
+
+  & tr td:nth-child(2) {
+    max-width: 330px;
+  }
+
+  & tr td:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  & td {
+    padding: 16px;
+    text-align: left !important;
+  }
+
+  & tr {
+    margin-bottom: 4px;
+    border-radius: 4px;
+    color: var(--primary-colors-almost-black);
+    background: var(--background-bg-000, #fff);
+    box-shadow: 0 1px 3px 0 rgba(55, 67, 98, 0.1);
+
+    & td {
+      font-size: 13px;
+      line-height: 20px;
+    }
+  }
+
+  .prompt-table__icons {
+    min-width: 80px;
+
+    & i {
+      color: var(--elements-e-300);
+
+      &:hover {
+        color: var(--topaz-hover);
+      }
+    }
+
+    & a:first-child {
+      margin-right: 16px;
+    }
+  }
+}

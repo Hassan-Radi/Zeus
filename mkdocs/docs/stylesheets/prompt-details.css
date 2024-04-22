@@ -19,7 +19,7 @@
       flex-direction: column;
       align-items: end;
       color: var(--primary-colors-almost-black);
-      font: normal 500 13px / 20px Roboto, sans-serif;
+      font: var(--roboto-13-500);
       gap: 4px;
     }
 
@@ -28,7 +28,7 @@
       flex-direction: column;
       align-items: start;
       color: var(--primary-colors-almost-black);
-      font: normal 400 13px / 20px Roboto, sans-serif;
+      font: var(--roboto-13-400);
       gap: 4px;
 
       .prompt__link {
@@ -48,7 +48,9 @@
   .prompt-block-heading {
     margin-bottom: 12px;
     color: var(--primary-colors-almost-black);
-    font: normal 500 17px / 24px Roboto, sans-serif;
+    font:
+      normal 500 17px / 24px Roboto,
+      sans-serif;
   }
 
   .iterations-history-heading {
@@ -62,18 +64,18 @@
     margin-bottom: 8px;
     border-radius: 4px;
     background: var(--primary-colors-white);
-    box-shadow: 0 1px 3px 0 rgba(55, 67, 98, 0.10);
+    box-shadow: 0 1px 3px 0 rgba(55, 67, 98, 0.1);
 
     .clipboard-block__name {
       padding: 16px 0 16px 16px;
       color: var(--primary-colors-almost-black);
-      font: normal 500 13px / 20px Roboto, sans-serif;
+      font: var(--roboto-13-500);
     }
 
     .clipboard-block__text {
       padding: 16px;
       color: var(--primary-colors-almost-black);
-      font: normal 400 13px / 20px Roboto, sans-serif;
+      font: var(--roboto-13-400);
     }
 
     .clipboard-block__button {
@@ -103,7 +105,7 @@
 
     &:is([open]) {
       padding: 0 16px;
-      outline: 2px solid var(--topaz-focused);
+      outline: var(--focused-border);
       background: var(--background-bg-100);
 
       .summary {
@@ -133,7 +135,7 @@
       padding: 12px 8px 12px 16px;
       border-radius: 4px;
       background: var(--primary-colors-white);
-      box-shadow: 0 1px 3px 0 rgba(55, 67, 98, 0.10);
+      box-shadow: 0 1px 3px 0 rgba(55, 67, 98, 0.1);
 
       &::before {
         display: none;
@@ -150,7 +152,9 @@
         .summary-title {
           margin-left: 16px;
           color: var(--character-primary-85);
-          font: normal 400 14px / 22px Roboto, sans-serif;
+          font:
+            normal 400 14px / 22px Roboto,
+            sans-serif;
         }
       }
     }

@@ -10,9 +10,9 @@
         border-top-width: 1px !important;
         border-radius: 4px;
         color: var(--primary-colors-almost-black);
-        font: normal 400 13px / 20px Roboto, sans-serif;
+        font: var(--roboto-13-400);
         background: var(--primary-colors-white);
-        box-shadow: 0 1px 3px 0 rgba(55, 67, 98, 0.10);
+        box-shadow: 0 1px 3px 0 rgba(55, 67, 98, 0.1);
 
         &::before {
           display: none;
@@ -32,8 +32,7 @@
             margin-right: 8px;
             padding: 2px 8px;
             border-radius: 6px !important;
-            font: normal 500 13px / 20px Roboto, sans-serif;
-
+            font: var(--roboto-13-500);
 
             &.bg-new {
               color: var(--tag-value-text);
@@ -65,7 +64,7 @@
       padding: 7px 16px;
       border-radius: 3px;
       color: var(--primary-colors-white);
-      font: normal 500 13px / 20px Roboto, sans-serif;
+      font: var(--roboto-13-500);
       text-align: center;
       background: var(--topaz-topaz);
       gap: 8px;
