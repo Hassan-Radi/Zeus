@@ -1,62 +1,39 @@
 {
   "title": "Create a decision table from parameters",
   "category": "Test case generation",
-  "badges": [
-  ],
-  "targetAudience": [
-    "QA Engineer"
-  ],
-  "submittedOriginallyBy": [
-    "Anzhelika Zheltanoha"
-  ],
-  "optimizedBy": [
-    "Hassan Radi"
-  ],
+  "badges": [],
+  "targetAudience": ["QA Engineer"],
+  "submittedOriginallyBy": ["Anzhelika Zheltanoha"],
+  "optimizedBy": ["Hassan Radi"],
   "promptHistory": {
     "1": {
       "revisedPrompt": "create decision table for testing 2 conditions – UserID, Password; 2 Actions – Login Successfully, Error showing ‘Invalid Credentials’; 3 Options — Blank, Valid, Invalid.",
       "changeLog": "Original version.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-3.5"
     },
     "2": {
       "revisedPrompt": "Create a decision table for testing 2 conditions – UserID, Password; 2 Actions – Login Successfully, Error showing ‘Invalid Credentials’; 3 Options — Blank, Valid, Invalid.",
       "changeLog": "Corrected spelling and grammar mistakes.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-3.5"
     },
     "3": {
       "revisedPrompt": "Create a decision table for testing 2 conditions – UserID, Password; 2 Actions – Login Successfully, Error showing ‘Invalid Credentials’; 3 Options — Blank, Valid, Invalid.",
       "changeLog": "Switched to using OpenAI GPT-4 for better results.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-4"
     },
     "4": {
       "revisedPrompt": "Act as a software tester and then create a decision table for testing the following: - 2 conditions: UserID, Password. - 2 Actions: Login Successfully, Error showing ‘Invalid Credentials’. - 3 Options: Blank, Valid, Invalid.",
       "changeLog": "Added more context for the AI + rephrased the prompt.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-4"
     },
     "5": {
       "revisedPrompt": "Act as a software tester and then create a decision table for testing the following: {{PARAMETERS}}",
       "changeLog": "Converted to a template prompt.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt",
-        "Template prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt", "Template prompt"],
       "llmModel": "GPT-4",
       "variables": [
         "PARAMETERS: - 2 conditions: UserID, Password. - 2 Actions: Login Successfully, Error showing ‘Invalid Credentials’. - 3 Options: Blank, Valid, Invalid."
@@ -65,11 +42,7 @@
     "6": {
       "revisedPrompt": "Act as a software tester and then create a decision table for testing the following parameters delimited by triple backticks: ```{{PARAMETERS}}```",
       "changeLog": "Use delimiters to separate the text to process from the actions to perform.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt",
-        "Template prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt", "Template prompt"],
       "llmModel": "GPT-4",
       "variables": [
         "PARAMETERS: - 2 conditions: UserID, Password. - 2 Actions: Login Successfully, Error showing ‘Invalid Credentials’. - 3 Options: Blank, Valid, Invalid."
@@ -78,11 +51,7 @@
     "7": {
       "revisedPrompt": "Act as a Senior Quality Assurance Engineer and then create a decision table for testing the following parameters delimited by triple backticks: ```{{PARAMETERS}}```",
       "changeLog": "Update prompt and its sample data.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt",
-        "Template prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt", "Template prompt"],
       "llmModel": "GPT-4",
       "variables": [
         "PARAMETERS: <br>- 2 conditions: UserID, Password.<br>- 2 Actions: Login Successfully, Error showing ‘Invalid Credentials’.<br>- 3 Options: Blank, Valid, Invalid."

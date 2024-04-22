@@ -1,30 +1,32 @@
 import test from 'node:test';
 import fs from 'fs';
 
-const TARGET_AUDIENCE_MAPS_PATH = "mkdocs/docs/config/maps";
-const OUTPUT_FILE_PATH = "mkdocs/docs/prompts/target_audience";
-const TARGET_AUDIENCE_FILE = "mkdocs/docs/config/targetAudience.json";
-const SCRIPTS_TO_INJECT_FILE = "mkdocs/docs/scriptsToInject.txt";
-const PROMPTS_JSON_PATH = "mkdocs/docs/json";
-let outputText = "";
+const TARGET_AUDIENCE_MAPS_PATH = 'mkdocs/docs/config/maps';
+const OUTPUT_FILE_PATH = 'mkdocs/docs/prompts/target_audience';
+const TARGET_AUDIENCE_FILE = 'mkdocs/docs/config/targetAudience.json';
+const SCRIPTS_TO_INJECT_FILE = 'mkdocs/docs/scriptsToInject.txt';
+const PROMPTS_JSON_PATH = 'mkdocs/docs/json';
+let outputText = '';
 
-test('Generate target audience pages', (t) => {
-  let targetAudienceEntries = JSON.parse(fs.readFileSync("./" + TARGET_AUDIENCE_FILE, "utf8"));
+test('Generate target audience pages', t => {
+  let targetAudienceEntries = JSON.parse(fs.readFileSync('./' + TARGET_AUDIENCE_FILE, 'utf8'));
   targetAudienceEntries.forEach((targetAudienceEntry: string) => {
     let fileName = targetAudienceEntry.toLowerCase().replace(' ', '_');
 
     // Add page header
-    outputText += "# " + targetAudienceEntry;
+    outputText += '# ' + targetAudienceEntry;
 
     // Add scripts to inject text
-    outputText += fs.readFileSync("./" + SCRIPTS_TO_INJECT_FILE, "utf8");
+    outputText += fs.readFileSync('./' + SCRIPTS_TO_INJECT_FILE, 'utf8');
 
     // Add target audience sentence
-    outputText += "Contains all the prompts that help " + targetAudienceEntry.toLowerCase() + "s.";
+    outputText += 'Contains all the prompts that help ' + targetAudienceEntry.toLowerCase() + 's.';
 
     // Read the data in the target audience map file
-    let data = fs.readFileSync("./" + TARGET_AUDIENCE_MAPS_PATH + '/' +
-        fileName + "Map.json", "utf8");
+    let data = fs.readFileSync(
+      './' + TARGET_AUDIENCE_MAPS_PATH + '/' + fileName + 'Map.json',
+      'utf8'
+    );
     let mapEntries: Map<string, string[]> = new Map(Object.entries(JSON.parse(data)));
 
     // Add all the prompts accordingly
@@ -36,16 +38,17 @@ test('Generate target audience pages', (t) => {
     }
 
     // Write the extracted info in a json file
-    const OUTPUT_FILE = OUTPUT_FILE_PATH + "/" + fileName.replace('Map.json', '') + ".md";
-    fs.writeFileSync(OUTPUT_FILE, outputText, "utf8");
+    const OUTPUT_FILE = OUTPUT_FILE_PATH + '/' + fileName.replace('Map.json', '') + '.md';
+    fs.writeFileSync(OUTPUT_FILE, outputText, 'utf8');
 
     // clear the output object, so new iterations start fresh
-    outputText = "";
+    outputText = '';
   });
 });
 
 function addPrompts(outputText: string, mapEntries: Map<string, string[]>) {
-  const liClassName = "list-group-item prompt-list__item d-flex justify-content-between align-items-center";
+  const liClassName =
+    'list-group-item prompt-list__item d-flex justify-content-between align-items-center';
   const arrowRight = `
     <span>      
       <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"none\">
@@ -66,7 +69,7 @@ function addPrompts(outputText: string, mapEntries: Map<string, string[]>) {
     values.forEach((value, index) => {
       // Read the prompt's JSON file first
       const promptFilePath = `${PROMPTS_JSON_PATH}/${value}.json`;
-      const prompt = JSON.parse(fs.readFileSync(`./${promptFilePath}`, "utf8"));
+      const prompt = JSON.parse(fs.readFileSync(`./${promptFilePath}`, 'utf8'));
       const liCounter = index + 1;
 
       // Add the prompts in the category
@@ -80,11 +83,13 @@ function addPrompts(outputText: string, mapEntries: Map<string, string[]>) {
       if (badges.length) {
         outputText = addBadges(outputText, badges);
       } else {
-        outputText += "</div>";
+        outputText += '</div>';
       }
 
       // Add the ending tags
-      outputText += arrowRight + `
+      outputText +=
+        arrowRight +
+        `
   </li>`;
     });
 
@@ -103,26 +108,26 @@ function addBadges(outputText: string, badges: string[]) {
   outputText += `
       <div>`;
 
-  badges.forEach((badge) => {
+  badges.forEach(badge => {
     switch (badge) {
-      case ("New"):
+      case 'New':
         outputText += `
         <span class=\"badge bg-new\">New</span>`;
         break;
-      case ("Advanced"):
+      case 'Advanced':
         outputText += `
         <span class=\"badge bg-advanced\">Advanced</span>`;
         break;
-      case ("Interactive"):
+      case 'Interactive':
         outputText += `
         <span class=\"badge bg-interactive\">Interactive</span>`;
         break;
-      case ("Intermediate"):
+      case 'Intermediate':
         outputText += `
         <span class=\"badge bg-intermediate\">Intermediate</span>`;
         break;
     }
-  })
+  });
 
   outputText += `
       </div>    

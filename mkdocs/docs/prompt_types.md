@@ -14,19 +14,19 @@ this from different angles.
 
 1. How many examples you've provided to the AI model, before asking it to make a prediction? For
    this the types of prompts can be:
-    - Zero-shot prompt
-    - Oneshot prompt
-    - Few-shot prompt
+   - Zero-shot prompt
+   - Oneshot prompt
+   - Few-shot prompt
 2. Did you give the AI model some basic instructions to limit or control what the user can do? or
    the user
    has
    complete freedom to ask what they want? For this the types of prompts can be:
-    - User prompt
-    - System prompt
+   - User prompt
+   - System prompt
 3. Can you use the prompt right away? or you need to provide data or answer
    questions first? For this the types of prompts can be:
-    - Template prompt
-    - Interactive prompt
+   - Template prompt
+   - Interactive prompt
 
 ## 1. Providing examples to the AI
 

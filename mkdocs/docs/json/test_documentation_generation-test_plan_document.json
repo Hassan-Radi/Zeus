@@ -1,36 +1,21 @@
 {
   "title": "Test plan document",
   "category": "Test documentation generation",
-  "badges": [
-    "New",
-    "Intermediate"
-  ],
-  "targetAudience": [
-    "QA Engineer"
-  ],
-  "submittedOriginallyBy": [
-    "Valentyna Kharchuk"
-  ],
-  "optimizedBy": [
-    "Hassan Radi"
-  ],
+  "badges": ["New", "Intermediate"],
+  "targetAudience": ["QA Engineer"],
+  "submittedOriginallyBy": ["Valentyna Kharchuk"],
+  "optimizedBy": ["Hassan Radi"],
   "promptHistory": {
     "1": {
       "revisedPrompt": "I want you to act as a software testing engineer. Give me please entry criteria for test process which I can write in test plan.",
       "changeLog": "Original version.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-4"
     },
     "2": {
       "revisedPrompt": "Act as a Senior Software Testing Engineer. Write a test plan document with entry criteria and test process.",
       "changeLog": "Fixed spelling and grammar mistakes + rephrased the prompt.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-4"
     }
   }

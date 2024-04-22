@@ -1,5 +1,5 @@
-const actions = new Actions;
-const ui = new UI;
+const actions = new Actions();
+const ui = new UI();
 let JSON_FILE_PATH; // TODO: find a better way to replace this
 let JSON_FILE_NAME; // TODO: find a better way to replace this
 
@@ -9,7 +9,7 @@ function getUrlParameters() {
 
 const navigateTo = path => {
   window.location.href = path;
-}
+};
 
 function populateThePage() {
   const jsonFileName = getUrlParameters().get('prompt');

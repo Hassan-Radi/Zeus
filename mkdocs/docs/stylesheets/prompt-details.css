@@ -1,7 +1,7 @@
 .md-content {
   .prompt-buttons {
-    gap: 8px;
     margin-bottom: 16px;
+    gap: 8px;
   }
 
   .header--category {
@@ -11,30 +11,30 @@
 
   .info-block {
     display: flex;
-    gap: 8px;
     margin: 24px 0 32px;
+    gap: 8px;
 
     .info-block__general {
       display: flex;
       flex-direction: column;
       align-items: end;
-      gap: 4px;
-      font: normal 500 13px / 20px Roboto;
       color: var(--primary-colors-almost-black);
+      font: normal 500 13px / 20px Roboto, sans-serif;
+      gap: 4px;
     }
 
     .info-block__data {
       display: flex;
       flex-direction: column;
       align-items: start;
-      gap: 4px;
-      font: normal 400 13px / 20px Roboto;
       color: var(--primary-colors-almost-black);
+      font: normal 400 13px / 20px Roboto, sans-serif;
+      gap: 4px;
 
       .prompt__link {
         margin-right: 8px;
-        border: 0;
         padding: 0 4px;
+        border: 0;
         font-weight: 500;
         text-decoration: none;
       }
@@ -47,8 +47,8 @@
 
   .prompt-block-heading {
     margin-bottom: 12px;
-    font: normal 500 17px / 24px Roboto;
     color: var(--primary-colors-almost-black);
+    font: normal 500 17px / 24px Roboto, sans-serif;
   }
 
   .iterations-history-heading {
@@ -66,14 +66,14 @@
 
     .clipboard-block__name {
       padding: 16px 0 16px 16px;
-      font: normal 500 13px / 20px Roboto;
       color: var(--primary-colors-almost-black);
+      font: normal 500 13px / 20px Roboto, sans-serif;
     }
 
     .clipboard-block__text {
       padding: 16px;
-      font: normal 400 13px / 20px Roboto;
       color: var(--primary-colors-almost-black);
+      font: normal 400 13px / 20px Roboto, sans-serif;
     }
 
     .clipboard-block__button {
@@ -83,7 +83,7 @@
       margin-left: auto;
       padding: 0 16px 16px 8px;
 
-      svg {
+      & svg {
         max-width: none;
       }
     }
@@ -102,14 +102,14 @@
     }
 
     &:is([open]) {
-      outline: 2px solid var(--topaz-focused);
       padding: 0 16px;
+      outline: 2px solid var(--topaz-focused);
       background: var(--background-bg-100);
 
       .summary {
         margin: 0 -16px;
 
-        &:after {
+        &::after {
           color: var(--topaz-focused);
         }
       }
@@ -135,11 +135,11 @@
       background: var(--primary-colors-white);
       box-shadow: 0 1px 3px 0 rgba(55, 67, 98, 0.10);
 
-      &:before {
+      &::before {
         display: none;
       }
 
-      &:after {
+      &::after {
         top: 14px;
         color: var(--elements-e-300);
       }
@@ -149,8 +149,8 @@
 
         .summary-title {
           margin-left: 16px;
-          font: normal 400 14px / 22px Roboto;
           color: var(--character-primary-85);
+          font: normal 400 14px / 22px Roboto, sans-serif;
         }
       }
     }

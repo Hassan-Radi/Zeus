@@ -1,56 +1,33 @@
 {
   "title": "Generate automation code from a BDD test case",
   "category": "Test code generation",
-  "badges": [
-    "New",
-    "Advanced"
-  ],
-  "targetAudience": [
-    "SDET",
-    "Architect"
-  ],
-  "submittedOriginallyBy": [
-    "Aliaksandr Farelnik"
-  ],
-  "optimizedBy": [
-    "Hassan Radi"
-  ],
+  "badges": ["New", "Advanced"],
+  "targetAudience": ["SDET", "Architect"],
+  "submittedOriginallyBy": ["Aliaksandr Farelnik"],
+  "optimizedBy": ["Hassan Radi"],
   "promptHistory": {
     "1": {
       "revisedPrompt": "I need to automate this BDD test case in Cucumber.js\nSummary: Verify background color for header\nScenario:\nGiven IMR exists for employee\nAnd user opens IMR\nWhen the Opportunities header loads\nThen the Opportunities header background-color is #303240",
       "changeLog": "Original version.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-3.5"
     },
     "2": {
       "revisedPrompt": "I need to automate this BDD test case in Cucumber.js\nSummary: Verify background color for header\nScenario:\nGiven IMR exists for employee\nAnd user opens IMR\nWhen the Opportunities header loads\nThen the Opportunities header background-color is #303240",
       "changeLog": "Use GPT-4.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-4"
     },
     "3": {
       "revisedPrompt": "Act as a Senior Software Development Engineer in Test. Generate automation code from the following BDD test case using Cucumber.js.\nSummary: Verify background color for header\nScenario:\nGiven IMR exists for employee\nAnd user opens IMR\nWhen the Opportunities header loads\nThen the Opportunities header background-color is #303240",
       "changeLog": "Rephrased the prompt to make it produce better results.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-4"
     },
     "4": {
       "revisedPrompt": "Act as a Senior Software Development Engineer in Test. Generate automation code from the following BDD test case using '{{AUTOMATION_TOOL}}' and '{{PROGRAMMING_LANGUAGE}}'.\n{{BDD_TEST_CASE}}",
       "changeLog": "Converted to a template prompt.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt",
-        "Template prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt", "Template prompt"],
       "llmModel": "GPT-4",
       "variables": [
         "AUTOMATION_TOOL: Cucumber",
@@ -61,11 +38,7 @@
     "5": {
       "revisedPrompt": "Act as a Senior Software Development Engineer in Test. Generate automation code from the BDD test case that is delimited by triple backticks. Use '{{AUTOMATION_TOOL}}' and '{{PROGRAMMING_LANGUAGE}}'. ```{{BDD_TEST_CASE}}```",
       "changeLog": "Added more enhancements to the prompt.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt",
-        "Template prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt", "Template prompt"],
       "llmModel": "GPT-4",
       "variables": [
         "AUTOMATION_TOOL: Cucumber",

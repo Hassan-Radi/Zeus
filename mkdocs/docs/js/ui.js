@@ -1,4 +1,4 @@
-const CATEGORIES_FILE_PATH = "/config/categories.json";
+const CATEGORIES_FILE_PATH = '/config/categories.json';
 
 class UI {
   constructor() {
@@ -7,25 +7,25 @@ class UI {
 
   showPromptHistory() {
     fetch(JSON_FILE_PATH)
-    .then((response) => response.json())
-    .then((json) => {
-      for (let i = 1; i <= Object.keys(json.promptHistory).length; i++) {
-        let detailsElement = document.createElement("details");
-        detailsElement.classList.add("details");
-        let summaryElement = document.createElement("summary");
-        summaryElement.classList.add("summary");
-        let summaryWrapperElement = document.createElement("div")
-        summaryWrapperElement.classList.add("summary-wrapper");
+      .then(response => response.json())
+      .then(json => {
+        for (let i = 1; i <= Object.keys(json.promptHistory).length; i++) {
+          let detailsElement = document.createElement('details');
+          detailsElement.classList.add('details');
+          let summaryElement = document.createElement('summary');
+          summaryElement.classList.add('summary');
+          let summaryWrapperElement = document.createElement('div');
+          summaryWrapperElement.classList.add('summary-wrapper');
 
-        summaryWrapperElement.innerHTML = `
+          summaryWrapperElement.innerHTML = `
           <div class="summary-closed-image">${SUMMARY_CLOSED_ICON}</div>
           <div class="summary-open-image">${SUMMARY_OPEN_ICON}</div>
           <div class="summary-title">Version ${i}</div>`;
 
-        summaryElement.appendChild(summaryWrapperElement);
+          summaryElement.appendChild(summaryWrapperElement);
 
-        let divElement = document.createElement("div");
-        divElement.innerHTML = `
+          let divElement = document.createElement('div');
+          divElement.innerHTML = `
           <div class="info-block">
             <div class="info-block__general">
                 <div>Type:</div>
@@ -34,32 +34,36 @@ class UI {
             </div>
             <div class="info-block__data">
                 <div>${this.getPromptTypeAsLinks(json.promptHistory[i].promptType)}</div>
-                <div>${JSON.stringify(json.promptHistory[i].changeLog).replaceAll('\"', '')}</div>
-                <div>${JSON.stringify(json.promptHistory[i].llmModel).replaceAll('\"', '')}</div>
+                <div>${JSON.stringify(json.promptHistory[i].changeLog).replaceAll('"', '')}</div>
+                <div>${JSON.stringify(json.promptHistory[i].llmModel).replaceAll('"', '')}</div>
             </div>
           </div>
           <div class="prompt-block-heading">Prompt</div>`;
 
-        divElement.innerHTML = this.addDataItemGroup(divElement.innerHTML, null, json.promptHistory[i].revisedPrompt.replaceAll('\"', ''))
+          divElement.innerHTML = this.addDataItemGroup(
+            divElement.innerHTML,
+            null,
+            json.promptHistory[i].revisedPrompt.replaceAll('"', '')
+          );
 
-        this.displayVariables(json, divElement, i);
+          this.displayVariables(json, divElement, i);
 
-        // add the text to the HTML document
-        const historyHeading = document.getElementById('prompt-iterations-history');
-        historyHeading.classList.add('iterations-history-heading', 'prompt-block-heading');
-        historyHeading.after(detailsElement);
-        detailsElement.appendChild(summaryElement);
-        detailsElement.appendChild(divElement);
-      }
-    });
+          // add the text to the HTML document
+          const historyHeading = document.getElementById('prompt-iterations-history');
+          historyHeading.classList.add('iterations-history-heading', 'prompt-block-heading');
+          historyHeading.after(detailsElement);
+          detailsElement.appendChild(summaryElement);
+          detailsElement.appendChild(divElement);
+        }
+      });
   }
 
   showPromptDetails() {
     fetch(JSON_FILE_PATH)
-    .then((response) => response.json())
-    .then((json) => {
-      let divElement = document.createElement("div");
-      divElement.innerHTML = `
+      .then(response => response.json())
+      .then(json => {
+        let divElement = document.createElement('div');
+        divElement.innerHTML = `
         <div class="info-block">
           <div class="info-block__general">
               <div>Submitted originally by:</div>
@@ -71,57 +75,69 @@ class UI {
               <div>${json.submittedOriginallyBy.join(', ')}</div>
               <div>${json.optimizedBy.join(', ')}</div>
               <div>${this.getPromptTypeAsLinks(json.promptHistory[Object.keys(json.promptHistory).length].promptType)}</div>
-              <div>${JSON.stringify(json.promptHistory[Object.keys(json.promptHistory).length].llmModel).replaceAll('\"', '')}</div>
+              <div>${JSON.stringify(json.promptHistory[Object.keys(json.promptHistory).length].llmModel).replaceAll('"', '')}</div>
           </div>
         </div>
         <div class="prompt-block-heading">Prompt</div>`;
 
-      divElement.innerHTML = this.addDataItemGroup(divElement.innerHTML, null,
-          json.promptHistory[Object.keys(json.promptHistory).length].revisedPrompt.replaceAll('\"', ''))
+        divElement.innerHTML = this.addDataItemGroup(
+          divElement.innerHTML,
+          null,
+          json.promptHistory[Object.keys(json.promptHistory).length].revisedPrompt.replaceAll(
+            '"',
+            ''
+          )
+        );
 
-      this.displayVariables(json, divElement,
-          Object.keys(json.promptHistory).length);
+        this.displayVariables(json, divElement, Object.keys(json.promptHistory).length);
 
-      // add the download as .json button
-      divElement.innerHTML += `
+        // add the download as .json button
+        divElement.innerHTML += `
         <button class="button button-primary download-json-button" onclick="navigateTo(JSON_FILE_PATH);">
           ${DOWNLOAD_ICON}
           Download as .json
         </button>
 `;
 
-      // add the text to the HTML document
-      document.getElementsByTagName('h1')[0].after(divElement);
-    });
+        // add the text to the HTML document
+        document.getElementsByTagName('h1')[0].after(divElement);
+      });
   }
 
   getPromptTypeAsLinks(promptTypes) {
-    let outputLinks = "";
+    let outputLinks = '';
     for (let i = 0; i < promptTypes.length; i++) {
       let promptType = promptTypes[i];
 
       // we are using root-relative links here (that's why the links start with '/')
       switch (promptType) {
         case 'Zero-shot prompt':
-          outputLinks += '<a class="button-secondary prompt__link" href="/prompt_types.html#zero-shot-prompt">Zero-shot prompt</a>';
+          outputLinks +=
+            '<a class="button-secondary prompt__link" href="/prompt_types.html#zero-shot-prompt">Zero-shot prompt</a>';
           break;
         case 'One-shot prompt':
-          outputLinks += '<a class="button-secondary prompt__link" href="/prompt_types.html#oneshot-prompt">One-shot prompt</a>';
+          outputLinks +=
+            '<a class="button-secondary prompt__link" href="/prompt_types.html#oneshot-prompt">One-shot prompt</a>';
           break;
         case 'Few-shot prompt':
-          outputLinks += '<a class="button-secondary prompt__link" href="/prompt_types.html#few-shot-prompt">Few-shot prompt</a>';
+          outputLinks +=
+            '<a class="button-secondary prompt__link" href="/prompt_types.html#few-shot-prompt">Few-shot prompt</a>';
           break;
         case 'User prompt':
-          outputLinks += '<a class="button-secondary prompt__link" href="/prompt_types.html#user-prompt">User prompt</a>';
+          outputLinks +=
+            '<a class="button-secondary prompt__link" href="/prompt_types.html#user-prompt">User prompt</a>';
           break;
         case 'System prompt':
-          outputLinks += '<a class="button-secondary prompt__link" href="/prompt_types.html#system-prompt">System prompt</a>';
+          outputLinks +=
+            '<a class="button-secondary prompt__link" href="/prompt_types.html#system-prompt">System prompt</a>';
           break;
         case 'Template prompt':
-          outputLinks += '<a class="button-secondary prompt__link" href="/prompt_types.html#template-prompt">Template prompt</a>';
+          outputLinks +=
+            '<a class="button-secondary prompt__link" href="/prompt_types.html#template-prompt">Template prompt</a>';
           break;
         case 'Interactive prompt':
-          outputLinks += '<a class="button-secondary prompt__link" href="/prompt_types.html#interactive-prompt">Interactive prompt</a>';
+          outputLinks +=
+            '<a class="button-secondary prompt__link" href="/prompt_types.html#interactive-prompt">Interactive prompt</a>';
           break;
       }
     }
@@ -159,12 +175,14 @@ class UI {
   displayVariables(json, divElement, entryIndex) {
     // add the sample data if any exists
     if (json.promptHistory[entryIndex].variables !== undefined) {
-      let variablesHtml = "";
+      let variablesHtml = '';
       let numberOfEntries = Object.keys(json.promptHistory[entryIndex].variables).length;
 
       for (let i = 0; i < numberOfEntries; i++) {
         let dataItemName = json.promptHistory[entryIndex].variables[i].split(':')[0].trim();
-        let dataItemValue = json.promptHistory[entryIndex].variables[i].substring(dataItemName.length + 1).trim();
+        let dataItemValue = json.promptHistory[entryIndex].variables[i]
+          .substring(dataItemName.length + 1)
+          .trim();
 
         variablesHtml = this.addDataItemGroup(variablesHtml, dataItemName, dataItemValue);
       }
@@ -179,20 +197,28 @@ class UI {
 
   showPageTitle() {
     fetch(JSON_FILE_PATH)
-    .then((response) => response.json())
-    .then((json) => {
-      const pageTitle = `[${json.category}] ${json.title}`;
+      .then(response => response.json())
+      .then(json => {
+        const pageTitle = `[${json.category}] ${json.title}`;
 
-      document.getElementById('header').innerHTML = `<span class="header--category">[${json.category}]</span></br> ${json.title}`;
-      document.title = pageTitle;
-      /**
-       * Show the same header text when you scroll down
-       */
-      this.getElementByXpath("//div[@data-md-component='header-topic']/span").textContent = pageTitle;
-    });
+        document.getElementById('header').innerHTML =
+          `<span class="header--category">[${json.category}]</span></br> ${json.title}`;
+        document.title = pageTitle;
+        /**
+         * Show the same header text when you scroll down
+         */
+        this.getElementByXpath("//div[@data-md-component='header-topic']/span").textContent =
+          pageTitle;
+      });
   }
 
-  showPromptButtons(showCreatePrompt, showExportPrompts, showBookmarkPrompt, showClearBookmarks, showEditPrompt) {
+  showPromptButtons(
+    showCreatePrompt,
+    showExportPrompts,
+    showBookmarkPrompt,
+    showClearBookmarks,
+    showEditPrompt
+  ) {
     const divElement = document.createElement('div');
     divElement.classList.add('d-flex', 'justify-content-end', 'prompt-buttons');
 
@@ -290,22 +316,22 @@ class UI {
 
   loadCategoryOptions() {
     fetch(CATEGORIES_FILE_PATH)
-    .then((response) => response.json())
-    .then((json) => {
-      let index = 0;
-      json.forEach(item => {
-        const newOption = document.createElement('option');
-        const optionText = document.createTextNode(item);
-        newOption.appendChild(optionText);
-        newOption.setAttribute('value', index.toString());
-        index++;
-        document.getElementById('category').appendChild(newOption);
+      .then(response => response.json())
+      .then(json => {
+        let index = 0;
+        json.forEach(item => {
+          const newOption = document.createElement('option');
+          const optionText = document.createTextNode(item);
+          newOption.appendChild(optionText);
+          newOption.setAttribute('value', index.toString());
+          index++;
+          document.getElementById('category').appendChild(newOption);
+        });
       });
-    });
   }
 
-  showEditFields(show){
-    if(!show){
+  showEditFields(show) {
+    if (!show) {
       document.getElementById('variables').classList.add('d-none');
       document.getElementById('changelogDiv').classList.add('d-none');
       document.getElementById('optimizedByGroupDiv').classList.add('d-none');
@@ -313,50 +339,62 @@ class UI {
   }
 
   getElementByXpath(path) {
-    return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+    return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null)
+      .singleNodeValue;
   }
 
   loadValuesInFields(jsonFileName) {
     let jsonFilePath = '/json/' + jsonFileName + '.json';
 
     fetch(jsonFilePath)
-    .then((response) => response.json())
-    .then((json) => {
-      document.getElementById('promptTitle').value = json.title;
-      document.getElementById('submittedBy').value = json.submittedOriginallyBy;
-      document.getElementById('optimizedBy').value = json.optimizedBy;
-      this.selectByText("category", json.category);
-      this.selectByText("llmModel", json.promptHistory[Object.keys(
-          json.promptHistory).length].llmModel);
-      document.getElementById('promptTextArea').value = json.promptHistory[Object.keys(
-          json.promptHistory).length].revisedPrompt;
+      .then(response => response.json())
+      .then(json => {
+        document.getElementById('promptTitle').value = json.title;
+        document.getElementById('submittedBy').value = json.submittedOriginallyBy;
+        document.getElementById('optimizedBy').value = json.optimizedBy;
+        this.selectByText('category', json.category);
+        this.selectByText(
+          'llmModel',
+          json.promptHistory[Object.keys(json.promptHistory).length].llmModel
+        );
+        document.getElementById('promptTextArea').value =
+          json.promptHistory[Object.keys(json.promptHistory).length].revisedPrompt;
 
-      // Here we use +2 to ignore the extra space after the :
-      if(json.promptHistory[Object.keys(json.promptHistory).length].variables){
-        json.promptHistory[Object.keys(
-            json.promptHistory).length].variables.forEach(variable => {
-          actions.addVariableToTable(variable.split(":")[0].trim(), variable.substring(variable.indexOf(':') + 2));
-        });
-      }
+        // Here we use +2 to ignore the extra space after the :
+        if (json.promptHistory[Object.keys(json.promptHistory).length].variables) {
+          json.promptHistory[Object.keys(json.promptHistory).length].variables.forEach(variable => {
+            actions.addVariableToTable(
+              variable.split(':')[0].trim(),
+              variable.substring(variable.indexOf(':') + 2)
+            );
+          });
+        }
 
-      json.badges.forEach(badge => this.selectByText("selectBadges", badge));
-      json.targetAudience.forEach(targetAudience => this.selectByText("selectTargetAudience", targetAudience));
-      json.promptHistory[Object.keys(
-          json.promptHistory).length].promptType.forEach(type => this.selectByText("selectPromptType", type));
-    });
+        json.badges.forEach(badge => this.selectByText('selectBadges', badge));
+        json.targetAudience.forEach(targetAudience =>
+          this.selectByText('selectTargetAudience', targetAudience)
+        );
+        json.promptHistory[Object.keys(json.promptHistory).length].promptType.forEach(type =>
+          this.selectByText('selectPromptType', type)
+        );
+      });
   }
 
-  selectByText(id, text){
-    $(`#${id} option`).filter(function() {
-      return $(this).text() === text.trim();
-    }).prop('selected', true);
+  selectByText(id, text) {
+    $(`#${id} option`)
+      .filter(function () {
+        return $(this).text() === text.trim();
+      })
+      .prop('selected', true);
 
     $(`#${id}`).trigger('change');
   }
 
   addActiveClass() {
     if (window.location.pathname === '/') {
-      const homeNavListItem = document.querySelector(".md-nav--primary > .md-nav__list > li:first-child");
+      const homeNavListItem = document.querySelector(
+        '.md-nav--primary > .md-nav__list > li:first-child'
+      );
       const homeNavListItemLink = homeNavListItem.querySelector('a');
 
       homeNavListItem.classList.add('md-nav__item--active');

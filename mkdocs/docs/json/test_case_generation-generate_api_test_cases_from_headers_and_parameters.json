@@ -1,54 +1,33 @@
 {
   "title": "Generate API test cases from headers & parameters",
   "category": "Test case generation",
-  "badges": [
-  ],
-  "targetAudience": [
-    "QA Engineer",
-    "SDET"
-  ],
-  "submittedOriginallyBy": [
-    "Vladislav Razakov"
-  ],
-  "optimizedBy": [
-    "Hassan Radi"
-  ],
+  "badges": [],
+  "targetAudience": ["QA Engineer", "SDET"],
+  "submittedOriginallyBy": ["Vladislav Razakov"],
+  "optimizedBy": ["Hassan Radi"],
   "promptHistory": {
     "1": {
       "revisedPrompt": "We have a POST request with body:\n{\n  \"fileId\": \"150aaaa9-80e2-419b-a747-67f3771c8d0c\",\n  \"accountId\": \"4060741400042390599\"\n}\nWrite tests for Postman",
       "changeLog": "Original version.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-3.5"
     },
     "2": {
       "revisedPrompt": "Write Postman tests for a POST request with body:\n{\n  \"fileId\": \"150aaaa9-80e2-419b-a747-67f3771c8d0c\",\n  \"accountId\": \"4060741400042390599\"\n}",
       "changeLog": "Minor refactor to the prompt.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-3.5"
     },
     "3": {
       "revisedPrompt": "Write API test cases for a POST request with body:\n{\n  \"fileId\": \"150aaaa9-80e2-419b-a747-67f3771c8d0c\",\n  \"accountId\": \"4060741400042390599\"\n}",
       "changeLog": "Started using GPT-4 in the prompt + genralising it to work with any API client (not just Postman).",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt"],
       "llmModel": "GPT-4"
     },
     "4": {
       "revisedPrompt": "Write API test cases for a {{REQUEST_TYPE}} request with body: {{REQUEST_BODY}}",
       "changeLog": "Converted the prompt to a template prompt.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt",
-        "Template prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt", "Template prompt"],
       "llmModel": "GPT-4",
       "variables": [
         "REQUEST_TYPE: POST",
@@ -58,11 +37,7 @@
     "5": {
       "revisedPrompt": "Act as a senior software development engineer in test. Write API test cases for a {{REQUEST_TYPE}} request with body: {{REQUEST_BODY}}",
       "changeLog": "Added the act as part.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt",
-        "Template prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt", "Template prompt"],
       "llmModel": "GPT-4",
       "variables": [
         "REQUEST_TYPE: POST",
@@ -72,11 +47,7 @@
     "6": {
       "revisedPrompt": "Act as a Senior Software Development Engineer in Test. Write API test cases for a {{REQUEST_TYPE}} request with parameters: {{REQUEST_PARAMETERS}} and headers: {{REQUEST_HEADERS}}",
       "changeLog": "Added the API headers part.",
-      "promptType": [
-        "Zero-shot prompt",
-        "User prompt",
-        "Template prompt"
-      ],
+      "promptType": ["Zero-shot prompt", "User prompt", "Template prompt"],
       "llmModel": "GPT-4",
       "variables": [
         "REQUEST_TYPE: POST",
