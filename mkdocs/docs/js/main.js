@@ -19,11 +19,10 @@ function populateThePage() {
   actions.injectEnableTooltipsEventListener();
 
   ui.showPageTitle();
-  ui.showPromptButtons(true, true, true, true, true);
+  ui.showPromptButtons(true, true, true, true);
   ui.showPromptDetails();
   ui.showPromptHistory();
 
   // show the correct bookmark icons
   actions.loadBookmarkIcon();
-  actions.loadRemoveAllBookmarksIcon();
 }

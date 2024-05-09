@@ -1,0 +1,79 @@
+#home-page {
+  .home-page__description {
+    max-width: 587px;
+    font: var(--roboto-13-500);
+    font-weight: normal;
+
+    @media screen and (width < 960px) {
+      margin-bottom: 24px;
+    }
+  }
+
+  .home_page__cta-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+
+    & button {
+      font: var(--roboto-13-500);
+    }
+  }
+
+  .most-popular-roles {
+    margin: 0;
+
+    & h2 {
+      margin-top: 56px;
+      font: var(--roboto-17-500);
+    }
+
+    & ul {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      margin: 0;
+      row-gap: 16px;
+
+      & li {
+        display: flex;
+        width: 100%;
+        margin: 0;
+        border-radius: 4px;
+        background: var(--primary-colors-white);
+        box-shadow: 0 1px 3px 0 #3743621A;
+
+        & a {
+          position: relative;
+          display: flex;
+          align-items: center;
+          width: 100%;
+          padding: 16px 24px;
+          text-decoration: none;
+
+          &,
+          &:hover {
+            color: var(--primary-colors-almost-black);
+            font: var(--roboto-14-500);
+          }
+
+          &:hover {
+            box-shadow: 0 1px 3px 0 #37436233;
+          }
+
+          & svg {
+            margin-right: 16px;
+          }
+
+          &::after {
+            position: absolute;
+            right: 24px;
+            width: 16px;
+            height: 16px;
+            background: url('icons/home-arrow.svg') no-repeat;
+            content: '';
+          }
+        }
+      }
+    }
+  }
+}

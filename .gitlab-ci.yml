@@ -1,3 +1,9 @@
+stages:
+- .pre
+- lint
+- build
+- deploy
+
 generate-dynamic-content:
   stage: .pre
   rules:
@@ -16,17 +22,31 @@ generate-dynamic-content:
       - mkdocs/docs/prompts/target_audience/*
     expire_in: 1 week
 
+lint:
+  stage: lint
+  image: node:18-alpine3.17
+  before_script:
+    - npm install
+  script:
+    - npm run lint
+    - npm run stylelint
+
 build-mkdocs:
   stage: build
   rules:
     - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   image: ubuntu:latest
-  needs: ['generate-dynamic-content']
+  needs: ['lint', 'generate-dynamic-content']
+  variables:
+    TZ: UTC
   before_script:
     - apt-get update
     - apt-get install -y zip
     - apt-get install -y mkdocs
     - apt-get install -y python3-pip
+    - apt-get install -y python3-venv
+    - python3 -m venv zeusenv
+    - source zeusenv/bin/activate
     - pip3 install mkdocs-material
   script:
     - cd mkdocs
@@ -37,7 +57,7 @@ build-mkdocs:
       - mkdocs/site.zip
     expire_in: 1 week
 
-deploy-site:
+deploy-epam-instance:
   stage: deploy
   rules:
     - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
@@ -64,3 +84,21 @@ deploy-site:
     - sudo rm site/ -r
     - sudo systemctl reload caddy
     - ENDSSH
+
+deploy-report-portal-instance:
+  stage: deploy
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
+  needs: ['build-mkdocs']
+  # Sensitive CI/CD variables located in the project settings.
+  # variables:
+  #   AWS_ACCESS_KEY_ID: sensitive_data
+  #   AWS_SECRET_ACCESS_KEY: sensitive_data
+  #   AWS_DEFAULT_REGION: eu-central-1
+  #   CLOUDFRONT_ID: string
+  #   S3_BUCKET_NAME: string
+  script:
+    - unzip ./mkdocs/site.zip
+    - aws s3 sync ./site/ s3://$S3_BUCKET_NAME/ --delete
+    - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_ID --paths "/*"

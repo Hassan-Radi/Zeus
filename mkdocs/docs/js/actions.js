@@ -6,9 +6,8 @@
 const PROMPTS_NAME_IN_LOCAL_STORAGE = 'prompts';
 const ORIGINAL_COPY_TO_CLIPBOARD_TOOLTIP = 'Copy to clipboard';
 const COPIED_TO_CLIPBOARD_TOOLTIP = 'Copied!';
-const ORIGINAL_BOOKMARK_TOOLTIP = 'Bookmark prompt';
-const BOOKMARK_ADDED_TOOLTIP = 'Bookmarked!';
-const BOOKMARK_REMOVED_TOOLTIP = 'Bookmark removed!';
+const PROMPT_ADDED_TOOLTIP = 'The prompt was added';
+const PROMPT_REMOVED_TOOLTIP = 'The prompt was removed';
 const ORIGINAL_CLEAR_ALL_PROMPTS_TOOLTIP = 'Clear all bookmarked prompts';
 const ALL_JSON_PROMPTS_PATH = 'config/allPrompts.json';
 const TOKEN_FILE_PATH = '/config/token.json';
@@ -66,37 +65,21 @@ class Actions {
     // check whether the prompt is bookmarked or not
     if (event.currentTarget.classList.contains('bookmark-removed')) {
       // change tooltip
-      $(event.currentTarget).attr('data-bs-original-title', BOOKMARK_ADDED_TOOLTIP).tooltip('show');
-
-      // change the icon
-      event.currentTarget.classList.remove('bookmark-removed');
-      event.currentTarget.classList.add('bookmark-added');
+      $(event.currentTarget).attr('data-bs-original-title', PROMPT_ADDED_TOOLTIP).tooltip('show');
 
       this.storePromptInLocalStorage(JSON_FILE_NAME);
     } else {
       // change tooltip
-      $(event.currentTarget)
-        .attr('data-bs-original-title', BOOKMARK_REMOVED_TOOLTIP)
-        .tooltip('show');
-
-      // change the icon
-      event.currentTarget.classList.remove('bookmark-added');
-      event.currentTarget.classList.add('bookmark-removed');
+      $(event.currentTarget).attr('data-bs-original-title', PROMPT_REMOVED_TOOLTIP).tooltip('show');
 
       this.removePromptFromLocalStorage(JSON_FILE_NAME);
     }
 
-    event.currentTarget.blur();
-
-    // update the remove all bookmarks button
-    this.loadRemoveAllBookmarksIcon();
+    this.loadBookmarkIcon();
   }
 
   resetBookmarkTooltip(event) {
-    // reset the bookmark's tooltip if we removed the bookmark
-    if (event.target.classList.contains('bookmark-removed')) {
-      event.target.setAttribute('data-bs-original-title', ORIGINAL_BOOKMARK_TOOLTIP);
-    }
+    event.target.setAttribute('data-bs-original-title', '');
 
     // hide the tooltip
     $(event.target).tooltip('hide');
@@ -139,15 +122,17 @@ class Actions {
     if (this.isPromptInLocalStorage(JSON_FILE_NAME)) {
       element.classList.remove('bookmark-removed');
       element.classList.add('bookmark-added');
+      element.innerHTML = `${REMOVE_FROM_EXPORTS_ICON} Remove from Export`;
 
       // update the tooltip
-      element.setAttribute('data-bs-original-title', BOOKMARK_ADDED_TOOLTIP);
+      element.setAttribute('data-bs-original-title', PROMPT_ADDED_TOOLTIP);
     } else {
       element.classList.remove('bookmark-added');
       element.classList.add('bookmark-removed');
+      element.innerHTML = `${BOOKMARK_ICON} Add to Export`;
 
       // update the tooltip
-      element.setAttribute('data-bs-original-title', ORIGINAL_BOOKMARK_TOOLTIP);
+      element.setAttribute('data-bs-original-title', '');
     }
   }
 
@@ -158,11 +143,13 @@ class Actions {
       if (element.classList.contains('invisible')) {
         element.classList.remove('invisible');
       }
+
       element.classList.add('visible');
     } else {
       if (element.classList.contains('visible')) {
         element.classList.remove('visible');
       }
+
       element.classList.add('invisible');
     }
   }
@@ -252,10 +239,10 @@ class Actions {
 
             if (this.isPromptInLocalStorage(json[i].fileName.replace('.json', ''))) {
               trElement.innerHTML +=
-                '<th class="text-center" scope="row"><input id="prompt-checkbox" class="form-check-input" type="checkbox" checked></th>';
+                '<td class="text-center"><input id="prompt-checkbox" class="form-check-input" type="checkbox" checked></td>';
             } else {
               trElement.innerHTML +=
-                '<th class="text-center" scope="row"><input id="prompt-checkbox" class="form-check-input" type="checkbox"></th>';
+                '<td class="text-center"><input id="prompt-checkbox" class="form-check-input" type="checkbox"></td>';
             }
             trElement.innerHTML += `<td class="text-center">${i + 1}</td>
               <td id="prompt-name">
@@ -397,6 +384,11 @@ class Actions {
     );
   }
 
+  getModalHeaderText = () =>
+    getUrlParameters().get('action') === 'edit'
+      ? EDIT_PROMPT_HEADER_TEXT
+      : CREATE_PROMPT_HEADER_TEXT;
+
   async getPromptJsonFile(promptReadableName) {
     let promptTitle = promptReadableName.substring(promptReadableName.indexOf('-') + 1).trim();
     let output;
@@ -415,30 +407,48 @@ class Actions {
   }
 
   validateData() {
+    const defaultModalErrorData = {
+      isHideCloseButton: false,
+      headerText: 'Error!',
+      isAppendMode: false,
+    };
+
     // check if the user didn't agree to the terms
     if (!this.isCheckBoxChecked(document.getElementById('agreeToTerms'))) {
-      this.showModalMessage(false, 'Error!', false, 'Please agree to the terms first.');
+      this.showModalMessage({
+        ...defaultModalErrorData,
+        message: 'Please agree to the terms first.',
+      });
 
       return false;
     }
 
     // check if the user didn't select any badges
-    if ($('#selectBadges').val() === 0) {
-      this.showModalMessage(false, 'Error!', false, 'Please select at least one badge!');
+    if (!$('#selectBadges').val().length) {
+      this.showModalMessage({
+        ...defaultModalErrorData,
+        message: 'Please select at least one badge!',
+      });
 
       return false;
     }
 
     // check if the user didn't select any target audience
-    if ($('#selectTargetAudience').val() === 0) {
-      this.showModalMessage(false, 'Error!', false, 'Please select at least one target audience!');
+    if (!$('#selectTargetAudience').val().length) {
+      this.showModalMessage({
+        ...defaultModalErrorData,
+        message: 'Please select at least one target audience!',
+      });
 
       return false;
     }
 
     // check if the user didn't select any prompt type
-    if ($('#selectPromptType').val() === 0) {
-      this.showModalMessage(false, 'Error!', false, 'Please select at least one prompt type!');
+    if (!$('#selectPromptType').val().length) {
+      this.showModalMessage({
+        ...defaultModalErrorData,
+        message: 'Please select at least one prompt type!',
+      });
 
       return false;
     }
@@ -532,12 +542,11 @@ class Actions {
       this.commitToBranch(branchName, createdFileName, newPromptData).then(() => {
         // create a merge request using the created branch
         this.createMergeRequest(branchName, createdFileName).then(async mergeRequestID => {
-          this.showModalMessage(
-            true,
-            isEditOperation ? EDIT_PROMPT_HEADER_TEXT : CREATE_PROMPT_HEADER_TEXT,
-            true,
-            '<br>To ensure prompt quality, your data has to be reviewed and approved by one of the code maintainers. Waiting for merge request to be merged...'
-          );
+          this.showModalMessage({
+            headerText: this.getModalHeaderText(),
+            message:
+              '<div>To ensure prompt quality, your data has to be reviewed and approved by one of the code maintainers. Waiting for merge request to be merged...</div>',
+          });
 
           await this.waitForMergeRequestToBeMerged(mergeRequestID, createdFileName);
         });
@@ -561,26 +570,25 @@ class Actions {
             .then(pipelineUrl => {
               // verify that it is a valid URL by invoking the URL constructor
               new URL(pipelineUrl);
-              this.showModalMessage(
-                true,
-                getUrlParameters().get('action') === 'edit'
-                  ? EDIT_PROMPT_HEADER_TEXT
-                  : CREATE_PROMPT_HEADER_TEXT,
-                true,
-                `<br><i class="fa-solid fa-check" style="color: #00ff4c;"></i> Pipeline created [<a href="${pipelineUrl}" target="_blank" rel="noopener">URL</a>].`
-              );
+              this.showModalMessage({
+                headerText: this.getModalHeaderText(),
+                message: `
+                  <div class="link-wrapper">
+                    ${CHECK_ICON} 
+                    <span>
+                      Pipeline created 
+                      <span class="branch-url">[<a href="${pipelineUrl}" class="button-secondary" target="_blank" rel="noopener">URL</a>]</span>.
+                    </span>
+                  </div>`,
+              });
               window.clearInterval(intervalID);
               this.completeMergeRequestPipeline(createdFileName);
             })
             .catch(() => {
-              this.showModalMessage(
-                true,
-                getUrlParameters().get('action') === 'edit'
-                  ? EDIT_PROMPT_HEADER_TEXT
-                  : CREATE_PROMPT_HEADER_TEXT,
-                true,
-                '<br>Waiting for pipeline...'
-              );
+              this.showModalMessage({
+                headerText: this.getModalHeaderText(),
+                message: '<div>Waiting for pipeline...</div>',
+              });
             });
         }, 1000);
       }, 5000);
@@ -614,38 +622,28 @@ class Actions {
       mergeRequestState = await this.getMergeRequestState(mergeRequestID);
 
       if (mergeRequestState === 'merged') {
-        this.showModalMessage(
-          true,
-          getUrlParameters().get('action') === 'edit'
-            ? EDIT_PROMPT_HEADER_TEXT
-            : CREATE_PROMPT_HEADER_TEXT,
-          true,
-          '<br><i class="fa-solid fa-check" style="color: #00ff4c;"></i> Merge request is successfully merged.'
-        );
+        this.showModalMessage({
+          headerText: this.getModalHeaderText(),
+          message: `<div class="link-wrapper">${CHECK_ICON} <span>Merge request is successfully merged.</span></div>`,
+        });
 
         window.clearInterval(intervalID);
         this.waitForPipelineToBeCreated(mergeRequestState, createdFileName);
       } else {
-        this.showModalMessage(
-          true,
-          getUrlParameters().get('action') === 'edit'
-            ? EDIT_PROMPT_HEADER_TEXT
-            : CREATE_PROMPT_HEADER_TEXT,
-          true,
-          `<br>[${x + 1}] Merge request is [${mergeRequestState}]. Waiting until it gets merged...`
-        );
+        this.showModalMessage({
+          headerText: this.getModalHeaderText(),
+          message: `<div>[${x + 1}] Merge request is [${mergeRequestState}]. Waiting until it gets merged...</div>`,
+        });
       }
 
       // show failure message when timing out
       if (++x === MR_WAITING_FOR_APPROVAL_NUMBER_OF_RETRIES) {
-        this.showModalMessage(
-          true,
-          getUrlParameters().get('action') === 'edit'
-            ? EDIT_PROMPT_HEADER_TEXT
-            : CREATE_PROMPT_HEADER_TEXT,
-          true,
-          '<br><i class="fa-solid fa-x" style="color: #ff0000;"></i> Timed out waiting for the merge request to be merged. Please contact one of the code maintainers.'
-        );
+        this.showModalMessage({
+          isHideCloseButton: false,
+          headerText: this.getModalHeaderText(),
+          message:
+            '<div><i class="fa-solid fa-x" style="color: #ff0000;"></i> Timed out waiting for the merge request to be merged. Please contact one of the code maintainers.</div>',
+        });
         window.clearInterval(intervalID);
       }
     }, MR_WAITING_FOR_APPROVAL_INTERVAL_TIME);
@@ -657,51 +655,36 @@ class Actions {
       let pipelineStatus = await this.getPipelineStatus(pipelineID);
 
       if (pipelineStatus === 'success') {
-        this.showModalMessage(
-          true,
-          getUrlParameters().get('action') === 'edit'
-            ? EDIT_PROMPT_HEADER_TEXT
-            : CREATE_PROMPT_HEADER_TEXT,
-          true,
-          '<br><i class="fa-solid fa-check" style="color: #00ff4c;"></i> Pipeline succeeded.'
-        );
+        this.showModalMessage({
+          headerText: this.getModalHeaderText(),
+          message: `<div>${CHECK_ICON} Pipeline succeeded.</div>`,
+        });
         window.clearInterval(intervalID);
         this.showNewPromptPage(createdFileName);
       } else {
-        this.showModalMessage(
-          true,
-          getUrlParameters().get('action') === 'edit'
-            ? EDIT_PROMPT_HEADER_TEXT
-            : CREATE_PROMPT_HEADER_TEXT,
-          true,
-          `<br>[${x + 1}] Pipeline status is [${pipelineStatus}]. Waiting until it finishes...`
-        );
+        this.showModalMessage({
+          headerText: this.getModalHeaderText(),
+          message: `<div>[${x + 1}] Pipeline status is [${pipelineStatus}]. Waiting until it finishes...</div>`,
+        });
       }
 
       // show failure message when timing out
       if (++x === WAITING_FOR_PIPELINE_NUMBER_OF_RETRIES) {
-        this.showModalMessage(
-          true,
-          getUrlParameters().get('action') === 'edit'
-            ? EDIT_PROMPT_HEADER_TEXT
-            : CREATE_PROMPT_HEADER_TEXT,
-          true,
-          `<br>[${x + 1}] Pipeline timed out.`
-        );
+        this.showModalMessage({
+          headerText: this.getModalHeaderText(),
+          message: `<div>[${x + 1}] Pipeline timed out.</div>`,
+        });
         window.clearInterval(intervalID);
       }
     }, WAITING_FOR_PIPELINE_INTERVAL_TIME);
   }
 
   async commitToBranch(branchName, createdFileName, newPromptData) {
-    this.showModalMessage(
-      true,
-      getUrlParameters().get('action') === 'edit'
-        ? EDIT_PROMPT_HEADER_TEXT
-        : CREATE_PROMPT_HEADER_TEXT,
-      true,
-      '<br>Creating a JSON file from the provided data and committing it to the branch...'
-    );
+    this.showModalMessage({
+      headerText: this.getModalHeaderText(),
+      message:
+        '<div>Creating a JSON file from the provided data and committing it to the branch...</div>',
+    });
 
     return fetch(`${GIT_BASE_URL}/api/v4/projects/${PROJECT_ENCODED_URL}/repository/commits`, {
       method: 'POST',
@@ -724,27 +707,27 @@ class Actions {
       .then(async r => {
         // Show file committed message
         let commitUrl = await r.json().then(json => json.web_url);
-        this.showModalMessage(
-          true,
-          getUrlParameters().get('action') === 'edit'
-            ? EDIT_PROMPT_HEADER_TEXT
-            : CREATE_PROMPT_HEADER_TEXT,
-          true,
-          `<br><i class="fa-solid fa-check" style="color: #00ff4c;"></i> File committed to branch [<a href="${commitUrl}" target="_blank" rel="noopener">URL</a>].`
-        );
+        this.showModalMessage({
+          headerText: this.getModalHeaderText(),
+          message: `
+            <div class="link-wrapper">
+              ${CHECK_ICON} 
+              <span>
+                File committed to branch 
+                <span class="branch-url">[<a href="${commitUrl}" class="button-secondary" target="_blank" rel="noopener">URL</a>]</span>.
+              </span>
+            </div>`,
+        });
       })
       .catch(ex => console.log(ex));
   }
 
   async createBranch(branchName) {
-    this.showModalMessage(
-      true,
-      getUrlParameters().get('action') === 'edit'
-        ? EDIT_PROMPT_HEADER_TEXT
-        : CREATE_PROMPT_HEADER_TEXT,
-      false,
-      'Creating a new branch in the code repository...'
-    );
+    this.showModalMessage({
+      headerText: this.getModalHeaderText(),
+      isAppendMode: false,
+      message: '<div>Creating a new branch in the code repository...</div>',
+    });
 
     return fetch(
       `${GIT_BASE_URL}/api/v4/projects/${PROJECT_ENCODED_URL}/repository/branches?` +
@@ -760,27 +743,26 @@ class Actions {
       .then(async r => {
         // show branch URL message
         let branchUrl = await r.json().then(json => json.web_url);
-        this.showModalMessage(
-          true,
-          getUrlParameters().get('action') === 'edit'
-            ? EDIT_PROMPT_HEADER_TEXT
-            : CREATE_PROMPT_HEADER_TEXT,
-          true,
-          `<br><i class="fa-solid fa-check" style="color: #00ff4c;"></i> Branch created [<a href="${branchUrl}" target="_blank" rel="noopener">URL</a>].`
-        );
+        this.showModalMessage({
+          headerText: this.getModalHeaderText(),
+          message: `
+            <div class="link-wrapper">
+              ${CHECK_ICON} 
+              <span>
+                Branch created 
+                <span class="branch-url">[<a href="${branchUrl}" class="button-secondary" target="_blank" rel="noopener">URL</a>]</span>.
+              </span>
+            </div>`,
+        });
       })
       .catch(ex => console.log(ex));
   }
 
   async createMergeRequest(branchName, createdFileName) {
-    this.showModalMessage(
-      true,
-      getUrlParameters().get('action') === 'edit'
-        ? EDIT_PROMPT_HEADER_TEXT
-        : CREATE_PROMPT_HEADER_TEXT,
-      true,
-      '<br>Creating a merge request to merge your changes to the main branch...'
-    );
+    this.showModalMessage({
+      headerText: this.getModalHeaderText(),
+      message: '<div>Creating a merge request to merge your changes to the main branch...</div>',
+    });
 
     let mergeRequestID;
     await fetch(
@@ -801,14 +783,18 @@ class Actions {
         // Show merge request message
         let mergeRequestUrl = await r.json().then(json => json.web_url);
         mergeRequestID = mergeRequestUrl.substring(mergeRequestUrl.lastIndexOf('/') + 1);
-        this.showModalMessage(
-          true,
-          getUrlParameters().get('action') === 'edit'
-            ? EDIT_PROMPT_HEADER_TEXT
-            : CREATE_PROMPT_HEADER_TEXT,
-          true,
-          `<br><i class="fa-solid fa-check" style="color: #00ff4c;"></i> Merge request created [<a href="${mergeRequestUrl}" target="_blank" rel="noopener">URL</a>].`
-        );
+
+        this.showModalMessage({
+          headerText: this.getModalHeaderText(),
+          message: `
+            <div class="link-wrapper">
+              ${CHECK_ICON} 
+              <span>
+                Merge request created 
+                <span class="branch-url">[<a href="${mergeRequestUrl}" class="button-secondary" target="_blank" rel="noopener">URL</a>]</span>.
+              </span>
+            </div>`,
+        });
       })
       .catch(ex => console.log(ex));
 
@@ -882,11 +868,8 @@ class Actions {
     return tokenValue;
   }
 
-  showModalMessage(hideFooter, headerText, isAppendMode, message) {
-    if (hideFooter) {
-      document.getElementById('promptModalFooter').classList.add('visually-hidden');
-    }
-
+  showModalMessage({ isHideCloseButton = true, headerText, isAppendMode = true, message }) {
+    document.getElementById('close-button').classList.toggle('d-none', isHideCloseButton);
     document.getElementById('submitPromptModalHeader').textContent = headerText;
 
     let modalBody = document.getElementById('submitPromptModalBody');
@@ -933,8 +916,8 @@ class Actions {
       `<td id="variableName" class="text-center">${variable}</td>` +
       `<td id="sampleValue" class="text-center">${sampleValue}</td>` +
       `<td class="prompt-table__icons">` +
-      `<a type="button" data-toggle="tooltip" title="Edit variable" id="editVariable"><i class="fa-solid fa-pen" onclick="actions.editVariableEntry(event);"></i>` +
-      `<a type="button" data-toggle="tooltip" title="Delete variable" id="deleteVariable"><i class="fa-solid fa-trash" onclick="actions.deleteVariableEntry(event);"></i>` +
+      `<button data-toggle="tooltip" title="Edit variable" id="editVariable" onclick="actions.editVariableEntry(event)">${PEN_ICON}</button>` +
+      `<button data-toggle="tooltip" title="Delete variable" id="deleteVariable" onclick="actions.deleteVariableEntry(event);">${BIN_ICON}</button>` +
       `</td>`;
 
     // Add the row to the table

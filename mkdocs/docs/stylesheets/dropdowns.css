@@ -16,7 +16,7 @@
     height: 36px !important;
     padding: 0;
     border: 1px solid #c1c7d0;
-    border-radius: 3px;
+    border-radius: 3px !important;
     color: var(--primary-colors-almost-black);
     font-size: 13px;
     font-weight: 400;
@@ -90,7 +90,7 @@
     align-items: center;
     margin: 0;
 
-    & .select2-selection__choice {
+    .select2-selection__choice {
       display: flex;
       flex-direction: row-reverse;
       align-items: center;
@@ -102,6 +102,11 @@
       color: var(--primary-colors-almost-black);
       font: var(--roboto-13-500);
       background-color: var(--background-bg-200);
+
+      & span {
+        padding-left: 8px;
+        vertical-align: text-top;
+      }
     }
 
     .select2-selection__choice__remove {

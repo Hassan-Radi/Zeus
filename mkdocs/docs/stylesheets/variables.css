@@ -22,7 +22,11 @@
   --elements-e-400: #8d95a1;
   --character-primary-85: rgba(0, 0, 0, 0.85);
   --focused-border: 2px solid var(--topaz-focused);
-  --roboto-13-400: normal 400 13px / 20px Roboto, sans-serif;
-  --roboto-13-500: normal 500 13px / 20px Roboto, sans-serif;
-  --roboto-15-500: normal 500 15px / 24px Roboto, sans-serif;
+  --roboto-13-400: normal 400 13px / 20px roboto, sans-serif;
+  --roboto-13-500: normal 500 13px / 20px roboto, sans-serif;
+  --roboto-14-500: normal 500 14px / 24px roboto, sans-serif;
+  --roboto-15-500: normal 500 15px / 24px roboto, sans-serif;
+  --roboto-17-500: normal 500 17px / 24px roboto, sans-serif;
+  --open-sans-20-400: normal 400 20px / 31px "Open Sans", sans-serif;
+  --md-primary-fg-color: #3f3f3f;
 }

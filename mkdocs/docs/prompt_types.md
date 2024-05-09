@@ -10,40 +10,40 @@
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
 
 This page explains the types of prompts that are supported in the prompt library. You can look at
-this from different angles.
+this from different angles:
 
 1. How many examples you've provided to the AI model, before asking it to make a prediction? For
    this the types of prompts can be:
-   - Zero-shot prompt
-   - Oneshot prompt
-   - Few-shot prompt
+    - Zero-shot prompt
+    - One-shot prompt
+    - Few-shot prompt
 2. Did you give the AI model some basic instructions to limit or control what the user can do? or
    the user
    has
    complete freedom to ask what they want? For this the types of prompts can be:
-   - User prompt
-   - System prompt
+    - User prompt
+    - System prompt
 3. Can you use the prompt right away? or you need to provide data or answer
    questions first? For this the types of prompts can be:
-   - Template prompt
-   - Interactive prompt
+    - Template prompt
+    - Interactive prompt
 
 ## 1. Providing examples to the AI
 
-### Zero-shot prompt
+<h3 id="zero-shot-prompt">Zero-shot prompt</h3>
 
 When you ask the AI model to make predictions or answer questions without providing examples on how
 to do it first. Like the following:
 
 > Using simple terms, explain Quantum Physics for me
 
-### Oneshot prompt
+<h3 id="oneshot-prompt">One-shot prompt</h3>
 
 When you provide one example to the AI model before asking it to make predictions or answer
 questions. You are therefore providing further training to
 the AI model. This is useful for hard tasks and helps the AI to produce better results.
 
-### Few-shot prompt
+<h3 id="few-shot-prompt">Few-shot prompt</h3>
 
 When you provide multiple examples to the AI model. The more examples you provide, the better the AI
 would be at answering your questions. This is useful for complex tasks that involve multiple things
@@ -51,13 +51,13 @@ to do.
 
 ## 2. Limiting the AI
 
-### User prompt
+<h3 id="user-prompt">User prompt</h3>
 
 This is the default way to interact with most LLMs in the market. The user is free to ask the AI
 model what they want, whether that's to answer a question, solve a puzzle or just have a chat to
 keep them entertained.
 
-### System prompt
+<h3 id="system-prompt">System prompt</h3>
 
 This is a more structured form of prompting. First, you give the AI model a set of instructions on
 what it can and can't do. You can instruct it to not answer specific questions, not use swear words
@@ -68,7 +68,7 @@ misusing it.
 
 ## 3. Providing data to the AI
 
-### Template prompt
+<h3 id="template-prompt">Template prompt</h3>
 
 When you have one or more variables in the prompt itself. The user has to provide values for those
 variables before they can start using the prompt. like the following:
@@ -78,9 +78,9 @@ variables before they can start using the prompt. like the following:
 Here, the user has to replace the variable `{{TOPIC}}` with the actual topic that they want the AI
 model to explain.
 
-### Interactive prompt
+<h3 id="interactive-prompt">Interactive prompt</h3>
 
-It is a type of [System prompt](#system-prompt) where you give instructions to the AI model about
+It is a type of <a type="button" class="button-secondary" href="#system-prompt">System prompt</a> where you give instructions to the AI model about
 what actions to perform and maybe ask it to collect some data from the user.
 This way of collecting data is why the prompt is called "Interactive" (The alternative
 would be to put the data as variables in the prompt itself). This can be very useful when you are

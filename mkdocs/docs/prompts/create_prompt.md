@@ -1,5 +1,6 @@
 # Create prompt
 
+<script type="text/javascript" src="/js/constants.js"></script>
 <script type="text/javascript" src="/js/ui.js"></script>
 <script type="text/javascript" src="/js/actions.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
@@ -96,7 +97,7 @@
       <label for="variablesTable">Variables</label>
       <div class="card-body">
         <table id="variablesTable" class="table-responsive table-hover prompt-table">
-          <thead class="sticky-top table-secondary prompt-table__header">
+          <thead class="table-secondary prompt-table__header">
             <tr>
               <th scope="col">Name</th>
               <th scope="col">Sample value</th>
@@ -157,13 +158,13 @@
         </optgroup>
       </select>
     </div>
-    <div class="form-check prompt-form__copyright">
+    <div class="prompt-form__copyright">
       <input class="form-check-input" type="checkbox" value="" id="agreeToTerms">
       <label class="form-check-label" for="agreeToTerms">
       A prompt is a form of copyrighted material. By submitting this data, you are agreeing to relinquish all your rights over this prompt to Epam&copy; and its subsidiaries.
       </label>
     </div>
-    <a type="button" id="submitPrompt" class="button button-primary float-end" data-bs-toggle="modal" data-bs-target="#createEditPrompt" onclick="actions.submitPrompt();"><i class="fa-regular fa-plus"></i> Submit</a>
+    <button id="submitPrompt" class="button button-primary float-end" data-bs-toggle="modal" data-bs-target="#createEditPrompt" onclick="actions.submitPrompt();"><i class="fa-regular fa-plus"></i> Submit</button>
     <button class="button button-secondary float-end me-2" id="cancelEditPrompt" onclick="actions.cancelPromptEdit();">Cancel</button>
   </div>
 </div>
@@ -173,34 +174,41 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="submitPromptModalHeader"></h1>
+        <button id="close-button" type="button" class="close-button" data-bs-dismiss="modal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.732062 15.7699C0.330523 15.3684 0.330524 14.7173 0.732063 14.3158L6.54847 8.4994L0.732063 2.683C0.330524 2.28146 0.330523 1.63044 0.732062 1.2289C1.1336 0.827357 1.78463 0.827357 2.18616 1.2289L8.00257 7.0453L13.819 1.22889C14.2205 0.82735 14.8715 0.827349 15.2731 1.22889C15.6746 1.63043 15.6746 2.28145 15.2731 2.68299L9.45667 8.4994L15.2731 14.3158C15.6746 14.7174 15.6746 15.3684 15.2731 15.7699C14.8715 16.1715 14.2205 16.1715 13.819 15.7699L8.00257 9.95351L2.18616 15.7699C1.78463 16.1715 1.1336 16.1715 0.732062 15.7699Z" fill="#A2AAB5"/>
+          </svg>
+        </button>
       </div>
-      <rte class="overflow-auto form-control" style="max-height: 300px;" id="submitPromptModalBody"></rte>
-      <div id="promptModalFooter" class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
-      </div>
+      <div class="overflow-auto form-control modal-body" style="max-height: 300px;" id="submitPromptModalBody"></div>
     </div>
   </div>
 </div>
 <!-- Add Variable Modal -->
 <div class="modal fade" id="addVariableModal" tabindex="-1" aria-labelledby="variablesModalHeader" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content modal-grey">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="variablesModalHeader">Add variable</h1>
+         <button id="close-button" type="button" class="close-button" data-bs-dismiss="modal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.732062 15.7699C0.330523 15.3684 0.330524 14.7173 0.732063 14.3158L6.54847 8.4994L0.732063 2.683C0.330524 2.28146 0.330523 1.63044 0.732062 1.2289C1.1336 0.827357 1.78463 0.827357 2.18616 1.2289L8.00257 7.0453L13.819 1.22889C14.2205 0.82735 14.8715 0.827349 15.2731 1.22889C15.6746 1.63043 15.6746 2.28145 15.2731 2.68299L9.45667 8.4994L15.2731 14.3158C15.6746 14.7174 15.6746 15.3684 15.2731 15.7699C14.8715 16.1715 14.2205 16.1715 13.819 15.7699L8.00257 9.95351L2.18616 15.7699C1.78463 16.1715 1.1336 16.1715 0.732062 15.7699Z" fill="#A2AAB5"/>
+          </svg>
+        </button>
       </div>
-      <div class="modal-body">
-        <div class="input-group input-group-sm mb-2">
-          <span id="variableNameLabel" class="input-group-text text-primary"><small>Name:</small></span>
-          <input id="variableNameInput" type="text" class="form-control" aria-label="Variable-name-input" aria-describedby="variableNameLabel">
+      <div class="modal-body prompt-form">
+        <div class="prompt-form__row">
+          <label id="variableNameLabel" for='variableNameInput'>Name</label>
+          <input id="variableNameInput" type="text" class="form-control" aria-label="Variable-name-input" aria-describedby="variableNameLabel" placeholder="Give the variable a name">
         </div>
-        <div class="form-floating">
-          <textarea class="form-control" style="height: 150px" placeholder="Add a variable sample value here" id="sampleValueTextArea"></textarea>
-          <label class="text-primary" for="sampleValueTextArea"><small>Sample value:</small></label>
+        <div class="prompt-form__row">
+          <label for="sampleValueTextArea">Sample value</label>
+          <textarea class="form-control" style="height: 150px" placeholder="Please enter sample value for variable" id="sampleValueTextArea"></textarea>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="actions.submitVariable();">Submit</button>
+        <button type="button" class="button button-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="button button-primary" onclick="actions.submitVariable();">Submit</button>
       </div>
     </div>
   </div>

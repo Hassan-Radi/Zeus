@@ -37,6 +37,15 @@
         border: 0;
         font-weight: 500;
         text-decoration: none;
+
+        &::after {
+          display: inline-block;
+          content: ',';
+        }
+
+        &:last-child::after {
+          display: none;
+        }
       }
     }
   }
@@ -48,9 +57,7 @@
   .prompt-block-heading {
     margin-bottom: 12px;
     color: var(--primary-colors-almost-black);
-    font:
-      normal 500 17px / 24px Roboto,
-      sans-serif;
+    font: var(--roboto-17-500);
   }
 
   .iterations-history-heading {
@@ -65,6 +72,10 @@
     border-radius: 4px;
     background: var(--primary-colors-white);
     box-shadow: 0 1px 3px 0 rgba(55, 67, 98, 0.1);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     .clipboard-block__name {
       padding: 16px 0 16px 16px;
@@ -104,9 +115,13 @@
     }
 
     &:is([open]) {
-      padding: 0 16px;
+      padding: 0 16px 16px;
       outline: var(--focused-border);
       background: var(--background-bg-100);
+
+      & > :last-child {
+        margin-bottom: 0;
+      }
 
       .summary {
         margin: 0 -16px;
@@ -122,6 +137,10 @@
 
       .info-block {
         justify-content: center;
+      }
+
+      .variables-block {
+        margin-bottom: 0;
       }
     }
 

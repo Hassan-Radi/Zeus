@@ -105,44 +105,21 @@ class UI {
   }
 
   getPromptTypeAsLinks(promptTypes) {
-    let outputLinks = '';
-    for (let i = 0; i < promptTypes.length; i++) {
-      let promptType = promptTypes[i];
+    const promptTypesMap = {
+      'Zero-shot prompt': '#zero-shot-prompt',
+      'One-shot prompt': '#oneshot-prompt',
+      'Few-shot prompt': '#few-shot-prompt',
+      'User prompt': '#user-prompt',
+      'System prompt': '#system-prompt',
+      'Template prompt': '#template-prompt',
+      'Interactive prompt': '#interactive-prompt',
+    };
 
-      // we are using root-relative links here (that's why the links start with '/')
-      switch (promptType) {
-        case 'Zero-shot prompt':
-          outputLinks +=
-            '<a class="button-secondary prompt__link" href="/prompt_types.html#zero-shot-prompt">Zero-shot prompt</a>';
-          break;
-        case 'One-shot prompt':
-          outputLinks +=
-            '<a class="button-secondary prompt__link" href="/prompt_types.html#oneshot-prompt">One-shot prompt</a>';
-          break;
-        case 'Few-shot prompt':
-          outputLinks +=
-            '<a class="button-secondary prompt__link" href="/prompt_types.html#few-shot-prompt">Few-shot prompt</a>';
-          break;
-        case 'User prompt':
-          outputLinks +=
-            '<a class="button-secondary prompt__link" href="/prompt_types.html#user-prompt">User prompt</a>';
-          break;
-        case 'System prompt':
-          outputLinks +=
-            '<a class="button-secondary prompt__link" href="/prompt_types.html#system-prompt">System prompt</a>';
-          break;
-        case 'Template prompt':
-          outputLinks +=
-            '<a class="button-secondary prompt__link" href="/prompt_types.html#template-prompt">Template prompt</a>';
-          break;
-        case 'Interactive prompt':
-          outputLinks +=
-            '<a class="button-secondary prompt__link" href="/prompt_types.html#interactive-prompt">Interactive prompt</a>';
-          break;
-      }
-    }
-
-    return outputLinks;
+    return promptTypes.reduce(
+      (acc, promptType) =>
+        (acc += `<a class="button-secondary button-link prompt__link" href="/prompt_types.html${promptTypesMap[promptType]}">${promptType}</a>`),
+      ''
+    );
   }
 
   addDataItemGroup(html, dataItemName, dataItemValue) {
@@ -212,27 +189,22 @@ class UI {
       });
   }
 
-  showPromptButtons(
-    showCreatePrompt,
-    showExportPrompts,
-    showBookmarkPrompt,
-    showClearBookmarks,
-    showEditPrompt
-  ) {
+  showPromptButtons(showCreatePrompt, showExportPrompts, showBookmarkPrompt, showEditPrompt) {
     const divElement = document.createElement('div');
     divElement.classList.add('d-flex', 'justify-content-end', 'prompt-buttons');
 
-    if (showClearBookmarks) {
+    if (showBookmarkPrompt) {
       divElement.innerHTML += `
         <button 
-          id="clear-bookmarked-prompts" 
-          class="btn btn-light fa-solid fa-delete-left" 
-          data-toggle="tooltip" 
+          id="bookmark-prompt" 
+          class="button button-secondary bookmark-removed"  
           type="button" 
-          title="${ORIGINAL_CLEAR_ALL_PROMPTS_TOOLTIP}" 
-          onclick="actions.removeAllBookmarks(true);" 
-          onmouseleave="actions.resetRemoveAllBookmarksTooltip(event);"
+          title 
+          onclick="actions.bookmarkPrompt(event);"
+          onmouseleave="actions.resetBookmarkTooltip(event);"
         >
+          ${BOOKMARK_ICON}
+          Add to Export
         </button>`;
     }
 
@@ -240,27 +212,12 @@ class UI {
       divElement.innerHTML += `
         <button 
           id="export-prompts" 
-          class="button button-secondary" 
+          class="button button-secondary button-icon" 
           type="button" 
           title="Export prompts" 
           onclick="window.location='/export.html';"
         >
           ${ADD_TO_EXPORT_ICON}
-          Add to Export
-        </button>`;
-    }
-
-    if (showBookmarkPrompt) {
-      divElement.innerHTML += `
-        <button 
-          id="bookmark-prompt" 
-          class="button button-secondary button-icon bookmark-removed"  
-          type="button" 
-          title 
-          onclick="actions.bookmarkPrompt(event);"
-          onmouseleave="actions.resetBookmarkTooltip(event);"
-        >
-          ${BOOKMARK_ICON}
         </button>`;
     }
 
@@ -300,7 +257,7 @@ class UI {
     divElement.innerHTML += `
      <button 
        id="create-prompt" 
-       class="btn btn-light btn-block d-flex justify-content-center align-items-center create-prompt-button" 
+       class="d-flex justify-content-center align-items-center button button-primary create-prompt-button" 
        type="button" 
        title="Create prompt" 
        onclick="navigateTo('/prompts/create_prompt.html');"

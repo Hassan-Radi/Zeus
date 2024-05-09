@@ -4,7 +4,7 @@ nav:
   - Home: /
   - Create prompt: prompts/create_prompt.md
   - Export prompts: export.md
-  - Target audience:
+  - Prompts by roles:
       - QA Engineer: prompts/target_audience/qa_engineer.md
       - SDET: prompts/target_audience/sdet.md
       - Business Analyst: prompts/target_audience/business_analyst.md
@@ -12,12 +12,13 @@ nav:
       - Developer: prompts/target_audience/developer.md
       - Architect: prompts/target_audience/architect.md
       - Designer: prompts/target_audience/designer.md
-  - Tutorials:
-      - Video tutorials: tutorials/video_tutorials.md
-  - Prompt types: prompt_types.md
+  - Documentations:
+      - Tutorials: tutorials/video_tutorials.md
+      - Features: features.md
+      - Prompt types: prompt_types.md
 theme:
   name: material
-copyright: Made with ❤️ by EPAM&copy; Systems, Inc. All Rights Reserved. 2023&emsp;(v3.3.0)&emsp;-&emsp;<a href="/features.html">Features</a>&emsp;-&emsp;<div class="float-end md-copyright__highlight">- Made with <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">Material for MkDocs</a></div><div class="float-end"><a href="https://chat.lab.epam.com/" target="_blank" rel="noopener">EPAM AI Dial</a>&emsp;</div>
+copyright: Made with ❤️ by EPAM&copy; Systems, Inc. All Rights Reserved. 2024 (v3.3.8)<div class="footer__links"><a href="/features.html">Features</a><a href="https://chat.lab.epam.com/" target="_blank" rel="noopener">EPAM AI Dial</a><div class="md-copyright__highlight">Made with <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">Material for MkDocs</a></div></div>
 extra:
   generator: false
 extra_css:
@@ -30,3 +31,6 @@ extra_css:
   - stylesheets/buttons.css
   - stylesheets/dropdowns.css
   - stylesheets/prompt-details.css
+  - stylesheets/home.css
+  - stylesheets/export-prompt.css
+  - stylesheets/modals.css

@@ -4,9 +4,7 @@
     border-bottom: 1px solid var(--elements-e-100);
     border-radius: 8px 8px 0 0;
     color: var(--primary-colors-almost-black);
-    font:
-      normal 500 15px / 24px Roboto,
-      sans-serif;
+    font: var(--roboto-15-500);
     background: var(--background-bg-200);
     box-shadow: none;
 
@@ -48,6 +46,7 @@
       }
 
       &:last-child {
+        border-bottom: none;
         border-radius: 0 0 8px 8px;
       }
     }
